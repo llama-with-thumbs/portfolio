@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlad Filitovich — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">VF</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero__content">
+      <p class="hero__greeting reveal">Hi, I'm</p>
+      <h1 class="hero__name reveal">Vlad Filitovich</h1>
+      <p class="hero__tagline reveal">Backend-leaning Software Engineer building and deploying applications across web and mobile platforms.</p>
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--primary">View Work</a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section class="section projects" id="projects">
+    <div class="section__header reveal">
+      <span class="section__label">01</span>
+      <h2 class="section__title">Selected Projects</h2>
+    </div>
+
+    <!-- Category: Maps & Visualization -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Maps &amp; Data Visualization</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="sporescope">
+          <div class="card__img">
+            <img src="assets/sporescope/thumbnail.png" alt="SporeScope" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">SporeScope</h4>
+            <p class="card__desc">Web app for visualizing biological growth experiments from Raspberry Pi imaging rigs. Interactive plate exploration, GPT analysis, time-series metrics, and polygon shape detection.</p>
+            <div class="card__tags">
+              <span>React</span><span>TypeScript</span><span>Firebase</span><span>Recharts</span><span>Canvas</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="hot-springs">
+          <div class="card__img">
+            <img src="assets/hot-springs-finder/thumbnail.png" alt="Hot Springs Finder" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">Hot Springs Finder</h4>
+            <p class="card__desc">Interactive Leaflet.js map of thermal springs across the US. Search with autocomplete, temperature filtering, satellite/default views, and responsive mobile design.</p>
+            <div class="card__tags">
+              <span>Leaflet.js</span><span>JavaScript</span><span>GitHub Pages</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="bio-chart">
+          <div class="card__img">
+            <img src="assets/bio-chart/thumbnail.png" alt="Bio Chart" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2023</span>
+            <h4 class="card__title">Bio Chart</h4>
+            <p class="card__desc">Microcontroller-driven sensor data pipeline — collects, processes, and visualizes biological growth data. Multi-stage image analysis with RGB extraction and interactive web dashboard.</p>
+            <div class="card__tags">
+              <span>React</span><span>TypeScript</span><span>Firebase</span><span>Python</span><span>AWS EC2</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="covid-dashboard">
+          <div class="card__img">
+            <img src="assets/covid-dashboard/thumbnail.png" alt="Covid Dashboard" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2021</span>
+            <h4 class="card__title">Covid Dashboard</h4>
+            <p class="card__desc">SPA with MVC architecture tracking pandemic data. Interactive Mapbox map and D3.js charts with data from Johns Hopkins CSSE.</p>
+            <div class="card__tags">
+              <span>D3.js</span><span>Mapbox</span><span>Webpack</span><span>MVC</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Category: Web & Mobile Apps -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Web &amp; Mobile Apps</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="bh-healthcare">
+          <div class="card__img">
+            <img src="assets/bh-healthcare/thumbnail.png" alt="BH Healthcare" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2020</span>
+            <h4 class="card__title">BH Healthcare</h4>
+            <p class="card__desc">Company site for a home health care provider in MA. Application forms with Formik/Yup, email via EmailJS, search with Fuse.js, and multilingual support.</p>
+            <div class="card__tags">
+              <span>React</span><span>Bootstrap</span><span>Formik</span><span>Fuse.js</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="language-for-kids">
+          <div class="card__img">
+            <img src="assets/language-for-kids/thumbnail.png" alt="Language for Kids" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2022</span>
+            <h4 class="card__title">Language for Kids</h4>
+            <p class="card__desc">Web-based game hub making language learning fun for children. Collaborative UI design with a graphic designer — responsive layouts, game carousel, login/registration, and progress tracking.</p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>Figma</span><span>Responsive</span><span>Firebase</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="medart">
+          <div class="card__img">
+            <img src="assets/medart-endodontics/thumbnail.png" alt="MedArt Endodontics" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2021</span>
+            <h4 class="card__title">MedArt Endodontics</h4>
+            <p class="card__desc">Professional dental clinic website with appointment booking and service showcase.</p>
+            <div class="card__tags">
+              <span>HTML/CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="more-projects">
+          <div class="card__img">
+            <div class="card__img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25a2.25 2.25 0 0 1-2.25-2.25v-2.25Z"/></svg>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__year">Various</span>
+            <h4 class="card__title">More Projects</h4>
+            <p class="card__desc">MusicTutor (React Native + OpenAI), Ziz (Flask accounting), Budget Math (React/TS), Timely-Notify (FastAPI + Leaflet)</p>
+            <div class="card__tags">
+              <span>React Native</span><span>Flask</span><span>FastAPI</span><span>TypeScript</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Category: Games & Interactive -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Games &amp; Interactive</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="memoji">
+          <div class="card__img">
+            <img src="assets/memoji/thumbnail.png" alt="Memoji Game" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2020</span>
+            <h4 class="card__title">Memoji</h4>
+            <p class="card__desc">Memory card game — Coursera Front-End capstone. Flip animations, visual feedback, modular game logic, and cross-device responsive design.</p>
+            <div class="card__tags">
+              <span>HTML5</span><span>CSS3</span><span>ES6+</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="gem-puzzle">
+          <div class="card__img">
+            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRwp1RHOOjWASHpG8LlYnNtMDm8wMIFzht6SOyAFQPFKR2JKaOQ4qdK8zTqMf4Lo__xXS4KXb0g3Jtswfj6mLaC2BrlqzzxQfUb0Ini2cFzVKghnvp8Khh8zVDyvKojLNEKiJHoPXyGRi2SBaOdM76cdOIQ38qnEzXtgc_VQxKeSfJ_9QSRB5c6zhiInJjbKUp4MQKsgW-rZ11lPHVh4YR6lSY4Nhp9WepMxME=w1280" alt="Gem Puzzle" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2021</span>
+            <h4 class="card__title">Gem Puzzle</h4>
+            <p class="card__desc">Classic sliding tile puzzle game with smooth animations and move counter.</p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>CSS3</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="calculator">
+          <div class="card__img">
+            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SThgURXvb4dWbKfmo9WU601uafKh1QdVs1lllTz4lvzjgn7AY3GEVyMpGX5OPFezyaVUO73ZuH45HZP9Q5Ldj2bmZHD3bYoEXHVr-ANr8PUGTHiTkN-V0Y-Y1kcxB6wcMJYCP_klEI1vzHYsodKI2Og-sMQiKKwMI6sHAIp5-IcsX8ryw4QYGgk8J0kRe0o4WOBNjJ02ken-m4ymm03R-2240qD0OXErficCA=w1280" alt="Calculator" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2020</span>
+            <h4 class="card__title">Calculator</h4>
+            <p class="card__desc">Functional calculator app with keyboard support and clean UI.</p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>HTML/CSS</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="english-cards">
+          <div class="card__img">
+            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSk949tleoXDwxHbKdix37-wm3R0NsxPkrGwH2Md3H8tpZBXWRl8fgTmE-jn61XWW7a4RWV7uWPzIT52xJMDSZzctMBDb1Wjzt7Susbz4oqqPh38Ft-QcbjqNwvg3Csub4gsyZ2lyN3dDmOgVAfp0tSgX7FXqppcchRJo1GDTnyRnVwgBuaBA6xQC5IMb_wvgZxpGUJtbOCbprK1GY8MRDjRls4jP3Vy3JXhnQ=w1280" alt="English Cards" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2021</span>
+            <h4 class="card__title">English Cards</h4>
+            <p class="card__desc">Flashcard-based vocabulary learning app with flip animations and category selection.</p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>CSS Animations</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="virtual-keyboard">
+          <div class="card__img">
+            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SQgC6oN36XQaEPSoYA-rmCwYHMlD6VKjqY7UuA1vsLn80slTP1nzG3qaCSoIN5M-YU6STjEJEStxLKHeCDhT5szE2sqgu96-ZbJAbFeAqP0WkoZ7U0jGNoZr-NKphAqgNM9HV4oiRlN3uSqxwS_omqPS4wh7mJVF59dzC7Ydv9ALh5iTHnI1fRXAGujXNrrKO_qfwgoS_z9fYWg8D6waAYq_4Lp9Y1XByOa=w1280" alt="Virtual Keyboard" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2020</span>
+            <h4 class="card__title">Virtual Keyboard</h4>
+            <p class="card__desc">On-screen virtual keyboard with multilingual support and key press animations.</p>
+            <div class="card__tags">
+              <span>JavaScript</span><span>DOM Events</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="coup">
+          <div class="card__img">
+            <div class="card__img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"/></svg>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__year">2021</span>
+            <h4 class="card__title">Coup Online</h4>
+            <p class="card__desc">Online multiplayer adaptation of the Coup board game with real-time gameplay.</p>
+            <div class="card__tags">
+              <span>Node.js</span><span>Socket.IO</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Category: Cloud & Automation -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Cloud &amp; Automation</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="aws">
+          <div class="card__img">
+            <div class="card__img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"/></svg>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__year">Ongoing</span>
+            <h4 class="card__title">AWS Infrastructure</h4>
+            <p class="card__desc">EC2 setup, Application Load Balancer, IAM, SSM sessions, and Dockerized Fuseki deployments.</p>
+            <div class="card__tags">
+              <span>AWS</span><span>Docker</span><span>EC2</span><span>IAM</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="sheets">
+          <div class="card__img">
+            <div class="card__img-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+            </div>
+          </div>
+          <div class="card__body">
+            <span class="card__year">Ongoing</span>
+            <h4 class="card__title">Google Sheets Automation</h4>
+            <p class="card__desc">Workflow automation using JavaScript and Google Apps Script for spreadsheet-driven business processes.</p>
+            <div class="card__tags">
+              <span>Apps Script</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section__header reveal">
+      <span class="section__label">02</span>
+      <h2 class="section__title">About Me</h2>
+    </div>
+    <div class="about__content reveal">
+      <div class="about__text">
+        <p>I'm a backend-leaning Software Engineer based in Cambridge, MA with a strong foundation in Python, SQL, and cloud-native tools. I've spent several years building and deploying applications across web and mobile platforms.</p>
+        <p>My work spans secure application development, healthcare systems, LLM integrations, interactive visualizations, and API design. I emphasize clean architecture, thoughtful design, and comprehensive testing to deliver production-ready solutions.</p>
+      </div>
+      <div class="about__skills">
+        <div class="skill-group">
+          <h4>Languages &amp; Frameworks</h4>
+          <div class="skill-tags">
+            <span>Python</span><span>Flask</span><span>FastAPI</span><span>React</span><span>TypeScript</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Infrastructure</h4>
+          <div class="skill-tags">
+            <span>PostgreSQL</span><span>SQL</span><span>Firebase</span><span>MongoDB</span><span>AWS</span><span>Docker</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools &amp; Practices</h4>
+          <div class="skill-tags">
+            <span>Git</span><span>Webpack</span><span>Figma</span><span>REST APIs</span><span>D3.js</span><span>Leaflet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="contact__content reveal">
+      <span class="section__label">03</span>
+      <h2 class="section__title">Let's Work Together</h2>
+      <p class="contact__text">Have a project in mind or just want to chat? I'd love to hear from you.</p>
+      <a href="mailto:vlad.filitovich@gmail.com" class="btn btn--primary btn--lg">Say Hello</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Vlad Filitovich</span>
+      <div class="footer__links">
+        <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__container">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal__hero" id="modalHero">
+        <img id="modalMainImg" src="" alt="">
+      </div>
+      <div class="modal__body">
+        <span class="modal__year" id="modalYear"></span>
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+        <div class="modal__tags" id="modalTags"></div>
+        <div class="modal__links" id="modalLinks"></div>
+        <div class="modal__gallery" id="modalGallery"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
