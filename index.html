@@ -272,23 +272,6 @@
           <div class="card__arrow">&rarr;</div>
         </a>
 
-        <a href="#" class="card" data-project="coup">
-          <div class="card__img">
-            <div class="card__img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"/></svg>
-            </div>
-          </div>
-          <div class="card__body">
-            <span class="card__year">2021</span>
-            <h4 class="card__title">Coup Online</h4>
-            <p class="card__desc">Online multiplayer adaptation of the Coup board game with real-time gameplay.</p>
-            <div class="card__tags">
-              <span>Node.js</span><span>Socket.IO</span>
-            </div>
-          </div>
-          <div class="card__arrow">&rarr;</div>
-        </a>
-
       </div>
     </div>
 
@@ -375,7 +358,22 @@
       <span class="section__label">03</span>
       <h2 class="section__title">Let's Work Together</h2>
       <p class="contact__text">Have a project in mind or just want to chat? I'd love to hear from you.</p>
-      <a href="mailto:vlad.filitovich@gmail.com" class="btn btn--primary btn--lg">Say Hello</a>
+      <form class="contact__form" id="contactForm">
+        <div class="form__group">
+          <label for="fromName" class="form__label">Name</label>
+          <input type="text" id="fromName" name="from_name" class="form__input" required>
+        </div>
+        <div class="form__group">
+          <label for="fromEmail" class="form__label">Email</label>
+          <input type="email" id="fromEmail" name="from_email" class="form__input" required>
+        </div>
+        <div class="form__group">
+          <label for="message" class="form__label">Message</label>
+          <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg form__submit">Send Message</button>
+        <p class="form__status" id="formStatus"></p>
+      </form>
     </div>
   </section>
 
@@ -408,6 +406,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

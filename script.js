@@ -139,15 +139,6 @@
       links: [],
       gallery: []
     },
-    'coup': {
-      year: '2021',
-      title: 'Coup Online',
-      desc: 'Online multiplayer adaptation of the popular Coup board game. Features real-time gameplay with WebSocket connections, game room management, and turn-based action resolution.',
-      tags: ['Node.js', 'Socket.IO', 'JavaScript'],
-      img: null,
-      links: [],
-      gallery: []
-    },
     'aws': {
       year: 'Ongoing',
       title: 'AWS Infrastructure',
@@ -294,5 +285,40 @@
     document.querySelectorAll('.hero .reveal').forEach(el => {
       el.classList.add('reveal--visible');
     });
+  });
+
+  // ── Contact form (EmailJS) ──
+  // TODO: Replace these with your EmailJS credentials
+  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form__submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    formStatus.textContent = '';
+    formStatus.className = 'form__status';
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+      .then(() => {
+        formStatus.textContent = 'Message sent successfully!';
+        formStatus.classList.add('form__status--success');
+        contactForm.reset();
+      })
+      .catch(() => {
+        formStatus.textContent = 'Something went wrong. Please try again.';
+        formStatus.classList.add('form__status--error');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      });
   });
 })();

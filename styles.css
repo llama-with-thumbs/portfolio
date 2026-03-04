@@ -553,6 +553,77 @@ img {
   line-height: 1.6;
 }
 
+.contact__form {
+  text-align: left;
+}
+
+.form__group {
+  margin-bottom: 1.25rem;
+}
+
+.form__label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.form__input:focus {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.form__input::placeholder {
+  color: var(--text-dim);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form__status {
+  font-size: 0.82rem;
+  margin-top: 1rem;
+  min-height: 1.3em;
+}
+
+.form__status--success {
+  color: #4ade80;
+}
+
+.form__status--error {
+  color: #f87171;
+}
+
 /* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
