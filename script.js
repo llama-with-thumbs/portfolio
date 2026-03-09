@@ -3,9 +3,9 @@
 
   // ── Project data ──
   const projects = {
-    'sememe': {
+    'sememes': {
       year: '2026',
-      title: 'Sememe',
+      title: 'Sememes',
       desc: 'A web application that records voice notes, transcribes them with OpenAI Whisper, auto-translates to English, and builds an interactive Topic Map — a network graph of recurring themes linked back to the exact moments they appear.\n\nFeatures include drag-and-drop audio/text upload, real-time SSE-streamed transcription, rich-text editing with auto-save, and a vis.js-powered semantic graph where node size scales by frequency and edges show relationship types. Five built-in color themes with persistent selection.',
       tags: ['Python', 'Flask', 'OpenAI Whisper', 'vis.js', 'SSE'],
       img: 'assets/sememe/thumbnail.svg',
