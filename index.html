@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vlad Filitovich — Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +28,7 @@
         <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
         <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
       </button>
+      <button class="web1-toggle" id="web1Toggle" aria-label="Toggle 90s mode">90s</button>
     </div>
   </nav>
 
@@ -35,6 +37,7 @@
     <div class="hero__content">
       <p class="hero__greeting reveal">Hi, I'm</p>
       <h1 class="hero__name reveal">Vlad Filitovich</h1>
+      <marquee class="hero__marquee web1-only" scrollamount="4">~ Welcome to my Personal Homepage! ~</marquee>
       <p class="hero__tagline reveal">Backend-leaning Software Engineer building and deploying applications across web and mobile platforms.</p>
       <div class="hero__cta reveal">
         <a href="#projects" class="btn btn--primary">View Work</a>
@@ -47,11 +50,75 @@
     </div>
   </header>
 
+  <div class="under-construction web1-only">** This site is under construction! Check back soon for updates! **</div>
+  <hr class="web1-hr web1-only">
+
   <!-- PROJECTS -->
   <section class="section projects" id="projects">
     <div class="section__header reveal">
       <span class="section__label">01</span>
       <h2 class="section__title">Selected Projects</h2>
+    </div>
+
+    <!-- Category: AI & NLP -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">AI &amp; NLP</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="sememe">
+          <div class="card__img">
+            <img src="assets/sememe/thumbnail.svg" alt="Sememe" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2026</span>
+            <h4 class="card__title">Sememe</h4>
+            <p class="card__desc">Voice note recorder with Whisper transcription, auto-translation, and interactive Topic Map — a vis.js graph of recurring themes linked to the exact moments they appear.</p>
+            <div class="card__tags">
+              <span>Python</span><span>Flask</span><span>Whisper</span><span>vis.js</span><span>SSE</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Category: Semantic Methodology -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Semantic Methodology</h3>
+      <div class="projects__grid">
+
+        <a href="#" class="card" data-project="sporescope">
+          <div class="card__img">
+            <img src="assets/sporescope/data-model.png" alt="SporeScope Data Model" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">SporeScope</h4>
+            <p class="card__desc">Ontology-based data model linking chambers, plates, and analytical snippets in Firestore with Firebase Storage assets. Feature extraction includes RGB intensities, growth area, perimeter, and polygon boundary shapes stored as semantic subcollections.</p>
+            <div class="card__tags">
+              <span>Ontology</span><span>Firestore</span><span>Canvas</span><span>Recharts</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="musictutor">
+          <div class="card__img">
+            <img src="assets/musictutor/instance-graph.png" alt="MusicTutor Instance Graph" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">MusicTutor</h4>
+            <p class="card__desc">RDF/OWL ontology modeling curriculum structure, temporal participation, and conversational interaction. Apache Jena Fuseki triple store with SPARQL querying via Node/Express API.</p>
+            <div class="card__tags">
+              <span>RDF/OWL</span><span>Fuseki</span><span>SPARQL</span><span>Node.js</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+      </div>
     </div>
 
     <!-- Category: Maps & Visualization -->
@@ -122,6 +189,14 @@
       </div>
     </div>
 
+    <!-- Category: Cloud & Automation -->
+    <div class="projects__category reveal">
+      <h3 class="projects__category-title">Cloud &amp; Automation</h3>
+      <div class="projects__grid">
+
+      </div>
+    </div>
+
     <!-- Category: Web & Mobile Apps -->
     <div class="projects__category reveal">
       <h3 class="projects__category-title">Web &amp; Mobile Apps</h3>
@@ -134,9 +209,9 @@
           <div class="card__body">
             <span class="card__year">2020</span>
             <h4 class="card__title">BH Healthcare</h4>
-            <p class="card__desc">Company site for a home health care provider in MA. Application forms with Formik/Yup, email via EmailJS, search with Fuse.js, and multilingual support.</p>
+            <p class="card__desc">Company site for a home health care provider in MA. Application forms with Formik/Yup, email via EmailJS, search with Fuse.js, multilingual support, and Google Apps Script automation for internal workflows.</p>
             <div class="card__tags">
-              <span>React</span><span>Bootstrap</span><span>Formik</span><span>Fuse.js</span>
+              <span>React</span><span>Bootstrap</span><span>Formik</span><span>Fuse.js</span><span>Apps Script</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
@@ -174,9 +249,7 @@
 
         <a href="#" class="card" data-project="more-projects">
           <div class="card__img">
-            <div class="card__img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25a2.25 2.25 0 0 1-2.25-2.25v-2.25Z"/></svg>
-            </div>
+            <img src="assets/more-projects/thumbnail.svg" alt="More Projects" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">Various</span>
@@ -214,7 +287,7 @@
 
         <a href="#" class="card" data-project="gem-puzzle">
           <div class="card__img">
-            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRwp1RHOOjWASHpG8LlYnNtMDm8wMIFzht6SOyAFQPFKR2JKaOQ4qdK8zTqMf4Lo__xXS4KXb0g3Jtswfj6mLaC2BrlqzzxQfUb0Ini2cFzVKghnvp8Khh8zVDyvKojLNEKiJHoPXyGRi2SBaOdM76cdOIQ38qnEzXtgc_VQxKeSfJ_9QSRB5c6zhiInJjbKUp4MQKsgW-rZ11lPHVh4YR6lSY4Nhp9WepMxME=w1280" alt="Gem Puzzle" loading="lazy">
+            <img src="assets/gem-puzzle/thumbnail.svg" alt="Gem Puzzle" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">2021</span>
@@ -229,7 +302,7 @@
 
         <a href="#" class="card" data-project="calculator">
           <div class="card__img">
-            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SThgURXvb4dWbKfmo9WU601uafKh1QdVs1lllTz4lvzjgn7AY3GEVyMpGX5OPFezyaVUO73ZuH45HZP9Q5Ldj2bmZHD3bYoEXHVr-ANr8PUGTHiTkN-V0Y-Y1kcxB6wcMJYCP_klEI1vzHYsodKI2Og-sMQiKKwMI6sHAIp5-IcsX8ryw4QYGgk8J0kRe0o4WOBNjJ02ken-m4ymm03R-2240qD0OXErficCA=w1280" alt="Calculator" loading="lazy">
+            <img src="assets/calculator/thumbnail.svg" alt="Calculator" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">2020</span>
@@ -244,7 +317,7 @@
 
         <a href="#" class="card" data-project="english-cards">
           <div class="card__img">
-            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSk949tleoXDwxHbKdix37-wm3R0NsxPkrGwH2Md3H8tpZBXWRl8fgTmE-jn61XWW7a4RWV7uWPzIT52xJMDSZzctMBDb1Wjzt7Susbz4oqqPh38Ft-QcbjqNwvg3Csub4gsyZ2lyN3dDmOgVAfp0tSgX7FXqppcchRJo1GDTnyRnVwgBuaBA6xQC5IMb_wvgZxpGUJtbOCbprK1GY8MRDjRls4jP3Vy3JXhnQ=w1280" alt="English Cards" loading="lazy">
+            <img src="assets/english-cards/thumbnail.svg" alt="English Cards" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">2021</span>
@@ -259,7 +332,7 @@
 
         <a href="#" class="card" data-project="virtual-keyboard">
           <div class="card__img">
-            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SQgC6oN36XQaEPSoYA-rmCwYHMlD6VKjqY7UuA1vsLn80slTP1nzG3qaCSoIN5M-YU6STjEJEStxLKHeCDhT5szE2sqgu96-ZbJAbFeAqP0WkoZ7U0jGNoZr-NKphAqgNM9HV4oiRlN3uSqxwS_omqPS4wh7mJVF59dzC7Ydv9ALh5iTHnI1fRXAGujXNrrKO_qfwgoS_z9fYWg8D6waAYq_4Lp9Y1XByOa=w1280" alt="Virtual Keyboard" loading="lazy">
+            <img src="assets/virtual-keyboard/thumbnail.svg" alt="Virtual Keyboard" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">2020</span>
@@ -274,49 +347,9 @@
 
       </div>
     </div>
-
-    <!-- Category: Cloud & Automation -->
-    <div class="projects__category reveal">
-      <h3 class="projects__category-title">Cloud &amp; Automation</h3>
-      <div class="projects__grid">
-
-        <a href="#" class="card" data-project="aws">
-          <div class="card__img">
-            <div class="card__img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"/></svg>
-            </div>
-          </div>
-          <div class="card__body">
-            <span class="card__year">Ongoing</span>
-            <h4 class="card__title">AWS Infrastructure</h4>
-            <p class="card__desc">EC2 setup, Application Load Balancer, IAM, SSM sessions, and Dockerized Fuseki deployments.</p>
-            <div class="card__tags">
-              <span>AWS</span><span>Docker</span><span>EC2</span><span>IAM</span>
-            </div>
-          </div>
-          <div class="card__arrow">&rarr;</div>
-        </a>
-
-        <a href="#" class="card" data-project="sheets">
-          <div class="card__img">
-            <div class="card__img-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
-            </div>
-          </div>
-          <div class="card__body">
-            <span class="card__year">Ongoing</span>
-            <h4 class="card__title">Google Sheets Automation</h4>
-            <p class="card__desc">Workflow automation using JavaScript and Google Apps Script for spreadsheet-driven business processes.</p>
-            <div class="card__tags">
-              <span>Apps Script</span><span>JavaScript</span>
-            </div>
-          </div>
-          <div class="card__arrow">&rarr;</div>
-        </a>
-
-      </div>
-    </div>
   </section>
+
+  <hr class="web1-hr web1-only">
 
   <!-- ABOUT -->
   <section class="section about" id="about">
@@ -352,6 +385,8 @@
     </div>
   </section>
 
+  <hr class="web1-hr web1-only">
+
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="contact__content reveal">
@@ -384,6 +419,8 @@
       <div class="footer__links">
         <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
       </div>
+      <div class="footer__best-viewed web1-only">Best viewed in Netscape Navigator 4.0 at 800x600 resolution</div>
+      <div class="footer__counter web1-only">You are visitor #00847 since January 2026</div>
     </div>
   </footer>
 

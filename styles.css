@@ -712,6 +712,28 @@ img {
   transform: scale(1) rotate(0deg);
 }
 
+/* ── Web 1.0 Toggle Button ── */
+
+.web1-toggle {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.web1-toggle:hover {
+  color: var(--accent);
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+
 /* Smooth theme transition on body */
 body,
 .nav,

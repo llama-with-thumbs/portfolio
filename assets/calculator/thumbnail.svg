@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f23"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Calculator body -->
+  <rect x="260" y="30" width="280" height="390" rx="16" fill="#16213e" stroke="#2a3a5c" stroke-width="1.5"/>
+  <!-- Display -->
+  <rect x="280" y="50" width="240" height="70" rx="8" fill="#0a0e1a"/>
+  <text x="500" y="100" text-anchor="end" fill="#e0e0e0" font-family="Inter,monospace" font-size="36" font-weight="300">84.5</text>
+  <text x="500" y="70" text-anchor="end" fill="#666" font-family="Inter,monospace" font-size="14">169 ÷ 2 =</text>
+  <!-- Button grid -->
+  <g transform="translate(280,140)">
+    <!-- Row 1: C, ±, %, ÷ -->
+    <rect x="0" y="0" width="52" height="44" rx="6" fill="#2a3a5c"/><text x="26" y="28" text-anchor="middle" fill="#a8b4c8" font-family="Inter,sans-serif" font-size="16">C</text>
+    <rect x="62" y="0" width="52" height="44" rx="6" fill="#2a3a5c"/><text x="88" y="28" text-anchor="middle" fill="#a8b4c8" font-family="Inter,sans-serif" font-size="16">±</text>
+    <rect x="124" y="0" width="52" height="44" rx="6" fill="#2a3a5c"/><text x="150" y="28" text-anchor="middle" fill="#a8b4c8" font-family="Inter,sans-serif" font-size="16">%</text>
+    <rect x="186" y="0" width="52" height="44" rx="6" fill="#e94560"/><text x="212" y="28" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18">÷</text>
+    <!-- Row 2: 7, 8, 9, × -->
+    <rect x="0" y="52" width="52" height="44" rx="6" fill="#1a2744"/><text x="26" y="80" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">7</text>
+    <rect x="62" y="52" width="52" height="44" rx="6" fill="#1a2744"/><text x="88" y="80" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">8</text>
+    <rect x="124" y="52" width="52" height="44" rx="6" fill="#1a2744"/><text x="150" y="80" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">9</text>
+    <rect x="186" y="52" width="52" height="44" rx="6" fill="#e94560"/><text x="212" y="80" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18">×</text>
+    <!-- Row 3: 4, 5, 6, - -->
+    <rect x="0" y="104" width="52" height="44" rx="6" fill="#1a2744"/><text x="26" y="132" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">4</text>
+    <rect x="62" y="104" width="52" height="44" rx="6" fill="#1a2744"/><text x="88" y="132" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">5</text>
+    <rect x="124" y="104" width="52" height="44" rx="6" fill="#1a2744"/><text x="150" y="132" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">6</text>
+    <rect x="186" y="104" width="52" height="44" rx="6" fill="#e94560"/><text x="212" y="132" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18">−</text>
+    <!-- Row 4: 1, 2, 3, + -->
+    <rect x="0" y="156" width="52" height="44" rx="6" fill="#1a2744"/><text x="26" y="184" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">1</text>
+    <rect x="62" y="156" width="52" height="44" rx="6" fill="#1a2744"/><text x="88" y="184" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">2</text>
+    <rect x="124" y="156" width="52" height="44" rx="6" fill="#1a2744"/><text x="150" y="184" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">3</text>
+    <rect x="186" y="156" width="52" height="44" rx="6" fill="#e94560"/><text x="212" y="184" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18">+</text>
+    <!-- Row 5: 0, ., = -->
+    <rect x="0" y="208" width="114" height="44" rx="6" fill="#1a2744"/><text x="57" y="236" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">0</text>
+    <rect x="124" y="208" width="52" height="44" rx="6" fill="#1a2744"/><text x="150" y="236" text-anchor="middle" fill="#d0d0d0" font-family="Inter,sans-serif" font-size="18">.</text>
+    <rect x="186" y="208" width="52" height="44" rx="6" fill="#e94560"/><text x="212" y="236" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18">=</text>
+  </g>
+</svg>

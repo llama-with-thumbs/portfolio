@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a192f"/>
+      <stop offset="100%" style="stop-color:#172a45"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Text area -->
+  <rect x="120" y="30" width="560" height="100" rx="8" fill="#0d1b2a" stroke="#2a3a5c" stroke-width="1"/>
+  <text x="140" y="65" fill="#e0e0e0" font-family="Inter,monospace" font-size="16">Hello World!</text>
+  <rect x="232" y="52" width="2" height="22" fill="#e94560" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Keyboard body -->
+  <rect x="80" y="155" width="640" height="270" rx="12" fill="#16213e" stroke="#2a3a5c" stroke-width="1"/>
+  <!-- Row 1: QWERTY -->
+  <g transform="translate(105,175)">
+    <rect x="0" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="25" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">Q</text>
+    <rect x="58" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="83" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">W</text>
+    <rect x="116" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="141" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">E</text>
+    <rect x="174" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="199" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">R</text>
+    <rect x="232" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="257" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">T</text>
+    <rect x="290" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="315" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">Y</text>
+    <rect x="348" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="373" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">U</text>
+    <rect x="406" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="431" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">I</text>
+    <rect x="464" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="489" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">O</text>
+    <rect x="522" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="547" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">P</text>
+  </g>
+  <!-- Row 2: ASDF -->
+  <g transform="translate(130,227)">
+    <rect x="0" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="25" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">A</text>
+    <rect x="58" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="83" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">S</text>
+    <rect x="116" y="0" width="50" height="42" rx="5" fill="#e94560" stroke="#e94560" stroke-width="0.5"/><text x="141" y="27" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="15">D</text>
+    <rect x="174" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="199" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">F</text>
+    <rect x="232" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="257" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">G</text>
+    <rect x="290" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="315" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">H</text>
+    <rect x="348" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="373" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">J</text>
+    <rect x="406" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="431" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">K</text>
+    <rect x="464" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="489" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">L</text>
+  </g>
+  <!-- Row 3: ZXCV -->
+  <g transform="translate(160,279)">
+    <rect x="0" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="25" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">Z</text>
+    <rect x="58" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="83" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">X</text>
+    <rect x="116" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="141" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">C</text>
+    <rect x="174" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="199" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">V</text>
+    <rect x="232" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="257" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">B</text>
+    <rect x="290" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="315" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">N</text>
+    <rect x="348" y="0" width="50" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/><text x="373" y="27" text-anchor="middle" fill="#c0c8d8" font-family="Inter,sans-serif" font-size="15">M</text>
+  </g>
+  <!-- Spacebar -->
+  <rect x="230" y="331" width="340" height="42" rx="5" fill="#1a2744" stroke="#2a3a5c" stroke-width="0.5"/>
+  <!-- Language indicator -->
+  <rect x="105" y="335" width="50" height="34" rx="5" fill="#0f3460" stroke="#457b9d" stroke-width="0.5"/>
+  <text x="130" y="357" text-anchor="middle" fill="#457b9d" font-family="Inter,sans-serif" font-size="11" font-weight="600">EN</text>
+  <rect x="645" y="335" width="50" height="34" rx="5" fill="#0f3460" stroke="#457b9d" stroke-width="0.5"/>
+  <text x="670" y="357" text-anchor="middle" fill="#457b9d" font-family="Inter,sans-serif" font-size="11" font-weight="600">RU</text>
+</svg>

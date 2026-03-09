@@ -3,6 +3,17 @@
 
   // ── Project data ──
   const projects = {
+    'sememe': {
+      year: '2026',
+      title: 'Sememe',
+      desc: 'A web application that records voice notes, transcribes them with OpenAI Whisper, auto-translates to English, and builds an interactive Topic Map — a network graph of recurring themes linked back to the exact moments they appear.\n\nFeatures include drag-and-drop audio/text upload, real-time SSE-streamed transcription, rich-text editing with auto-save, and a vis.js-powered semantic graph where node size scales by frequency and edges show relationship types. Five built-in color themes with persistent selection.',
+      tags: ['Python', 'Flask', 'OpenAI Whisper', 'vis.js', 'SSE'],
+      img: 'assets/sememe/thumbnail.svg',
+      links: [
+        { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/Sememe', primary: true }
+      ],
+      gallery: []
+    },
     'sporescope': {
       year: '2025',
       title: 'SporeScope',
@@ -13,7 +24,11 @@
         { label: 'Live Demo', url: 'https://llama-with-thumbs.github.io/SporeScopeWeb/', primary: true },
         { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/SporeScopeWeb' }
       ],
-      gallery: []
+      gallery: [
+        'https://firebasestorage.googleapis.com/v0/b/sporescope.firebasestorage.app/o/Assets%2FScreenshot%202025-12-16%20151047.png?alt=media&token=c83a15da-34ed-4abf-92eb-2c0bb16e5a67',
+        'https://firebasestorage.googleapis.com/v0/b/sporescope.firebasestorage.app/o/Assets%2FChamber-flask-model.drawio.png?alt=media&token=cb922253-0f0b-4af3-9451-b2d95e402105',
+        'https://firebasestorage.googleapis.com/v0/b/sporescope.firebasestorage.app/o/Assets%2Ftest_with_circles.png?alt=media&token=91d37956-3e60-47c9-836a-6032dff34ef3'
+      ]
     },
     'hot-springs': {
       year: '2025',
@@ -22,7 +37,8 @@
       tags: ['Leaflet.js', 'JavaScript', 'HTML/CSS', 'GitHub Pages'],
       img: 'assets/hot-springs-finder/thumbnail.png',
       links: [
-        { label: 'Live Demo', url: 'https://hotspringfinder.com/', primary: true }
+        { label: 'Live Demo', url: 'https://hotspringfinder.com/', primary: true },
+        { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/hot-springs-map' }
       ],
       gallery: []
     },
@@ -52,8 +68,8 @@
     'bh-healthcare': {
       year: '2020',
       title: 'BH Healthcare',
-      desc: 'A company website for Best Home Health Care, Inc. — a home health care provider operating in Needham and Lawrence, MA. The site introduces community services including Group Adult Foster Care (GAFC) and Adult Foster Care (AFC), highlights company values, and enables job applicants to submit forms.\n\nFeatures include application forms with Formik/Yup validation, email routing via EmailJS/Nodemailer, site-wide search powered by Fuse.js, and multilingual support (Spanish, Portuguese, Russian) via Google Translate widget.',
-      tags: ['React', 'Bootstrap', 'Formik', 'Yup', 'EmailJS', 'Fuse.js'],
+      desc: 'A company website for Best Home Health Care, Inc. — a home health care provider operating in Needham and Lawrence, MA. The site introduces community services including Group Adult Foster Care (GAFC) and Adult Foster Care (AFC), highlights company values, and enables job applicants to submit forms.\n\nFeatures include application forms with Formik/Yup validation, email routing via EmailJS/Nodemailer, site-wide search powered by Fuse.js, and multilingual support (Spanish, Portuguese, Russian) via Google Translate widget.\n\nAlso built a Google Apps Script automation suite for the company — triggered workflows that send scheduled emails, process spreadsheet data, and handle internal business operations.',
+      tags: ['React', 'Bootstrap', 'Formik', 'Yup', 'EmailJS', 'Fuse.js', 'Apps Script'],
       img: 'assets/bh-healthcare/thumbnail.png',
       links: [
         { label: 'Visit Site', url: 'https://www.bhhealthcare.org/', primary: true }
@@ -83,13 +99,24 @@
       ],
       gallery: []
     },
+    'musictutor': {
+      year: '2025',
+      title: 'MusicTutor',
+      desc: 'An AI-powered music education platform built on a semantic knowledge graph.\n\nThe ontology (RDF/OWL) defines core classes — Person, Student, Course, Module, Lesson, CourseTaking, and Message (with StudentMessage, AITutorMessage, SystemMessage subclasses). Courses decompose into Modules and Lessons with explicit sequential ordering (isFollowedBy). CourseTaking reifies enrollment, linking a Student to a Course in a temporally scoped context.\n\nMessages are typed and linked both sequentially and to specific Lesson entities, embedding conversational interaction into the curricular graph.\n\nThe instance graph instantiates this schema with concrete courses, modules, lessons, students, and timestamped dialogue threads — forming an operational knowledge graph where structure, participation, and interaction are semantically coherent.\n\nApache Jena Fuseki (TDB2) serves as the persistent RDF triple store and SPARQL endpoint. A Node/Express backend mediates access with authentication, authorization, and business logic, while Fuseki handles semantic persistence and graph querying.',
+      tags: ['RDF/OWL', 'Apache Fuseki', 'SPARQL', 'Node.js', 'Express', 'React Native', 'OpenAI'],
+      img: 'assets/musictutor/instance-graph.png',
+      links: [],
+      gallery: []
+    },
     'more-projects': {
       year: 'Various',
       title: 'More Projects',
       desc: 'A collection of additional projects spanning mobile and web development:\n\n• MusicTutor — Expo/React Native mobile app with Node/Express backend and OpenAI integration for music education.\n• Ziz — Flask-based local accounting and household management tool.\n• Budget Math / Budget TSX — React/TypeScript budgeting interface for personal finance tracking.\n• Timely-Notify — Calendar-driven notification web app using Python FastAPI backend and Leaflet-based map UI.',
       tags: ['React Native', 'Flask', 'FastAPI', 'TypeScript', 'Node.js', 'OpenAI'],
-      img: null,
-      links: [],
+      img: 'assets/more-projects/thumbnail.svg',
+      links: [
+        { label: 'Timely-Notify Demo', url: 'https://timely-notify.onrender.com', primary: true }
+      ],
       gallery: []
     },
     'memoji': {
@@ -108,7 +135,7 @@
       title: 'Gem Puzzle',
       desc: 'Classic sliding tile puzzle game with smooth CSS animations, move counter, and timer. Built as a practice project exploring DOM manipulation and game state management.',
       tags: ['JavaScript', 'CSS3', 'HTML5'],
-      img: null,
+      img: 'assets/gem-puzzle/thumbnail.svg',
       links: [],
       gallery: []
     },
@@ -117,7 +144,7 @@
       title: 'Calculator',
       desc: 'Functional calculator application with full keyboard support, clean minimal UI, and standard arithmetic operations. Built with vanilla JavaScript focusing on event handling and state management.',
       tags: ['JavaScript', 'HTML/CSS'],
-      img: null,
+      img: 'assets/calculator/thumbnail.svg',
       links: [],
       gallery: []
     },
@@ -126,7 +153,7 @@
       title: 'English Cards',
       desc: 'Flashcard-based vocabulary learning application with smooth flip animations, category selection, and progress tracking. Designed to help users learn English vocabulary through interactive card-matching exercises.',
       tags: ['JavaScript', 'CSS Animations'],
-      img: null,
+      img: 'assets/english-cards/thumbnail.svg',
       links: [],
       gallery: []
     },
@@ -135,28 +162,10 @@
       title: 'Virtual Keyboard',
       desc: 'On-screen virtual keyboard with multilingual support and key press animations. Features multiple language layouts, visual key press feedback, and full text input functionality.',
       tags: ['JavaScript', 'DOM Events', 'CSS'],
-      img: null,
+      img: 'assets/virtual-keyboard/thumbnail.svg',
       links: [],
       gallery: []
     },
-    'aws': {
-      year: 'Ongoing',
-      title: 'AWS Infrastructure',
-      desc: 'Cloud infrastructure experiments and deployments including EC2 instance setup, Application Load Balancer configuration, IAM policy management, SSM session management, and Dockerized Apache Fuseki triple store deployments.',
-      tags: ['AWS', 'Docker', 'EC2', 'IAM', 'ALB'],
-      img: null,
-      links: [],
-      gallery: []
-    },
-    'sheets': {
-      year: 'Ongoing',
-      title: 'Google Sheets Automation',
-      desc: 'Workflow automation solutions using JavaScript and Google Apps Script for spreadsheet-driven business processes. Automates repetitive tasks, data processing, and reporting within Google Workspace environments.',
-      tags: ['Apps Script', 'JavaScript', 'Google Workspace'],
-      img: null,
-      links: [],
-      gallery: []
-    }
   };
 
   // ── Modal ──
@@ -236,9 +245,27 @@
 
   themeToggle.addEventListener('click', () => {
     const current = root.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
+    const next = (current === 'light' || current === 'web1') ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+  });
+
+  // ── Web 1.0 toggle ──
+  const web1Toggle = document.getElementById('web1Toggle');
+  let preWeb1Theme = null;
+
+  web1Toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    if (current === 'web1') {
+      const restore = preWeb1Theme || 'dark';
+      root.setAttribute('data-theme', restore);
+      localStorage.setItem('theme', restore);
+      preWeb1Theme = null;
+    } else {
+      preWeb1Theme = current;
+      root.setAttribute('data-theme', 'web1');
+      localStorage.setItem('theme', 'web1');
+    }
   });
 
   // ── Nav scroll state ──
