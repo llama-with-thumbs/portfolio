@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlad Filitovich — Art</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">VF</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+      </button>
+      <button class="web1-toggle" id="web1Toggle" aria-label="Toggle 90s mode">90s</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero art-hero" id="hero">
+    <div class="hero__content">
+      <p class="hero__greeting reveal">Visual Work</p>
+      <h1 class="hero__name reveal">Art &amp; Sketches</h1>
+      <p class="hero__tagline reveal">A collection of personal work — drawings, paintings, and experiments in form, color, and pattern.</p>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section__header reveal">
+      <span class="section__label">01</span>
+      <h2 class="section__title">Gallery</h2>
+    </div>
+
+    <div class="gallery__filters reveal" id="galleryFilters">
+      <button class="gallery__filter gallery__filter--active" data-filter="all">All</button>
+      <button class="gallery__filter" data-filter="painting">Painting</button>
+      <button class="gallery__filter" data-filter="drawing">Drawing</button>
+      <button class="gallery__filter" data-filter="digital">Digital</button>
+    </div>
+
+    <div class="gallery__grid reveal" id="galleryGrid">
+      <!-- Replace these placeholders with your art.
+           Drop images into assets/art/ and update src + data-* attributes.
+           data-category should be one of: painting, drawing, digital -->
+
+      <a href="#" class="gallery__item" data-category="painting" data-title="Untitled" data-meta="Oil on canvas · 2025">
+        <img src="assets/art/placeholder-1.jpg" alt="Untitled" loading="lazy" onerror="this.parentElement.style.display='none'">
+        <div class="gallery__caption"><strong>Untitled</strong><span>Oil on canvas · 2025</span></div>
+      </a>
+
+      <a href="#" class="gallery__item" data-category="drawing" data-title="Study" data-meta="Graphite · 2024">
+        <img src="assets/art/placeholder-2.jpg" alt="Study" loading="lazy" onerror="this.parentElement.style.display='none'">
+        <div class="gallery__caption"><strong>Study</strong><span>Graphite · 2024</span></div>
+      </a>
+
+      <a href="#" class="gallery__item" data-category="digital" data-title="Composition" data-meta="Digital · 2025">
+        <img src="assets/art/placeholder-3.jpg" alt="Composition" loading="lazy" onerror="this.parentElement.style.display='none'">
+        <div class="gallery__caption"><strong>Composition</strong><span>Digital · 2025</span></div>
+      </a>
+    </div>
+
+    <p class="gallery__empty" id="galleryEmpty" style="display:none">Nothing here yet — add images to <code>assets/art/</code>.</p>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&larr;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&rarr;</button>
+    <div class="lightbox__caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Vlad Filitovich</span>
+      <div class="footer__links">
+        <a href="index.html">Portfolio</a>
+        <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    (() => {
+      'use strict';
+
+      const grid = document.getElementById('galleryGrid');
+      const empty = document.getElementById('galleryEmpty');
+      const filters = document.getElementById('galleryFilters');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCap = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+
+      let items = Array.from(grid.querySelectorAll('.gallery__item'));
+      let visible = items.slice();
+      let currentIndex = -1;
+
+      function refreshEmpty() {
+        const anyVisible = items.some(it => it.style.display !== 'none' && !it.classList.contains('gallery__item--hidden'));
+        empty.style.display = anyVisible ? 'none' : '';
+      }
+
+      // Filtering
+      filters.addEventListener('click', (e) => {
+        const btn = e.target.closest('.gallery__filter');
+        if (!btn) return;
+        filters.querySelectorAll('.gallery__filter').forEach(b => b.classList.remove('gallery__filter--active'));
+        btn.classList.add('gallery__filter--active');
+        const cat = btn.dataset.filter;
+        items.forEach(it => {
+          const match = cat === 'all' || it.dataset.category === cat;
+          it.classList.toggle('gallery__item--hidden', !match);
+        });
+        visible = items.filter(it => !it.classList.contains('gallery__item--hidden') && it.style.display !== 'none');
+        refreshEmpty();
+      });
+
+      // Lightbox open
+      function open(index) {
+        const it = visible[index];
+        if (!it) return;
+        currentIndex = index;
+        const img = it.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightboxCap.innerHTML = `<strong>${it.dataset.title || ''}</strong><span>${it.dataset.meta || ''}</span>`;
+        lightbox.classList.add('lightbox--open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('lightbox--open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function step(delta) {
+        if (!visible.length) return;
+        const next = (currentIndex + delta + visible.length) % visible.length;
+        open(next);
+      }
+
+      grid.addEventListener('click', (e) => {
+        const it = e.target.closest('.gallery__item');
+        if (!it) return;
+        e.preventDefault();
+        // Recompute visible in case images failed to load and were hidden by onerror
+        visible = items.filter(i => i.style.display !== 'none' && !i.classList.contains('gallery__item--hidden'));
+        const idx = visible.indexOf(it);
+        if (idx >= 0) open(idx);
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', () => step(-1));
+      nextBtn.addEventListener('click', () => step(1));
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('lightbox--open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+      });
+
+      // Initial empty-state check (handles all placeholders failing to load)
+      window.addEventListener('load', refreshEmpty);
+    })();
+  </script>
+</body>
+</html>

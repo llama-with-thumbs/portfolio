@@ -181,6 +181,8 @@
   const modalLinks = document.getElementById('modalLinks');
   const modalGallery = document.getElementById('modalGallery');
 
+  const hasProjectModal = modal && modalBackdrop && modalClose;
+
   function openModal(id) {
     const p = projects[id];
     if (!p) return;
@@ -220,19 +222,20 @@
     document.body.style.overflow = '';
   }
 
-  // Card click handler
-  document.querySelectorAll('.card[data-project]').forEach(card => {
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal(card.dataset.project);
+  if (hasProjectModal) {
+    document.querySelectorAll('.card[data-project]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(card.dataset.project);
+      });
     });
-  });
 
-  modalBackdrop.addEventListener('click', closeModal);
-  modalClose.addEventListener('click', closeModal);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-  });
+    modalBackdrop.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
 
   // ── Theme toggle ──
   const themeToggle = document.getElementById('themeToggle');
@@ -324,6 +327,8 @@
 
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+
+  if (!contactForm) return;
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
