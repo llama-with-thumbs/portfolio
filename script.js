@@ -166,6 +166,45 @@
       links: [],
       gallery: []
     },
+
+    // ── R&D projects (rd.html) ──
+    // Photos: drop images into assets/rd/<project>/ and list them in `gallery`.
+    'synchronicity-table': {
+      year: 'In progress',
+      title: 'Synchronicity Table',
+      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
+      tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Prototyping'],
+      img: 'assets/rd/synchronicity-table.svg',
+      links: [],
+      gallery: []
+    },
+    'coffee-cone': {
+      year: 'In progress',
+      title: '3D-Printed Coffee Dosing Cone',
+      desc: 'A custom cone designed and 3D-printed for transferring ground coffee from the grinder into the portafilter without spilling.\n\nWrite-up in progress — the problem it solves, measurements, CAD iterations, fit testing, print settings, and the improvements made after living with it.',
+      tags: ['CAD', '3D Printing', 'Design Iteration', 'Prototyping'],
+      img: 'assets/rd/coffee-cone.svg',
+      links: [],
+      gallery: []
+    },
+    'rpi-system': {
+      year: 'In progress',
+      title: 'Raspberry Pi Camera / Display System',
+      desc: 'A hardware and software integration project built around a Raspberry Pi.\n\nCovers Linux configuration, automated startup, networking, camera or display control, and the troubleshooting it took to make the whole thing come up reliably on its own.\n\nWrite-up and photos in progress.',
+      tags: ['Raspberry Pi', 'Linux', 'Networking', 'Camera', 'Autostart'],
+      img: 'assets/rd/rpi-system.svg',
+      links: [],
+      gallery: []
+    },
+    'kiosk-display': {
+      year: 'In progress',
+      title: 'Waiting-Room Display / Kiosk',
+      desc: 'An unattended information display built from an older computer and an external monitor.\n\nThe interface is served from GitHub Pages, with automatic launch, scheduled refresh, and recovery after a restart or power loss — so it keeps showing the right thing without anyone tending it.\n\nWrite-up and photos in progress.',
+      tags: ['Kiosk Mode', 'GitHub Pages', 'Autostart', 'Recovery', 'Repurposed Hardware'],
+      img: 'assets/rd/kiosk-display.svg',
+      links: [],
+      gallery: []
+    },
   };
 
   // ── Modal ──

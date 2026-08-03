@@ -127,7 +127,7 @@ img {
 
 .nav__links {
   display: flex;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .nav__links a {
@@ -137,6 +137,14 @@ img {
   letter-spacing: 0.02em;
   transition: color 0.2s;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Tighten spacing before the mobile menu kicks in — five nav items */
+@media (min-width: 769px) and (max-width: 940px) {
+  .nav__right { gap: 1rem; }
+  .nav__links { gap: 1.1rem; }
+  .nav__links a { font-size: 0.76rem; }
 }
 
 .nav__links a:hover {

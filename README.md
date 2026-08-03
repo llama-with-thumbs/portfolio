@@ -39,7 +39,9 @@ open index.html   # or double-click the file
 ## Structure
 
 ```
-index.html       — Single-page site
+index.html       — Main page: software projects, about, contact
+rd.html          — R&D projects: fabrication, 3D printing, embedded systems
+art.html         — Art gallery with filters and lightbox
 styles.css       — Dark/light theme, responsive layout, modal styles
 script.js        — Theme toggle, scroll reveal, modal logic, project data
 assets/          — Project screenshots and thumbnails

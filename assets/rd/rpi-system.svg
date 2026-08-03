@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- board -->
+  <rect x="270" y="150" width="260" height="170" rx="10" fill="#1d3557" stroke="#457b9d" stroke-width="2"/>
+  <!-- GPIO header -->
+  <g fill="#e94560" opacity="0.85">
+    <rect x="292" y="166" width="180" height="10" rx="3"/>
+  </g>
+  <!-- SoC -->
+  <rect x="352" y="204" width="70" height="70" rx="6" fill="#0f1626" stroke="#533483" stroke-width="2"/>
+  <text x="387" y="245" text-anchor="middle" fill="#457b9d" font-family="Inter,sans-serif" font-size="12">SoC</text>
+  <!-- ports -->
+  <g fill="#0f1626" stroke="#457b9d" stroke-width="1.5">
+    <rect x="486" y="212" width="34" height="24" rx="3"/>
+    <rect x="486" y="248" width="34" height="24" rx="3"/>
+    <rect x="292" y="288" width="44" height="18" rx="3"/>
+  </g>
+
+  <!-- camera module on ribbon -->
+  <path d="M530,224 C580,224 600,160 640,150" fill="none" stroke="#533483" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <rect x="612" y="112" width="60" height="60" rx="8" fill="#1d3557" stroke="#457b9d" stroke-width="2"/>
+  <circle cx="642" cy="142" r="17" fill="#0f1626" stroke="#e94560" stroke-width="2"/>
+  <circle cx="642" cy="142" r="6" fill="#457b9d" opacity="0.8"/>
+
+  <!-- terminal / autostart -->
+  <rect x="128" y="112" width="118" height="80" rx="6" fill="#0f1626" stroke="#457b9d" stroke-width="2"/>
+  <g stroke="#e94560" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <line x1="144" y1="136" x2="156" y2="136"/>
+    <line x1="164" y1="136" x2="216" y2="136"/>
+    <line x1="144" y1="154" x2="156" y2="154"/>
+    <line x1="164" y1="154" x2="196" y2="154"/>
+  </g>
+
+  <text x="400" y="392" text-anchor="middle" fill="#a0a0a0" font-family="Inter,sans-serif" font-size="15" letter-spacing="0.08em">RASPBERRY PI CAMERA / DISPLAY</text>
+</svg>
