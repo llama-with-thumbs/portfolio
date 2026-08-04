@@ -222,7 +222,7 @@
       ]
     },
     'coffee-cone': {
-      year: 'Finished',
+      year: 'Finished · in use',
       title: '3D-Printed Coffee Dosing Cone',
       desc: 'A flexible dosing cone made for a 58 mm portafilter. It grips the basket rim by friction, prevents coffee grounds from spilling, and removes easily with one hand.\n\nPrinted in flexible TPU filament, I use it myself several times a day. It is a small but constant reminder of how useful 3D printing can be for solving simple, everyday problems.',
       tags: ['CAD', '3D Printing', 'TPU', 'Functional Design'],
