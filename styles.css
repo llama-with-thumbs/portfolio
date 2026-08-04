@@ -1057,11 +1057,32 @@ body,
 
 .modal__media .carousel__dots {
   position: absolute;
+  left: auto;
+  right: 1rem;
+  bottom: 0.9rem;
+  margin: 0;
+  z-index: 3;
+}
+
+/* Per-slide caption, sitting on the image */
+.carousel__slide {
+  position: relative;
+  margin: 0;
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carousel__caption {
+  position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.75rem;
-  margin: 0;
+  bottom: 0;
   z-index: 2;
+  padding: 1.75rem 5.5rem 0.85rem 1rem;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: #f2f2f2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
 }
 
 .modal__media .carousel__dot {
@@ -1088,11 +1109,6 @@ body,
 .carousel__track {
   display: flex;
   transition: transform 0.45s var(--ease);
-}
-
-.carousel__slide {
-  flex: 0 0 100%;
-  min-width: 0;
 }
 
 .carousel__slide img,

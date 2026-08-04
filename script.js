@@ -172,7 +172,7 @@
     'sporescope-rig': {
       year: '2025',
       title: 'SporeScope — Imaging Rig',
-      desc: 'A compact 16 × 15 × 18 in imaging rig built from 2020 aluminum extrusion and assembled with corner brackets and standard extrusion hardware. It holds 100 × 15 mm malt extract agar plates in fixed positions beneath a Raspberry Pi–controlled overhead camera, enabling consistent time-series image capture.\n\nThe plates are illuminated only from below with diffuse light. As colonies grow, they reduce light transmission through the agar and appear as increasingly defined silhouettes, allowing their shape and expansion to be tracked over time.\n\nThe rest of the carousel is what comes out of it. The web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nThe final slides are per-plate time-lapses, each frame stamped with elapsed hours, showing a colony spreading across the dish. Every plate keeps its sample identifier (SMP-837C0C, SMP-9A8231) under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
+      desc: 'A compact 16 × 15 × 18 in imaging rig built from 2020 aluminum extrusion and assembled with corner brackets and standard extrusion hardware. It holds 100 × 15 mm malt extract agar plates in fixed positions beneath a Raspberry Pi–controlled overhead camera, enabling consistent time-series image capture.\n\nThe plates are illuminated only from below with diffuse light. As colonies grow, they reduce light transmission through the agar and appear as increasingly defined silhouettes, allowing their shape and expansion to be tracked over time.\n\nThe web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nEvery plate keeps its sample identifier under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
       tags: ['Aluminum Extrusion', 'Raspberry Pi', 'Backlit Imaging', 'Biological Imaging', 'Shape Detection', 'LLM Analysis'],
       img: 'assets/rd/sporescope-rig/rig-wide.jpg',
       links: [
@@ -180,45 +180,45 @@
         { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/SporeScopeWeb' }
       ],
       gallery: [
-        'assets/rd/sporescope-rig/rig-wide.jpg',
-        'assets/rd/sporescope-rig/rig.jpg',
-        'assets/rd/sporescope-rig/web-app.jpg',
-        'assets/rd/sporescope-rig/plate-837C0C.gif',
-        'assets/rd/sporescope-rig/plate-9A8231.gif'
+        { src: 'assets/rd/sporescope-rig/rig-wide.jpg', caption: '2020 extrusion frame with a backlit stage below and the overhead camera under the top plate.' },
+        { src: 'assets/rd/sporescope-rig/rig.jpg', caption: 'Six agar plates loaded in fixed positions on the diffused light box.' },
+        { src: 'assets/rd/sporescope-rig/web-app.jpg', caption: 'Web app: one live row per plate — current frame, culture profile, GPT analysis, extracted colony outlines, and intensity over the run.' },
+        { src: 'assets/rd/sporescope-rig/plate-837C0C.gif', caption: 'Plate SMP-837C0C — captured frames assembled into a time-lapse, stamped with elapsed hours.' },
+        { src: 'assets/rd/sporescope-rig/plate-9A8231.gif', caption: 'Plate SMP-9A8231 — a colony spreading across the dish over the run.' }
       ]
     },
     'bio-chart-rig': {
       year: '2023',
-      title: 'Bio Chart — Controlled-Environment Imaging Rig',
-      desc: 'The physical side of Bio Chart — the controlled-environment chamber that produces the images the web app analyzes.\n\nEnclosing the cultures is the point: inside the box, lighting, framing, and conditions are held steady and independent of whatever the room is doing, so what changes between frames is the growth itself.\n\nA built enclosure with interior LED lighting at the top and stepped shelving that holds labeled culture jars in fixed positions, so every capture frames the same subjects from the same angle. The Raspberry Pi is mounted on a wooden plate on the outside wall with its camera ribbon passing through a cut window into the chamber — the compute stays outside the humid environment while the sensor looks in.\n\nEach chamber carries its own identity plate: a chamber ID (CHA-AFBEFC) and a static IP, matching the chamber entity in the data model so captures land against the right record.\n\nFixed geometry and lighting are what make the downstream analysis possible — mean channel intensities and extracted shape coordinates only mean something if frames stay comparable across weeks.\n\nEverything the rig captures lands in a purpose-built data model, shown in the carousel: Firestore holds Chambers → Plates → Snippets → Shapes, with each snippet carrying its raw-image path and mean blue/red/green channel intensities, while Firebase Storage mirrors the same hierarchy as chamber directories of plates, raw images, and GIFs. Document fields point across to the stored files, so a measurement can always be traced back to the frame it came from.\n\nThe interface built on top of it is the readout side: one row per flask, showing the latest frame, flask parameters (identifier, seeded culture, substrate, start date, elapsed time), a time-lapse still, and mean red/green/blue intensity plotted over the run. The clip after it shows the interactive side of that interface in use. The final three slides are the assembled time-lapses served by that interface — one per flask, each frame stamped with elapsed hours, so a multi-week run plays back in a few seconds.\n\nThe software that consumes this data lives under Software Projects.',
-      tags: ['Controlled Environment', 'Woodworking', 'Raspberry Pi', 'Camera Module', 'Time-Lapse', 'Firestore', 'Data Model'],
+      title: 'Bio Chart — Sensor & Imaging Chamber',
+      desc: 'A compact sensor and imaging chamber built to collect repeatable data from biological samples. The enclosure contains sample shelves, sensors, controlled overhead lighting, and a camera for consistent image capture. A Raspberry Pi mounted externally connects to the internal components and coordinates data collection and transmission.\n\nMicrocontrollers record sensor measurements while the camera captures samples at scheduled intervals. The enclosed structure helps reduce changes in ambient light and keeps the samples, sensors, and camera in fixed positions throughout each experiment.\n\nCaptures land in a purpose-built data model: Firestore holds Chambers → Plates → Snippets → Shapes, with each snippet carrying its raw-image path and mean channel intensities, while Firebase Storage mirrors the same hierarchy. The software that reads it lives under Software Projects.',
+      tags: ['Raspberry Pi', 'Microcontrollers', 'Sensors', 'Image Capture', 'Data Acquisition', 'Biological Monitoring'],
       img: 'assets/rd/bio-chart-rig/rig-1.jpg',
       links: [
         { label: 'Bio Chart Web App', url: 'https://llama-with-thumbs.github.io/bio-chart-web/', primary: true },
         { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/bio-chart-web' }
       ],
       gallery: [
-        'assets/rd/bio-chart-rig/rig-1.jpg',
-        'assets/rd/bio-chart-rig/rig-3.jpg',
-        'assets/rd/bio-chart-rig/rig-2.jpg',
-        'assets/rd/bio-chart-rig/data-model.png',
-        'assets/rd/bio-chart-rig/web-interface.jpg',
-        { video: 'assets/rd/bio-chart-rig/interface-demo.mp4', poster: 'assets/rd/bio-chart-rig/interface-demo-poster.jpg' },
-        'assets/rd/bio-chart-rig/timelapse-a.gif',
-        'assets/rd/bio-chart-rig/timelapse-b.gif',
-        'assets/rd/bio-chart-rig/timelapse-c.gif'
+        { src: 'assets/rd/bio-chart-rig/rig-1.jpg', caption: 'Chamber open with the interior LED lighting on; the Raspberry Pi sits outside on the wall, camera ribbon passing through a cut window.' },
+        { src: 'assets/rd/bio-chart-rig/rig-3.jpg', caption: 'Stepped shelving holds labeled culture jars in fixed positions, so every capture frames the same subjects.' },
+        { src: 'assets/rd/bio-chart-rig/rig-2.jpg', caption: 'Closed, with the chamber ID and static IP on the front plate.' },
+        { src: 'assets/rd/bio-chart-rig/data-model.png', caption: 'Data model: Firestore holds chambers → plates → snippets → shapes; Firebase Storage mirrors the same hierarchy for the files.' },
+        { src: 'assets/rd/bio-chart-rig/web-interface.jpg', caption: 'Web interface: one row per flask — latest frame, flask parameters, time-lapse still, and mean red/green/blue intensity over the run.' },
+        { video: 'assets/rd/bio-chart-rig/interface-demo.mp4', poster: 'assets/rd/bio-chart-rig/interface-demo-poster.jpg', caption: 'Interacting with the live interface.' },
+        { src: 'assets/rd/bio-chart-rig/timelapse-a.gif', caption: 'Flask time-lapse — each frame stamped with elapsed hours.' },
+        { src: 'assets/rd/bio-chart-rig/timelapse-b.gif', caption: 'A second flask over the same run.' },
+        { src: 'assets/rd/bio-chart-rig/timelapse-c.gif', caption: 'A third flask; weeks of growth play back in seconds.' }
       ]
     },
     'synchronicity-table': {
       year: 'In progress',
       title: 'Synchronicity Table',
-      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nThe second slide is that layout made real: the tabletop cut to the outline the tool produced, with every circle bored out at its planned diameter and position, wiring already routed underneath.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
+      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
       tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Design Tool'],
       img: 'assets/rd/synchronicity-table/design-app.jpg',
       links: [],
       gallery: [
-        'assets/rd/synchronicity-table/design-app.jpg',
-        'assets/rd/synchronicity-table/panel-cut.jpg'
+        { src: 'assets/rd/synchronicity-table/design-app.jpg', caption: 'Browser layout tool: circles placed at real dimensions with live animation and tilt/rotation preview.' },
+        { src: 'assets/rd/synchronicity-table/panel-cut.jpg', caption: 'The tabletop cut to that outline, every circle bored at its planned diameter, wiring routed underneath.' }
       ]
     },
     'coffee-cone': {
@@ -229,8 +229,8 @@
       img: 'assets/rd/coffee-cone/cone.jpg',
       links: [],
       gallery: [
-        'assets/rd/coffee-cone/cone.jpg',
-        'assets/rd/coffee-cone/cone-on-portafilter.jpg'
+        { src: 'assets/rd/coffee-cone/cone.jpg', caption: 'The cone printed in flexible TPU, stained from daily use.' },
+        { src: 'assets/rd/coffee-cone/cone-on-portafilter.jpg', caption: 'Seated on the 58 mm portafilter, gripping the basket rim by friction.' }
       ]
     },
     'lasercutter': {
@@ -241,23 +241,23 @@
       img: 'assets/rd/lasercutter/collage.jpg',
       links: [],
       gallery: [
-        'assets/rd/lasercutter/laser-4.jpg',
-        'assets/rd/lasercutter/laser-3.jpg',
-        'assets/rd/lasercutter/laser-2.jpg',
-        'assets/rd/lasercutter/laser-1.jpg'
+        { src: 'assets/rd/lasercutter/laser-4.jpg', caption: 'Clips engraved as a batch — HOT !!!, TEA TIME, EAT ME — clamped flat in a row for one job.' },
+        { src: 'assets/rd/lasercutter/laser-3.jpg', caption: 'Finished clips in use as labelled markers.' },
+        { src: 'assets/rd/lasercutter/laser-2.jpg', caption: 'Shelf location plates 2.1 and 1.1, screwed to the shelf edge.' },
+        { src: 'assets/rd/lasercutter/laser-1.jpg', caption: 'Plates 2.3 and 3.2 — level and position, so a box goes back where it belongs.' }
       ]
     },
     'plant-rig': {
       year: 'In progress',
       title: 'Plant Imaging Rig',
-      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nThe last slide is a clip of an early prototype of the turning mechanism.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
+      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
       tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing', 'Time-Lapse'],
       img: 'assets/rd/plant-rig/rig-wide.jpg',
       links: [],
       gallery: [
-        'assets/rd/plant-rig/rig-wide.jpg',
-        'assets/rd/plant-rig/rig.jpg',
-        { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg' }
+        { src: 'assets/rd/plant-rig/rig-wide.jpg', caption: 'Camera housing and diffused light column at the top, motorised platter below carrying the pot.' },
+        { src: 'assets/rd/plant-rig/rig.jpg', caption: 'The full rail on its wall bracket, with the O-ring belt running to the platter.' },
+        { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg', caption: 'Early prototype of the turning mechanism.' }
       ]
     },
     'kiosk-display': {
@@ -268,8 +268,8 @@
       img: 'assets/rd/kiosk-display/install-wide.jpg',
       links: [],
       gallery: [
-        'assets/rd/kiosk-display/install-wide.jpg',
-        'assets/rd/kiosk-display/install.jpg'
+        { src: 'assets/rd/kiosk-display/install-wide.jpg', caption: 'Installed in portrait on a plywood backer, machine and cabling mounted behind the screen.' },
+        { src: 'assets/rd/kiosk-display/install.jpg', caption: 'Closer view of the mount and the display running unattended.' }
       ]
     },
   };
@@ -300,12 +300,18 @@
   // ── Modal gallery: single item, or a carousel when there's more than one ──
   let carousel = null;
 
-  // A gallery entry is either an image path or { video, poster }
+  // A gallery entry is an image path, or { src | video, poster, caption }
   function mediaTag(item, title) {
     if (typeof item === 'object' && item.video) {
       return `<video src="${item.video}"${item.poster ? ` poster="${item.poster}"` : ''} controls loop muted playsinline preload="none"></video>`;
     }
-    return `<img src="${item}" alt="${title}" loading="lazy">`;
+    const src = typeof item === 'object' ? item.src : item;
+    return `<img src="${src}" alt="${title}" loading="lazy">`;
+  }
+
+  function captionTag(item) {
+    const caption = typeof item === 'object' ? item.caption : null;
+    return caption ? `<figcaption class="carousel__caption">${caption}</figcaption>` : '';
   }
 
   function renderGallery(images, title) {
@@ -321,7 +327,7 @@
     modalMedia.style.display = '';
 
     if (images.length === 1) {
-      modalMedia.innerHTML = mediaTag(images[0], title);
+      modalMedia.innerHTML = `<figure class="carousel__slide">${mediaTag(images[0], title)}${captionTag(images[0])}</figure>`;
       return;
     }
 
@@ -329,7 +335,7 @@
       <div class="carousel">
         <div class="carousel__viewport">
           <div class="carousel__track">
-            ${images.map(item => `<div class="carousel__slide">${mediaTag(item, title)}</div>`).join('')}
+            ${images.map(item => `<figure class="carousel__slide">${mediaTag(item, title)}${captionTag(item)}</figure>`).join('')}
           </div>
         </div>
         <button class="carousel__nav carousel__nav--prev" aria-label="Previous image">&larr;</button>
