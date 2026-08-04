@@ -222,10 +222,10 @@
       ]
     },
     'coffee-cone': {
-      year: 'In progress',
+      year: 'Finished',
       title: '3D-Printed Coffee Dosing Cone',
-      desc: 'A dosing funnel printed in flexible filament that drops onto a 58 mm portafilter and catches every gram coming out of the grinder.\n\nThe part is deliberately plain: a straight-walled skirt sized to grip the basket rim, opening into a wider cone above it. Printing it flexible rather than rigid is what makes it work — the skirt stretches over the rim and holds by friction, seats without a lip or catch, and pops off one-handed. Grounds that would otherwise scatter across the counter end up in the basket.\n\nSimple to make, in use every morning. The staining in the photos is a few hundred shots of wear.\n\nWrite-up in progress — measurements, CAD iterations, fit testing, and print settings.',
-      tags: ['CAD', '3D Printing', 'Flexible Filament', 'Design Iteration'],
+      desc: 'A flexible dosing cone made for a 58 mm portafilter. It grips the basket rim by friction, prevents coffee grounds from spilling, and removes easily with one hand.\n\nPrinted in flexible TPU filament, I use it myself several times a day. It is a small but constant reminder of how useful 3D printing can be for solving simple, everyday problems.',
+      tags: ['CAD', '3D Printing', 'TPU', 'Functional Design'],
       img: 'assets/rd/coffee-cone/cone.jpg',
       links: [],
       gallery: [
