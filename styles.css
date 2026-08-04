@@ -520,6 +520,13 @@ img {
   align-items: start;
 }
 
+.about__portrait {
+  display: block;
+  width: 160px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
 .about__text p {
   font-size: 0.9rem;
   color: var(--text-muted);
