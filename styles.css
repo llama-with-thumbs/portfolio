@@ -520,13 +520,24 @@ img {
   align-items: start;
 }
 
+.about__figure {
+  margin: 0 0 1.25rem;
+  width: 150px;
+}
+
 .about__portrait {
   display: block;
-  width: 150px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   border: 1px solid var(--border);
-  margin-bottom: 1.25rem;
+}
+
+.about__caption {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
 }
 
 .about__text p {
