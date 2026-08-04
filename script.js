@@ -289,6 +289,14 @@
 
   const hasProjectModal = modal && modalBackdrop && modalClose;
 
+  // Media block at the very top of the modal — the gallery renders here, so the
+  // carousel sits above the text rather than under it.
+  const modalMedia = document.createElement('div');
+  modalMedia.className = 'modal__media';
+  if (modalHero && modalHero.parentNode) {
+    modalHero.parentNode.insertBefore(modalMedia, modalHero);
+  }
+
   // ── Modal gallery: single item, or a carousel when there's more than one ──
   let carousel = null;
 
@@ -302,21 +310,22 @@
 
   function renderGallery(images, title) {
     carousel = null;
+    modalGallery.innerHTML = '';
 
     if (!images.length) {
-      modalGallery.className = 'modal__gallery';
-      modalGallery.innerHTML = '';
+      modalMedia.style.display = 'none';
+      modalMedia.innerHTML = '';
       return;
     }
+
+    modalMedia.style.display = '';
 
     if (images.length === 1) {
-      modalGallery.className = 'modal__gallery';
-      modalGallery.innerHTML = mediaTag(images[0], title);
+      modalMedia.innerHTML = mediaTag(images[0], title);
       return;
     }
 
-    modalGallery.className = 'modal__gallery modal__gallery--carousel';
-    modalGallery.innerHTML = `
+    modalMedia.innerHTML = `
       <div class="carousel">
         <div class="carousel__viewport">
           <div class="carousel__track">
@@ -330,12 +339,12 @@
         </div>
       </div>`;
 
-    const track = modalGallery.querySelector('.carousel__track');
-    const dots = Array.from(modalGallery.querySelectorAll('.carousel__dot'));
+    const track = modalMedia.querySelector('.carousel__track');
+    const dots = Array.from(modalMedia.querySelectorAll('.carousel__dot'));
     carousel = { index: 0, count: images.length, track, dots };
 
-    modalGallery.querySelector('.carousel__nav--prev').addEventListener('click', () => carouselStep(-1));
-    modalGallery.querySelector('.carousel__nav--next').addEventListener('click', () => carouselStep(1));
+    modalMedia.querySelector('.carousel__nav--prev').addEventListener('click', () => carouselStep(-1));
+    modalMedia.querySelector('.carousel__nav--next').addEventListener('click', () => carouselStep(1));
     dots.forEach(dot => dot.addEventListener('click', () => carouselGo(Number(dot.dataset.index))));
 
     // Swipe on touch devices
@@ -364,8 +373,11 @@
     const p = projects[id];
     if (!p) return;
 
-    // Hero image
-    if (p.img) {
+    // Top media: the gallery carousel when there is one, otherwise the hero image
+    modalMedia.style.setProperty('--hero-img', p.img ? `url('${p.img}')` : 'none');
+    renderGallery(p.gallery, p.title);
+
+    if (p.img && !p.gallery.length) {
       modalMainImg.src = p.img;
       modalMainImg.alt = p.title;
       modalHero.style.setProperty('--hero-img', `url('${p.img}')`);
@@ -385,8 +397,6 @@
     modalLinks.innerHTML = p.links.map(l =>
       `<a href="${l.url}" target="_blank" rel="noopener" class="btn ${l.primary ? 'btn--primary' : 'btn--outline'}">${l.label}</a>`
     ).join('');
-
-    renderGallery(p.gallery, p.title);
 
     modal.classList.add('modal--open');
     document.body.style.overflow = 'hidden';

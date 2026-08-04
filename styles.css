@@ -994,6 +994,60 @@ body,
   border-color: var(--border-hover);
 }
 
+/* ── Media block at the top of the modal (hero image or carousel) ── */
+
+.modal__media {
+  position: relative;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--card-gradient-from), var(--card-gradient-to));
+}
+
+.modal__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(24px) saturate(1.15);
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.modal__media > img,
+.modal__media > video,
+.modal__media .carousel__slide img,
+.modal__media .carousel__slide video {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 52vh, 560px);
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.modal__media .carousel__viewport {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.modal__media .carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.75rem;
+  margin: 0;
+  z-index: 2;
+}
+
+.modal__media .carousel__dot {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
 /* ── Carousel (modal gallery with 2+ images) ── */
 
 .modal__gallery--carousel {
