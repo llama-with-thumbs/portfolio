@@ -245,11 +245,12 @@
     'plant-rig': {
       year: 'In progress',
       title: 'Plant Imaging Rig',
-      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nThe second slide is a clip of an early prototype of the turning mechanism.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
+      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nThe last slide is a clip of an early prototype of the turning mechanism.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
       tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing', 'Time-Lapse'],
-      img: 'assets/rd/plant-rig/rig.jpg',
+      img: 'assets/rd/plant-rig/rig-wide.jpg',
       links: [],
       gallery: [
+        'assets/rd/plant-rig/rig-wide.jpg',
         'assets/rd/plant-rig/rig.jpg',
         { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg' }
       ]
