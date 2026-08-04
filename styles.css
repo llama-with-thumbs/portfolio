@@ -26,6 +26,8 @@
   --card-gradient-from: rgba(167, 139, 250, 0.05);
   --card-gradient-to: rgba(167, 139, 250, 0.02);
   --tag-bg: rgba(167, 139, 250, 0.08);
+  --tag-sw: #f472b6;
+  --tag-sw-bg: rgba(244, 114, 182, 0.10);
   --btn-primary-text: #0a0a0b;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -49,6 +51,8 @@
   --card-gradient-from: rgba(124, 58, 237, 0.06);
   --card-gradient-to: rgba(124, 58, 237, 0.02);
   --tag-bg: rgba(124, 58, 237, 0.08);
+  --tag-sw: #be185d;
+  --tag-sw-bg: rgba(219, 39, 119, 0.09);
   --btn-primary-text: #ffffff;
 }
 
@@ -484,6 +488,13 @@ img {
   background: var(--tag-bg);
   color: var(--accent);
   letter-spacing: 0.02em;
+}
+
+/* Software tags — pink, to set them apart from hardware/fabrication tags */
+.card__tags span.tag--sw,
+.modal__tags span.tag--sw {
+  background: var(--tag-sw-bg);
+  color: var(--tag-sw);
 }
 
 .card__arrow {

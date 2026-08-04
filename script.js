@@ -173,7 +173,8 @@
       year: '2025',
       title: 'SporeScope — Imaging Rig',
       desc: 'A compact 16 × 15 × 18 in imaging rig built from 2020 aluminum extrusion and assembled with corner brackets and standard extrusion hardware. It holds 100 × 15 mm malt extract agar plates in fixed positions beneath a Raspberry Pi–controlled overhead camera, enabling consistent time-series image capture.\n\nThe plates are illuminated only from below with diffuse light. As colonies grow, they reduce light transmission through the agar and appear as increasingly defined silhouettes, allowing their shape and expansion to be tracked over time.\n\nThe web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nEvery plate keeps its sample identifier under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
-      tags: ['Aluminum Extrusion', 'Raspberry Pi', 'Backlit Imaging', 'Biological Imaging', 'Shape Detection', 'LLM Analysis'],
+      tags: ['Aluminum Extrusion', 'Raspberry Pi', 'Backlit Imaging', 'Biological Imaging', 'Shape Detection'],
+      swTags: ['Python', 'React', 'TypeScript', 'Firebase', 'LLM Analysis'],
       img: 'assets/rd/sporescope-rig/rig-wide.jpg',
       links: [
         { label: 'SporeScope Web App', url: 'https://llama-with-thumbs.github.io/SporeScopeWeb/', primary: true },
@@ -191,6 +192,7 @@
       title: 'Bio Chart — Sensor & Imaging Chamber',
       desc: 'A compact sensor and imaging chamber built to collect repeatable data from biological samples. The enclosure contains sample shelves, sensors, controlled overhead lighting, and a camera for consistent image capture. A Raspberry Pi mounted externally connects to the internal components and coordinates data collection and transmission.\n\nMicrocontrollers record sensor measurements while the camera captures samples at scheduled intervals. The enclosed structure helps reduce changes in ambient light and keeps the samples, sensors, and camera in fixed positions throughout each experiment.\n\nCaptures land in a purpose-built data model: Firestore holds Chambers → Plates → Snippets → Shapes, with each snippet carrying its raw-image path and mean channel intensities, while Firebase Storage mirrors the same hierarchy. The software that reads it lives under Software Projects.',
       tags: ['Raspberry Pi', 'Microcontrollers', 'Sensors', 'Image Capture', 'Data Acquisition', 'Biological Monitoring'],
+      swTags: ['Python', 'React', 'TypeScript', 'Firestore', 'AWS EC2'],
       img: 'assets/rd/bio-chart-rig/rig-1.jpg',
       links: [
         { label: 'Bio Chart Web App', url: 'https://llama-with-thumbs.github.io/bio-chart-web/', primary: true },
@@ -212,7 +214,8 @@
       year: 'In progress',
       title: 'Synchronicity Table',
       desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
-      tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Design Tool'],
+      tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Geometry'],
+      swTags: ['JavaScript', 'SVG', 'Browser Tool'],
       img: 'assets/rd/synchronicity-table/design-app.jpg',
       links: [],
       gallery: [
@@ -236,7 +239,8 @@
       year: 'Ongoing',
       title: 'Laser Cutting & Engraving',
       desc: 'An ongoing set of small parts cut and engraved on the laser — the kind of thing that takes ten minutes to draw and then quietly makes daily life work better.\n\nNumbered plates screwed to the edge of storage shelving turn a wall of boxes into addressable locations: 1.1, 2.1, 2.3, 3.2 — level and position, so anything can be put back where it belongs and found again. The plates are cut to a common outline with fixed screw holes, so a new one drops into the same jig and matches the rest.\n\nEngraved wooden clips carry what would otherwise be a strip of tape and a marker — HOT !!!, DO NOT EAT, EAT ME, TEA TIME — legible, reusable, and hard to ignore. They are engraved as a batch, clamped flat in a row so one job burns six clips at a time.\n\nWrite-up in progress — material and power settings per stock, the engraving font work, and the jig used to keep parts repeatable.',
-      tags: ['Laser Cutting', 'Engraving', 'Vector Design', 'Plywood', 'Shop Fixtures'],
+      tags: ['Laser Cutting', 'Engraving', 'Plywood', 'Shop Fixtures'],
+      swTags: ['Inkscape', 'Vector Design'],
       img: 'assets/rd/lasercutter/collage.jpg',
       links: [],
       gallery: [
@@ -250,7 +254,8 @@
       year: 'In progress',
       title: 'Plant Imaging Rig',
       desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
-      tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing', 'Time-Lapse'],
+      tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing'],
+      swTags: ['Python', 'Capture Scheduling', 'Time-Lapse'],
       img: 'assets/rd/plant-rig/rig-wide.jpg',
       links: [],
       gallery: [
@@ -263,7 +268,8 @@
       year: 'In progress',
       title: 'Waiting-Room Display / Kiosk',
       desc: 'An unattended information display built from an older computer and an external monitor, wall-mounted in portrait orientation on a plywood backer with the machine and cabling mounted behind the screen.\n\nThe interface is served from GitHub Pages, with automatic launch, scheduled refresh, and recovery after a restart or power loss — so it keeps showing the right thing without anyone tending it.\n\nFull write-up in progress.',
-      tags: ['Kiosk Mode', 'GitHub Pages', 'Autostart', 'Recovery', 'Repurposed Hardware'],
+      tags: ['Repurposed Hardware', 'Kiosk Mode', 'Wall Mount'],
+      swTags: ['GitHub Pages', 'HTML/CSS', 'JavaScript', 'Autostart', 'Recovery'],
       img: 'assets/rd/kiosk-display/install-wide.jpg',
       links: [],
       gallery: [
@@ -395,8 +401,9 @@
     modalTitle.textContent = p.title;
     modalDesc.innerHTML = p.desc.replace(/\n/g, '<br>');
 
-    // Tags
-    modalTags.innerHTML = p.tags.map(t => `<span>${t}</span>`).join('');
+    // Tags — hardware first, then software tags in their own colour
+    modalTags.innerHTML = p.tags.map(t => `<span>${t}</span>`).join('') +
+      (p.swTags || []).map(t => `<span class="tag--sw">${t}</span>`).join('');
 
     // Links
     modalLinks.innerHTML = p.links.map(l =>
