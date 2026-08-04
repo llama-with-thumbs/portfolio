@@ -174,12 +174,13 @@
       title: 'SporeScope — Imaging Rig',
       desc: 'The physical side of SporeScope — the station that photographs the plates the web app analyzes.\n\nThe frame is built from black aluminium extrusion, with a solid top plate and an open working volume. The stage at the bottom is a backlit panel: plates sit on a diffused light box so each dish is lit evenly from beneath, which is what gives clean edges for growth area, perimeter, and polygon boundary extraction rather than the uneven top lighting a room provides. Six petri dishes load at once, in fixed positions on the stage.\n\nAbove them, the camera is carried on a rail under the top plate so it can be set over the stage and left there — fixed height, fixed framing, repeatable frame after frame.\n\nThe rest of the carousel is what comes out of it. The web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nThe final slides are per-plate time-lapses, each frame stamped with elapsed hours, showing a colony spreading across the dish. Every plate keeps its sample identifier (SMP-837C0C, SMP-9A8231) under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
       tags: ['Aluminium Extrusion', 'Backlit Stage', 'Camera Rail', 'Raspberry Pi', 'Shape Detection', 'LLM Analysis'],
-      img: 'assets/rd/sporescope-rig/rig.jpg',
+      img: 'assets/rd/sporescope-rig/rig-wide.jpg',
       links: [
         { label: 'SporeScope Web App', url: 'https://llama-with-thumbs.github.io/SporeScopeWeb/', primary: true },
         { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/SporeScopeWeb' }
       ],
       gallery: [
+        'assets/rd/sporescope-rig/rig-wide.jpg',
         'assets/rd/sporescope-rig/rig.jpg',
         'assets/rd/sporescope-rig/web-app.jpg',
         'assets/rd/sporescope-rig/plate-837C0C.gif',
