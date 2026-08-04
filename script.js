@@ -181,7 +181,6 @@
       ],
       gallery: [
         { src: 'assets/rd/sporescope-rig/rig-wide.jpg', caption: '2020 extrusion frame with a backlit stage below and the overhead camera under the top plate.' },
-        { src: 'assets/rd/sporescope-rig/rig.jpg', caption: 'Six agar plates loaded in fixed positions on the diffused light box.' },
         { src: 'assets/rd/sporescope-rig/web-app.jpg', caption: 'Web app: one live row per plate — current frame, culture profile, GPT analysis, extracted colony outlines, and intensity over the run.' },
         { src: 'assets/rd/sporescope-rig/plate-837C0C.gif', caption: 'Plate SMP-837C0C — captured frames assembled into a time-lapse, stamped with elapsed hours.' },
         { src: 'assets/rd/sporescope-rig/plate-9A8231.gif', caption: 'Plate SMP-9A8231 — a colony spreading across the dish over the run.' }
