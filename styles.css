@@ -420,7 +420,7 @@ img {
 .card__img--fit img {
   position: relative;
   object-fit: contain;
-  padding: 0.35rem 0;
+  padding: 0;
 }
 
 .card__img-placeholder {
