@@ -303,6 +303,11 @@ img {
   padding: 5rem clamp(1.5rem, 4vw, 3rem);
 }
 
+/* First section on a page with no hero — clears the fixed nav */
+.section--top {
+  padding-top: 7.5rem;
+}
+
 .section__header {
   display: flex;
   align-items: baseline;
@@ -386,6 +391,12 @@ img {
 .card:hover .card__img img {
   transform: scale(1.05);
   opacity: 1;
+}
+
+/* Show the whole image instead of cropping it — for tall/portrait photos */
+.card__img--contain img {
+  object-fit: contain;
+  padding: 0.5rem;
 }
 
 .card__img-placeholder {
@@ -826,6 +837,7 @@ body,
 
 .modal__hero {
   width: 100%;
+  height: 340px;
   max-height: 340px;
   overflow: hidden;
   border-radius: 14px 14px 0 0;
@@ -941,6 +953,112 @@ body,
 .modal__gallery img:hover {
   transform: scale(1.02);
   border-color: var(--border-hover);
+}
+
+/* ── Carousel (modal gallery with 2+ images) ── */
+
+.modal__gallery--carousel {
+  display: block;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--card-gradient-from), var(--card-gradient-to));
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.45s var(--ease);
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carousel__slide img,
+.carousel__slide video {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 0;
+  cursor: default;
+  background: transparent;
+}
+
+.carousel__slide img:hover {
+  transform: none;
+}
+
+.modal__gallery video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.carousel__nav {
+  position: absolute;
+  top: calc(50% - 1rem);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s, border-color 0.2s, transform 0.2s var(--ease);
+}
+
+.carousel__nav:hover {
+  opacity: 1;
+  border-color: var(--border-hover);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.carousel__nav--prev { left: 0.75rem; }
+.carousel__nav--next { right: 0.75rem; }
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.carousel__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-hover);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel__dot--active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+@media (max-width: 640px) {
+  .carousel__slide img { height: 240px; }
+  .carousel__nav { width: 32px; height: 32px; }
 }
 
 /* Scrollbar inside modal */

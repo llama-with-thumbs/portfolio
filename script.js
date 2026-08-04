@@ -169,41 +169,98 @@
 
     // ── R&D projects (rd.html) ──
     // Photos: drop images into assets/rd/<project>/ and list them in `gallery`.
+    'sporescope-rig': {
+      year: '2025',
+      title: 'SporeScope — Imaging Rig',
+      desc: 'The physical side of SporeScope — the station that photographs the plates the web app analyzes.\n\nThe frame is built from black aluminium extrusion, with a solid top plate and an open working volume. The stage at the bottom is a backlit panel: plates sit on a diffused light box so each dish is lit evenly from beneath, which is what gives clean edges for growth area, perimeter, and polygon boundary extraction rather than the uneven top lighting a room provides. Six petri dishes load at once, in fixed positions on the stage.\n\nAbove them, the camera is carried on a rail under the top plate so it can be set over the stage and left there — fixed height, fixed framing, repeatable frame after frame.\n\nThe rest of the carousel is what comes out of it. The web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nThe final slides are per-plate time-lapses, each frame stamped with elapsed hours, showing a colony spreading across the dish. Every plate keeps its sample identifier (SMP-837C0C, SMP-9A8231) under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
+      tags: ['Aluminium Extrusion', 'Backlit Stage', 'Camera Rail', 'Raspberry Pi', 'Shape Detection', 'LLM Analysis'],
+      img: 'assets/rd/sporescope-rig/rig.jpg',
+      links: [
+        { label: 'SporeScope Web App', url: 'https://llama-with-thumbs.github.io/SporeScopeWeb/', primary: true },
+        { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/SporeScopeWeb' }
+      ],
+      gallery: [
+        'assets/rd/sporescope-rig/rig.jpg',
+        'assets/rd/sporescope-rig/web-app.jpg',
+        'assets/rd/sporescope-rig/plate-837C0C.gif',
+        'assets/rd/sporescope-rig/plate-9A8231.gif'
+      ]
+    },
+    'bio-chart-rig': {
+      year: '2023',
+      title: 'Bio Chart — Imaging Rig',
+      desc: 'The physical side of Bio Chart — the growth chamber that produces the images the web app analyzes.\n\nA built enclosure with interior LED lighting at the top and stepped shelving that holds labeled culture jars in fixed positions, so every capture frames the same subjects from the same angle. The Raspberry Pi is mounted on a wooden plate on the outside wall with its camera ribbon passing through a cut window into the chamber — the compute stays outside the humid environment while the sensor looks in.\n\nEach chamber carries its own identity plate: a chamber ID (CHA-AFBEFC) and a static IP, matching the chamber entity in the data model so captures land against the right record.\n\nFixed geometry and lighting are what make the downstream analysis possible — mean channel intensities and extracted shape coordinates only mean something if frames stay comparable across weeks.\n\nEverything the rig captures lands in a purpose-built data model, shown in the carousel: Firestore holds Chambers → Plates → Snippets → Shapes, with each snippet carrying its raw-image path and mean blue/red/green channel intensities, while Firebase Storage mirrors the same hierarchy as chamber directories of plates, raw images, and GIFs. Document fields point across to the stored files, so a measurement can always be traced back to the frame it came from.\n\nThe interface built on top of it is the readout side: one row per flask, showing the latest frame, flask parameters (identifier, seeded culture, substrate, start date, elapsed time), a time-lapse still, and mean red/green/blue intensity plotted over the run. The final three slides are the assembled time-lapses served by that interface — one per flask, each frame stamped with elapsed hours, so a multi-week run plays back in a few seconds.\n\nThe software that consumes this data lives under Software Projects.',
+      tags: ['Woodworking', 'Raspberry Pi', 'Camera Module', 'Lighting', 'Time-Lapse', 'Firestore', 'Data Model'],
+      img: 'assets/rd/bio-chart-rig/rig-1.jpg',
+      links: [
+        { label: 'Bio Chart Web App', url: 'https://llama-with-thumbs.github.io/bio-chart-web/', primary: true },
+        { label: 'GitHub', url: 'https://github.com/llama-with-thumbs/bio-chart-web' }
+      ],
+      gallery: [
+        'assets/rd/bio-chart-rig/rig-1.jpg',
+        'assets/rd/bio-chart-rig/rig-3.jpg',
+        'assets/rd/bio-chart-rig/rig-2.jpg',
+        'assets/rd/bio-chart-rig/data-model.png',
+        'assets/rd/bio-chart-rig/web-interface.jpg',
+        'assets/rd/bio-chart-rig/timelapse-a.gif',
+        'assets/rd/bio-chart-rig/timelapse-b.gif',
+        'assets/rd/bio-chart-rig/timelapse-c.gif'
+      ]
+    },
     'synchronicity-table': {
       year: 'In progress',
       title: 'Synchronicity Table',
-      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
-      tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Prototyping'],
-      img: 'assets/rd/synchronicity-table.svg',
+      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
+      tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Design Tool'],
+      img: 'assets/rd/synchronicity-table/design-app.jpg',
       links: [],
-      gallery: []
+      gallery: ['assets/rd/synchronicity-table/design-app.jpg']
     },
     'coffee-cone': {
       year: 'In progress',
       title: '3D-Printed Coffee Dosing Cone',
-      desc: 'A custom cone designed and 3D-printed for transferring ground coffee from the grinder into the portafilter without spilling.\n\nWrite-up in progress — the problem it solves, measurements, CAD iterations, fit testing, print settings, and the improvements made after living with it.',
-      tags: ['CAD', '3D Printing', 'Design Iteration', 'Prototyping'],
-      img: 'assets/rd/coffee-cone.svg',
+      desc: 'A dosing funnel printed in flexible filament that drops onto a 58 mm portafilter and catches every gram coming out of the grinder.\n\nThe part is deliberately plain: a straight-walled skirt sized to grip the basket rim, opening into a wider cone above it. Printing it flexible rather than rigid is what makes it work — the skirt stretches over the rim and holds by friction, seats without a lip or catch, and pops off one-handed. Grounds that would otherwise scatter across the counter end up in the basket.\n\nSimple to make, in use every morning. The staining in the photos is a few hundred shots of wear.\n\nWrite-up in progress — measurements, CAD iterations, fit testing, and print settings.',
+      tags: ['CAD', '3D Printing', 'Flexible Filament', 'Design Iteration'],
+      img: 'assets/rd/coffee-cone/cone.jpg',
       links: [],
-      gallery: []
+      gallery: [
+        'assets/rd/coffee-cone/cone.jpg',
+        'assets/rd/coffee-cone/cone-on-portafilter.jpg'
+      ]
     },
-    'rpi-system': {
-      year: 'In progress',
-      title: 'Raspberry Pi Camera / Display System',
-      desc: 'A hardware and software integration project built around a Raspberry Pi.\n\nCovers Linux configuration, automated startup, networking, camera or display control, and the troubleshooting it took to make the whole thing come up reliably on its own.\n\nWrite-up and photos in progress.',
-      tags: ['Raspberry Pi', 'Linux', 'Networking', 'Camera', 'Autostart'],
-      img: 'assets/rd/rpi-system.svg',
+    'lasercutter': {
+      year: 'Ongoing',
+      title: 'Laser Cutting & Engraving',
+      desc: 'An ongoing set of small parts cut and engraved on the laser — the kind of thing that takes ten minutes to draw and then quietly makes daily life work better.\n\nNumbered plates screwed to the edge of storage shelving turn a wall of boxes into addressable locations: 1.1, 2.1, 2.3, 3.2 — level and position, so anything can be put back where it belongs and found again. The plates are cut to a common outline with fixed screw holes, so a new one drops into the same jig and matches the rest.\n\nEngraved wooden clips carry warnings that would otherwise be a strip of tape and a marker — HOT !!!, DO NOT EAT — legible, reusable, and hard to ignore.\n\nWrite-up in progress — material and power settings per stock, the engraving font work, and the jig used to keep parts repeatable.',
+      tags: ['Laser Cutting', 'Engraving', 'Vector Design', 'Plywood', 'Shop Fixtures'],
+      img: 'assets/rd/lasercutter/laser-3.jpg',
       links: [],
-      gallery: []
+      gallery: [
+        'assets/rd/lasercutter/laser-3.jpg',
+        'assets/rd/lasercutter/laser-2.jpg',
+        'assets/rd/lasercutter/laser-1.jpg'
+      ]
+    },
+    'plant-rig': {
+      year: 'In progress',
+      title: 'Plant Imaging Rig',
+      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nThe second slide is a clip of an early prototype of the turning mechanism.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
+      tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing', 'Time-Lapse'],
+      img: 'assets/rd/plant-rig/rig.jpg',
+      links: [],
+      gallery: [
+        'assets/rd/plant-rig/rig.jpg',
+        { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg' }
+      ]
     },
     'kiosk-display': {
       year: 'In progress',
       title: 'Waiting-Room Display / Kiosk',
-      desc: 'An unattended information display built from an older computer and an external monitor.\n\nThe interface is served from GitHub Pages, with automatic launch, scheduled refresh, and recovery after a restart or power loss — so it keeps showing the right thing without anyone tending it.\n\nWrite-up and photos in progress.',
+      desc: 'An unattended information display built from an older computer and an external monitor, wall-mounted in portrait orientation on a plywood backer with the machine and cabling mounted behind the screen.\n\nThe interface is served from GitHub Pages, with automatic launch, scheduled refresh, and recovery after a restart or power loss — so it keeps showing the right thing without anyone tending it.\n\nFull write-up in progress.',
       tags: ['Kiosk Mode', 'GitHub Pages', 'Autostart', 'Recovery', 'Repurposed Hardware'],
-      img: 'assets/rd/kiosk-display.svg',
+      img: 'assets/rd/kiosk-display/install.jpg',
       links: [],
-      gallery: []
+      gallery: ['assets/rd/kiosk-display/install.jpg']
     },
   };
 
@@ -221,6 +278,77 @@
   const modalGallery = document.getElementById('modalGallery');
 
   const hasProjectModal = modal && modalBackdrop && modalClose;
+
+  // ── Modal gallery: single item, or a carousel when there's more than one ──
+  let carousel = null;
+
+  // A gallery entry is either an image path or { video, poster }
+  function mediaTag(item, title) {
+    if (typeof item === 'object' && item.video) {
+      return `<video src="${item.video}"${item.poster ? ` poster="${item.poster}"` : ''} controls loop muted playsinline preload="none"></video>`;
+    }
+    return `<img src="${item}" alt="${title}" loading="lazy">`;
+  }
+
+  function renderGallery(images, title) {
+    carousel = null;
+
+    if (!images.length) {
+      modalGallery.className = 'modal__gallery';
+      modalGallery.innerHTML = '';
+      return;
+    }
+
+    if (images.length === 1) {
+      modalGallery.className = 'modal__gallery';
+      modalGallery.innerHTML = mediaTag(images[0], title);
+      return;
+    }
+
+    modalGallery.className = 'modal__gallery modal__gallery--carousel';
+    modalGallery.innerHTML = `
+      <div class="carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            ${images.map(item => `<div class="carousel__slide">${mediaTag(item, title)}</div>`).join('')}
+          </div>
+        </div>
+        <button class="carousel__nav carousel__nav--prev" aria-label="Previous image">&larr;</button>
+        <button class="carousel__nav carousel__nav--next" aria-label="Next image">&rarr;</button>
+        <div class="carousel__dots">
+          ${images.map((_, i) => `<button class="carousel__dot${i === 0 ? ' carousel__dot--active' : ''}" data-index="${i}" aria-label="Image ${i + 1}"></button>`).join('')}
+        </div>
+      </div>`;
+
+    const track = modalGallery.querySelector('.carousel__track');
+    const dots = Array.from(modalGallery.querySelectorAll('.carousel__dot'));
+    carousel = { index: 0, count: images.length, track, dots };
+
+    modalGallery.querySelector('.carousel__nav--prev').addEventListener('click', () => carouselStep(-1));
+    modalGallery.querySelector('.carousel__nav--next').addEventListener('click', () => carouselStep(1));
+    dots.forEach(dot => dot.addEventListener('click', () => carouselGo(Number(dot.dataset.index))));
+
+    // Swipe on touch devices
+    let startX = null;
+    track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) carouselStep(dx < 0 ? 1 : -1);
+      startX = null;
+    }, { passive: true });
+  }
+
+  function carouselGo(i) {
+    if (!carousel) return;
+    carousel.index = (i + carousel.count) % carousel.count;
+    carousel.track.style.transform = `translateX(-${carousel.index * 100}%)`;
+    carousel.dots.forEach((dot, n) => dot.classList.toggle('carousel__dot--active', n === carousel.index));
+  }
+
+  function carouselStep(delta) {
+    if (carousel) carouselGo(carousel.index + delta);
+  }
 
   function openModal(id) {
     const p = projects[id];
@@ -247,10 +375,7 @@
       `<a href="${l.url}" target="_blank" rel="noopener" class="btn ${l.primary ? 'btn--primary' : 'btn--outline'}">${l.label}</a>`
     ).join('');
 
-    // Gallery
-    modalGallery.innerHTML = p.gallery.map(src =>
-      `<img src="${src}" alt="${p.title}" loading="lazy">`
-    ).join('');
+    renderGallery(p.gallery, p.title);
 
     modal.classList.add('modal--open');
     document.body.style.overflow = 'hidden';
@@ -272,7 +397,12 @@
     modalBackdrop.addEventListener('click', closeModal);
     modalClose.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        closeModal();
+      } else if (carousel && modal.classList.contains('modal--open')) {
+        if (e.key === 'ArrowLeft') carouselStep(-1);
+        else if (e.key === 'ArrowRight') carouselStep(1);
+      }
     });
   }
 

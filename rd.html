@@ -34,40 +34,58 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero art-hero" id="hero">
-    <div class="hero__content">
-      <p class="hero__greeting reveal">Hardware &amp; Prototyping</p>
-      <h1 class="hero__name reveal">R&amp;D Projects</h1>
-      <p class="hero__tagline reveal">Physical builds and hardware/software integration — fabrication, 3D printing, embedded Linux, and installations that have to keep running unattended.</p>
-    </div>
-  </header>
-
   <div class="under-construction web1-only">** This site is under construction! Check back soon for updates! **</div>
-  <hr class="web1-hr web1-only">
 
   <!-- R&D PROJECTS -->
-  <section class="section projects" id="rd">
+  <section class="section section--top projects" id="rd">
     <div class="section__header reveal">
       <span class="section__label">01</span>
       <h2 class="section__title">R&amp;D Projects</h2>
     </div>
 
-    <!-- Category: Fabrication & Physical Computing -->
     <div class="projects__category reveal">
-      <h3 class="projects__category-title">Fabrication &amp; Physical Computing</h3>
       <div class="projects__grid">
+
+        <a href="#" class="card" data-project="sporescope-rig">
+          <div class="card__img">
+            <img src="assets/rd/sporescope-rig/rig.jpg" alt="SporeScope imaging rig" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">SporeScope — Imaging Rig</h4>
+            <p class="card__desc">Extrusion-framed imaging station with a backlit stage for six petri dishes and a camera carried on a rail above it — even, repeatable frames for plate analysis.</p>
+            <div class="card__tags">
+              <span>Aluminium Extrusion</span><span>Backlit Stage</span><span>Camera Rail</span><span>Raspberry Pi</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="bio-chart-rig">
+          <div class="card__img">
+            <img src="assets/rd/bio-chart-rig/rig-1.jpg" alt="Bio Chart imaging chamber" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2023</span>
+            <h4 class="card__title">Bio Chart — Imaging Rig</h4>
+            <p class="card__desc">The hardware behind Bio Chart: a built growth chamber with controlled lighting, labeled shelves for culture jars, and a Raspberry Pi camera mounted through the wall for repeatable time-lapse capture.</p>
+            <div class="card__tags">
+              <span>Woodworking</span><span>Raspberry Pi</span><span>Camera Module</span><span>Firestore</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
 
         <a href="#" class="card" data-project="synchronicity-table">
           <div class="card__img">
-            <img src="assets/rd/synchronicity-table.svg" alt="Synchronicity Table" loading="lazy">
+            <img src="assets/rd/synchronicity-table/design-app.jpg" alt="Synchronicity Table layout tool" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
             <h4 class="card__title">Synchronicity Table</h4>
-            <p class="card__desc">Interactive sculpture system — physical fabrication, Raspberry Pi, LCD integration, custom software, geometry, prototyping, and installation reliability.</p>
+            <p class="card__desc">Interactive sculpture system — fabrication, Raspberry Pi, LCD integration, and a purpose-built browser tool for positioning the geometry and previewing the animation at real dimensions.</p>
             <div class="card__tags">
-              <span>Fabrication</span><span>Raspberry Pi</span><span>LCD</span><span>Geometry</span>
+              <span>Fabrication</span><span>Raspberry Pi</span><span>LCD</span><span>Design Tool</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
@@ -75,45 +93,52 @@
 
         <a href="#" class="card" data-project="coffee-cone">
           <div class="card__img">
-            <img src="assets/rd/coffee-cone.svg" alt="3D-Printed Coffee Dosing Cone" loading="lazy">
+            <img src="assets/rd/coffee-cone/cone.jpg" alt="3D-printed dosing cone" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
             <h4 class="card__title">3D-Printed Coffee Dosing Cone</h4>
-            <p class="card__desc">A custom cone for transferring ground coffee into the portafilter — measurements, CAD iterations, fit testing, print settings, and improvements after real use.</p>
+            <p class="card__desc">A dosing funnel printed in flexible filament that sits on a 58&nbsp;mm portafilter and catches every gram from the grinder. Simple part, used every morning.</p>
             <div class="card__tags">
-              <span>CAD</span><span>3D Printing</span><span>Prototyping</span>
+              <span>CAD</span><span>3D Printing</span><span>Flexible Filament</span><span>58&nbsp;mm</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
         </a>
 
-      </div>
-    </div>
-
-    <!-- Category: Embedded Systems & Displays -->
-    <div class="projects__category reveal">
-      <h3 class="projects__category-title">Embedded Systems &amp; Displays</h3>
-      <div class="projects__grid">
-
-        <a href="#" class="card" data-project="rpi-system">
+        <a href="#" class="card" data-project="lasercutter">
           <div class="card__img">
-            <img src="assets/rd/rpi-system.svg" alt="Raspberry Pi Camera / Display System" loading="lazy">
+            <img src="assets/rd/lasercutter/laser-3.jpg" alt="Laser-engraved clothespins" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">Ongoing</span>
+            <h4 class="card__title">Laser Cutting &amp; Engraving</h4>
+            <p class="card__desc">Small shop-made parts cut and engraved on the laser — numbered plates for a shelf location system, labeled clips, and one-off fixtures.</p>
+            <div class="card__tags">
+              <span>Laser Cutting</span><span>Engraving</span><span>Vector Design</span><span>Plywood</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="plant-rig">
+          <div class="card__img card__img--contain">
+            <img src="assets/rd/plant-rig/rig.jpg" alt="Wall-mounted plant imaging rig" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
-            <h4 class="card__title">Raspberry Pi Camera / Display System</h4>
-            <p class="card__desc">Hardware and software integration — Linux configuration, automated startup, networking, camera or display control, and troubleshooting.</p>
+            <h4 class="card__title">Plant Imaging Rig</h4>
+            <p class="card__desc">Wall-mounted Raspberry Pi camera station with its own diffused light and a belt-driven motorized platter that rotates the plant between shots for consistent multi-angle capture.</p>
             <div class="card__tags">
-              <span>Raspberry Pi</span><span>Linux</span><span>Networking</span><span>systemd</span>
+              <span>Raspberry Pi</span><span>Camera</span><span>Motor Control</span><span>Lighting</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
         </a>
 
         <a href="#" class="card" data-project="kiosk-display">
-          <div class="card__img">
-            <img src="assets/rd/kiosk-display.svg" alt="Interactive Waiting-Room Display / Kiosk" loading="lazy">
+          <div class="card__img card__img--contain">
+            <img src="assets/rd/kiosk-display/install.jpg" alt="Wall-mounted waiting-room display" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
