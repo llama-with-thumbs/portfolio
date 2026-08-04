@@ -212,11 +212,14 @@
     'synchronicity-table': {
       year: 'In progress',
       title: 'Synchronicity Table',
-      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
+      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything. Circles are placed on the table surface at real dimensions — each one labelled with its diameter in mm, the panel measured at 286 × 511 mm inside a Ø667 mm envelope — with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing color fields are judged in motion rather than imagined, and tilt and rotation sliders swing the whole arrangement into perspective, including a grouped view of the sculpture as a body rather than a flat plan.\n\nThe second slide is that layout made real: the tabletop cut to the outline the tool produced, with every circle bored out at its planned diameter and position, wiring already routed underneath.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
       tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Custom Software', 'Geometry', 'Design Tool'],
       img: 'assets/rd/synchronicity-table/design-app.jpg',
       links: [],
-      gallery: ['assets/rd/synchronicity-table/design-app.jpg']
+      gallery: [
+        'assets/rd/synchronicity-table/design-app.jpg',
+        'assets/rd/synchronicity-table/panel-cut.jpg'
+      ]
     },
     'coffee-cone': {
       year: 'In progress',
