@@ -365,6 +365,7 @@
     if (p.img) {
       modalMainImg.src = p.img;
       modalMainImg.alt = p.title;
+      modalHero.style.setProperty('--hero-img', `url('${p.img}')`);
       modalHero.style.display = '';
     } else {
       modalHero.style.display = 'none';
