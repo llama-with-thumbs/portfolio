@@ -233,11 +233,12 @@
     'lasercutter': {
       year: 'Ongoing',
       title: 'Laser Cutting & Engraving',
-      desc: 'An ongoing set of small parts cut and engraved on the laser — the kind of thing that takes ten minutes to draw and then quietly makes daily life work better.\n\nNumbered plates screwed to the edge of storage shelving turn a wall of boxes into addressable locations: 1.1, 2.1, 2.3, 3.2 — level and position, so anything can be put back where it belongs and found again. The plates are cut to a common outline with fixed screw holes, so a new one drops into the same jig and matches the rest.\n\nEngraved wooden clips carry warnings that would otherwise be a strip of tape and a marker — HOT !!!, DO NOT EAT — legible, reusable, and hard to ignore.\n\nWrite-up in progress — material and power settings per stock, the engraving font work, and the jig used to keep parts repeatable.',
+      desc: 'An ongoing set of small parts cut and engraved on the laser — the kind of thing that takes ten minutes to draw and then quietly makes daily life work better.\n\nNumbered plates screwed to the edge of storage shelving turn a wall of boxes into addressable locations: 1.1, 2.1, 2.3, 3.2 — level and position, so anything can be put back where it belongs and found again. The plates are cut to a common outline with fixed screw holes, so a new one drops into the same jig and matches the rest.\n\nEngraved wooden clips carry what would otherwise be a strip of tape and a marker — HOT !!!, DO NOT EAT, EAT ME, TEA TIME — legible, reusable, and hard to ignore. They are engraved as a batch, clamped flat in a row so one job burns six clips at a time.\n\nWrite-up in progress — material and power settings per stock, the engraving font work, and the jig used to keep parts repeatable.',
       tags: ['Laser Cutting', 'Engraving', 'Vector Design', 'Plywood', 'Shop Fixtures'],
-      img: 'assets/rd/lasercutter/laser-3.jpg',
+      img: 'assets/rd/lasercutter/collage.jpg',
       links: [],
       gallery: [
+        'assets/rd/lasercutter/laser-4.jpg',
         'assets/rd/lasercutter/laser-3.jpg',
         'assets/rd/lasercutter/laser-2.jpg',
         'assets/rd/lasercutter/laser-1.jpg'
