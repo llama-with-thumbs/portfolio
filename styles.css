@@ -399,6 +399,30 @@ img {
   padding: 0.5rem;
 }
 
+/* Same, but the corners are filled with a blurred copy of the photo itself.
+   Set the source on the element: style="--thumb: url('…')" */
+.card__img--fit {
+  position: relative;
+}
+
+.card__img--fit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--thumb);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) saturate(1.15);
+  transform: scale(1.2);
+  opacity: 0.55;
+}
+
+.card__img--fit img {
+  position: relative;
+  object-fit: contain;
+  padding: 0.35rem 0;
+}
+
 .card__img-placeholder {
   display: flex;
   align-items: center;

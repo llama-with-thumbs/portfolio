@@ -260,9 +260,12 @@
       title: 'Waiting-Room Display / Kiosk',
       desc: 'An unattended information display built from an older computer and an external monitor, wall-mounted in portrait orientation on a plywood backer with the machine and cabling mounted behind the screen.\n\nThe interface is served from GitHub Pages, with automatic launch, scheduled refresh, and recovery after a restart or power loss — so it keeps showing the right thing without anyone tending it.\n\nFull write-up in progress.',
       tags: ['Kiosk Mode', 'GitHub Pages', 'Autostart', 'Recovery', 'Repurposed Hardware'],
-      img: 'assets/rd/kiosk-display/install.jpg',
+      img: 'assets/rd/kiosk-display/install-wide.jpg',
       links: [],
-      gallery: ['assets/rd/kiosk-display/install.jpg']
+      gallery: [
+        'assets/rd/kiosk-display/install-wide.jpg',
+        'assets/rd/kiosk-display/install.jpg'
+      ]
     },
   };
 
