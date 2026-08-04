@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlad Filitovich — About</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">VF</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="rd.html">R&amp;D</a></li>
+        <li><a href="index.html#projects">Software Projects</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+      </button>
+      <button class="web1-toggle" id="web1Toggle" aria-label="Toggle 90s mode">90s</button>
+    </div>
+  </nav>
+
+  <div class="under-construction web1-only">** This site is under construction! Check back soon for updates! **</div>
+
+  <!-- ABOUT -->
+  <section class="section section--top about" id="about">
+    <div class="section__header reveal">
+      <span class="section__label">01</span>
+      <h2 class="section__title">About Me</h2>
+    </div>
+    <div class="about__content reveal">
+      <div class="about__text">
+        <p>I'm an interdisciplinary engineer based in Cambridge, MA, with experience across software development, materials science, digital fabrication, and technical design. I enjoy working with a wide range of tools — from Python, SQL, and cloud platforms to CAD software, electronics, prototyping, and material-based processes.</p>
+        <p>My work often combines physical and digital systems, including interactive installations, visualization tools, web applications, fabrication projects, and experimental objects. I'm especially interested in choosing the right tools for each idea and moving between engineering, design, and artistic practice.</p>
+      </div>
+      <div class="about__skills">
+        <div class="skill-group">
+          <h4>Software &amp; Programming</h4>
+          <div class="skill-tags">
+            <span>Python</span><span>Flask</span><span>FastAPI</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>SQL</span><span>REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>CAD &amp; Technical Design</h4>
+          <div class="skill-tags">
+            <span>SolidWorks</span><span>AutoCAD</span><span>3D Modeling</span><span>Technical Drawing</span><span>Figma</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Materials &amp; Fabrication</h4>
+          <div class="skill-tags">
+            <span>Materials Science</span><span>Prototyping</span><span>3D Printing</span><span>Mold Making</span><span>Material Selection</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Electronics &amp; Physical Computing</h4>
+          <div class="skill-tags">
+            <span>Raspberry Pi</span><span>Sensors</span><span>Motors</span><span>Basic Electronics</span><span>Interactive Systems</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Infrastructure</h4>
+          <div class="skill-tags">
+            <span>PostgreSQL</span><span>Firebase</span><span>MongoDB</span><span>AWS</span><span>Docker</span><span>Git</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Visualization &amp; Mapping</h4>
+          <div class="skill-tags">
+            <span>D3.js</span><span>Leaflet</span><span>Interactive Visualization</span><span>Data Visualization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="web1-hr web1-only">
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Vlad Filitovich</span>
+      <div class="footer__links">
+        <a href="index.html">Portfolio</a>
+        <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
