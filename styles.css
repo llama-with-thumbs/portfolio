@@ -522,8 +522,10 @@ img {
 
 .about__portrait {
   display: block;
-  width: 160px;
+  width: 150px;
   height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   margin-bottom: 1.25rem;
 }
 
