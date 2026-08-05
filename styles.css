@@ -332,6 +332,19 @@ img {
   letter-spacing: -0.02em;
 }
 
+/* Heading plus a lead line, for pages that open straight into a section */
+.section__intro {
+  margin-bottom: 2.5rem;
+}
+
+.section__lead {
+  margin-top: 0.6rem;
+  max-width: 640px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
 /* ═══════════════════════════════════════════
    PROJECT CARDS
    ═══════════════════════════════════════════ */
