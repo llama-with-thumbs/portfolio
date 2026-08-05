@@ -244,6 +244,7 @@
       img: 'assets/rd/lasercutter/collage.jpg',
       links: [],
       gallery: [
+        { src: 'assets/rd/lasercutter/workshop.jpg', caption: 'The machine in my home workshop — CO₂ laser on a desk with the water chiller underneath, extraction ducted out, and sheet stock stored below.' },
         { src: 'assets/rd/lasercutter/laser-4.jpg', caption: 'Clips engraved as a batch — HOT !!!, TEA TIME, EAT ME — clamped flat in a row for one job.' },
         { src: 'assets/rd/lasercutter/laser-3.jpg', caption: 'Finished clips in use as labelled markers.' },
         { src: 'assets/rd/lasercutter/laser-2.jpg', caption: 'Shelf location plates 2.1 and 1.1, screwed to the shelf edge.' },
