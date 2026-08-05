@@ -1362,6 +1362,11 @@ body,
   padding: 2rem clamp(1.5rem, 4vw, 3rem) 5rem;
 }
 
+/* No hero above it — clear the fixed nav */
+.gallery--top {
+  padding-top: 7.5rem;
+}
+
 .gallery__filters {
   display: flex;
   flex-wrap: wrap;
