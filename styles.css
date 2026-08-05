@@ -1469,6 +1469,16 @@ body,
   transform: translateY(0);
 }
 
+/* Muted tile — black and white until hovered (thumbnails only, not the carousel) */
+.gallery__item--muted img {
+  filter: grayscale(1) brightness(0.82);
+  transition: filter 0.35s var(--ease), transform 0.45s var(--ease);
+}
+
+.gallery__item--muted:hover img {
+  filter: grayscale(0.35) brightness(0.95);
+}
+
 .gallery__item--hidden {
   display: none;
 }
