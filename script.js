@@ -193,6 +193,17 @@
       ]
     },
 
+    'helmet': {
+      year: 'Workshop commission',
+      title: 'Napoleonic Cavalry Helmet',
+      desc: 'A cavalry helmet of the Napoleonic period, made in a workshop producing reproductions of uniform and equipment from that era.\n\nThe piece combines brass work with leather, fur and horsehair: a polished skull with an embossed crest and ornamented comb, scale chinstrap and rosette boss, a fur turban around the base, a lacquered leather peak bound in brass, and the mane and plume set at the crown.\n\nI worked at the shop for about a year.',
+      tags: ['Brass Work', 'Metalwork', 'Historical Reproduction', 'Leather', 'Craft'],
+      img: 'assets/art/helmet.jpg',
+      links: [],
+      gallery: [
+        { src: 'assets/art/helmet.jpg', caption: 'Brass skull and comb with embossed ornament, fur turban, scale chinstrap, and horsehair mane and plume.' }
+      ]
+    },
     'iron-gates': {
       year: 'Saint Petersburg',
       title: 'Wrought Iron Gates — Restoration',
