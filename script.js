@@ -182,13 +182,14 @@
     },
     'sun-figure': {
       year: 'Wedding commission',
-      title: 'Sun Figure',
-      desc: 'A large sun-faced figure with outstretched arms, built as a wedding decoration.\n\nIt worked as the backdrop for the ceremony stage, and its fabric wings doubled as curtains — people could walk in and out through them.',
-      tags: ['Sculpture', 'Installation', 'Event Design', 'Fabric'],
+      title: 'Giant Puppet',
+      desc: 'A giant sun-faced puppet with outstretched hands, built as a wedding decoration.\n\nIt worked as the backdrop for the ceremony stage, and its fabric wings doubled as curtains — people could walk in and out through them.',
+      tags: ['Puppet', 'Sculpture', 'Installation', 'Event Design'],
       img: 'assets/art/wedding-backdrop.jpg',
       links: [],
       gallery: [
-        { src: 'assets/art/wedding-backdrop.jpg', caption: 'Standing at the ceremony site — the figure as stage backdrop, arms spread and fabric hung between them as curtains.' }
+        { src: 'assets/art/wedding-backdrop.jpg', caption: 'The puppet standing at the ceremony site, arms spread with the fabric hung between them.' },
+        { src: 'assets/art/puppet-ceremony.jpg', caption: 'In use during the ceremony — the couple framed by the gold face above and the open hands to either side.' }
       ]
     },
 
