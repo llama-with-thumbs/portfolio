@@ -301,6 +301,7 @@
       links: [],
       gallery: [
         { src: 'assets/rd/plant-rig/rig-wide.jpg', caption: 'Camera housing and diffused light column at the top, motorised platter below carrying the pot.' },
+        { src: 'assets/rd/plant-rig/rig-lights-off.jpg', caption: 'Lights off: the camera housing, the extrusion arm carrying the platter, and the belt running to the motor pulley.' },
         { src: 'assets/rd/plant-rig/rig.jpg', caption: 'The full rail on its wall bracket, with the O-ring belt running to the platter.' },
         { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg', caption: 'Early prototype of the turning mechanism.' }
       ]
