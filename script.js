@@ -193,6 +193,19 @@
       ]
     },
 
+    'iron-gates': {
+      year: 'Saint Petersburg',
+      title: 'Wrought Iron Gates — Restoration',
+      desc: 'Gates leading into the inner garden of an old house in Saint Petersburg, restored in the forge.\n\nOnly the right leaf survived. We copied it to rebuild the missing left one — matching the scrollwork, the fleur ornaments, and the circular К monogram so the pair reads as original.\n\nI worked as a blacksmith for about two years during my last years of college; this was one of the restoration jobs from that time.',
+      tags: ['Blacksmithing', 'Wrought Iron', 'Restoration', 'Forging', 'Ornamental Metalwork'],
+      img: 'assets/art/gates-1.jpg',
+      links: [],
+      gallery: [
+        { src: 'assets/art/gates-1.jpg', caption: 'The finished pair in the archway — the left leaf rebuilt from the surviving right one, down to the scrollwork crown and К monogram.' },
+        { src: 'assets/art/gates-2.jpg', caption: 'Open, seen from the street: Кузнечный переулок — Blacksmith Lane.' }
+      ]
+    },
+
     // ── R&D projects (rd.html) ──
     // Photos: drop images into assets/rd/<project>/ and list them in `gallery`.
     'sporescope-rig': {
