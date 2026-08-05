@@ -167,6 +167,31 @@
       gallery: []
     },
 
+    // ── Art (art.html) ──
+    'synthtember': {
+      year: 'Sep 11 – Nov 13, 2026',
+      title: 'Synth-tember: A Synthesis of Art + Science',
+      desc: 'A group exhibition at New Alliance Gallery bringing together artists working where art and science meet.\n\nI am one of the exhibiting artists, showing alongside more than forty others across the run of the show.',
+      tags: ['Group Exhibition', 'New Alliance Gallery', 'Art + Science'],
+      img: 'assets/art/synthtember.jpg',
+      links: [],
+      gallery: [
+        { src: 'assets/art/synthtember.jpg', caption: 'Show promo — Synth-tember: A Synthesis of Art + Science, 9/11 – 11/13 at New Alliance Gallery.' },
+        { src: 'assets/art/synthtember-artists.jpg', caption: 'The full list of exhibiting artists.' }
+      ]
+    },
+    'sun-figure': {
+      year: 'Wedding commission',
+      title: 'Sun Figure',
+      desc: 'A large sun-faced figure with outstretched arms, built as a wedding decoration.\n\nIt worked as the backdrop for the ceremony stage, and its fabric wings doubled as curtains — people could walk in and out through them.',
+      tags: ['Sculpture', 'Installation', 'Event Design', 'Fabric'],
+      img: 'assets/art/wedding-backdrop.jpg',
+      links: [],
+      gallery: [
+        { src: 'assets/art/wedding-backdrop.jpg', caption: 'Standing at the ceremony site — the figure as stage backdrop, arms spread and fabric hung between them as curtains.' }
+      ]
+    },
+
     // ── R&D projects (rd.html) ──
     // Photos: drop images into assets/rd/<project>/ and list them in `gallery`.
     'sporescope-rig': {
@@ -421,10 +446,11 @@
   }
 
   if (hasProjectModal) {
-    document.querySelectorAll('.card[data-project]').forEach(card => {
-      card.addEventListener('click', (e) => {
+    // Project cards and art gallery tiles both open the modal
+    document.querySelectorAll('[data-project]').forEach(el => {
+      el.addEventListener('click', (e) => {
         e.preventDefault();
-        openModal(card.dataset.project);
+        openModal(el.dataset.project);
       });
     });
 
