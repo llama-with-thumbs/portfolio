@@ -287,7 +287,8 @@
         { src: 'assets/rd/lasercutter/laser-4.jpg', caption: 'Clips engraved as a batch — HOT !!!, TEA TIME, EAT ME — clamped flat in a row for one job.' },
         { src: 'assets/rd/lasercutter/laser-3.jpg', caption: 'Finished clips in use as labelled markers.' },
         { src: 'assets/rd/lasercutter/laser-2.jpg', caption: 'Shelf location plates 2.1 and 1.1, screwed to the shelf edge.' },
-        { src: 'assets/rd/lasercutter/laser-1.jpg', caption: 'Plates 2.3 and 3.2 — level and position, so a box goes back where it belongs.' }
+        { src: 'assets/rd/lasercutter/laser-1.jpg', caption: 'Plates 2.3 and 3.2 — level and position, so a box goes back where it belongs.' },
+        { src: 'assets/rd/lasercutter/shelf-label.jpg', caption: 'Engraved name plate marking what a storage shelf holds.' }
       ]
     },
     'plant-rig': {
