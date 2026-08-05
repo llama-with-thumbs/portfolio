@@ -194,14 +194,17 @@
     },
 
     'helmet': {
-      year: 'Workshop commission',
-      title: 'Napoleonic Cavalry Helmet',
-      desc: 'A cavalry helmet of the Napoleonic period, made in a workshop producing reproductions of uniform and equipment from that era.\n\nThe piece combines brass work with leather, fur and horsehair: a polished skull with an embossed crest and ornamented comb, scale chinstrap and rosette boss, a fur turban around the base, a lacquered leather peak bound in brass, and the mane and plume set at the crown.\n\nI worked at the shop for about a year.',
+      year: 'Workshop work',
+      title: 'Napoleonic Helmets & Shakos',
+      desc: 'Uniform headwear of the Napoleonic period, made in a workshop producing reproductions of period uniform and equipment.\n\nEach piece pulls together several trades at once — raised and embossed brass, cast and chased fittings, nickel plate work, felt and cloth bodies, leather peaks bound in metal, fur turbans, and horsehair manes and plumes.\n\nI worked at the shop for about a year.',
       tags: ['Brass Work', 'Metalwork', 'Historical Reproduction', 'Leather', 'Craft'],
-      img: 'assets/art/helmet.jpg',
+      img: 'assets/art/helmet-collage.jpg',
       links: [],
       gallery: [
-        { src: 'assets/art/helmet.jpg', caption: 'Brass skull and comb with embossed ornament, fur turban, scale chinstrap, and horsehair mane and plume.' }
+        { src: 'assets/art/helmet.jpg', caption: 'Brass helmet — polished skull, embossed comb, scale chinstrap and rosette boss, fur turban, black horsehair mane and plume.' },
+        { src: 'assets/art/helmet-3.jpg', caption: 'The same pattern in an officer version, with a leopard-skin turban and gilt fittings.' },
+        { src: 'assets/art/helmet-2.jpg', caption: 'Czapka with a crimson cloth body and a gilt sunburst plate carrying the crowned N.' },
+        { src: 'assets/art/helmet-4.jpg', caption: 'Red shako with a silver eagle plate numbered 3, tricolour cockade and white band.' }
       ]
     },
     'iron-gates': {
