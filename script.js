@@ -291,7 +291,7 @@
     'lasercutter': {
       year: 'Ongoing',
       title: 'Laser Cutting & Engraving',
-      desc: 'An ongoing set of small parts cut and engraved on the laser — the kind of thing that takes ten minutes to draw and then quietly makes daily life work better.\n\nNumbered plates screwed to the edge of storage shelving turn a wall of boxes into addressable locations: 1.1, 2.1, 2.3, 3.2 — level and position, so anything can be put back where it belongs and found again. The plates are cut to a common outline with fixed screw holes, so a new one drops into the same jig and matches the rest.\n\nEngraved wooden clips carry what would otherwise be a strip of tape and a marker — HOT !!!, DO NOT EAT, EAT ME, TEA TIME — legible, reusable, and hard to ignore. They are engraved as a batch, clamped flat in a row so one job burns six clips at a time.\n\nWrite-up in progress — material and power settings per stock, the engraving font work, and the jig used to keep parts repeatable.',
+      desc: 'A collection of rapid one-off fixtures, labels, gauges, jigs, and workflow tools produced with a laser cutter to simplify everyday tasks and prototype mechanical ideas.',
       tags: ['Laser Cutting', 'Engraving', 'Plywood', 'Shop Fixtures'],
       swTags: ['Inkscape', 'Vector Design'],
       img: 'assets/rd/lasercutter/collage.jpg',
