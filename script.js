@@ -225,7 +225,7 @@
     'sporescope-rig': {
       year: '2025',
       title: 'SporeScope — Imaging Rig',
-      desc: 'A compact 16 × 15 × 18 in imaging rig built from 2020 aluminum extrusion and assembled with corner brackets and standard extrusion hardware. It holds 100 × 15 mm malt extract agar plates in fixed positions beneath a Raspberry Pi–controlled overhead camera, enabling consistent time-series image capture.\n\nThe plates are illuminated only from below with diffuse light. As colonies grow, they reduce light transmission through the agar and appear as increasingly defined silhouettes, allowing their shape and expansion to be tracked over time.\n\nThe web app groups plates under their chamber and gives each one a live row: the current frame with a scale bar, a culture profile (seeded culture, substrate, start date, elapsed time, total shape area in mm²), an LLM-written read on the state of the plate, the assembled time-lapse, the extracted colony outlines drawn over the dish, and an intensity chart across the run. Rows carry a freshness marker, so a plate that stopped reporting is obvious at a glance.\n\nEvery plate keeps its sample identifier under its chamber, so a sequence always traces back to the dish it came from.\n\nThe web app that reads these captures — plates, snippets, shape boundaries, and time-series metrics — is under Software Projects.',
+      desc: '<h4>Motivation</h4><p>Designed to automate long-term monitoring of fungal growth and evaluate whether simple, low-cost backlit imaging is sufficient to distinguish healthy mycelium from contamination without specialized optics.</p><h4>Engineering decisions</h4><ul><li>Built from modular aluminum extrusion to maintain stable camera-to-sample geometry during multi-week experiments.</li><li>Camera distance was intentionally increased beyond the minimum focus distance to reduce lens distortion while maintaining adequate resolution.</li><li>Uniform edge-lit LED panel provides repeatable shadow-based imaging across the entire plate.</li><li>A laser-cut plate holder seats each dish in a numbered position, preventing slipping and making remounting repeatable between runs.</li><li>Settled on a 30-minute capture interval — frequent enough to follow growth, without wasting cloud storage in the AWS S3 database.</li></ul><h4>Challenges</h4><ul><li>High humidity caused condensation on agar plates, introducing image noise and reducing measurement reliability.</li><li>Maintaining sub-pixel positional repeatability was essential because image analysis compares the same pixels over time.</li></ul><h4>Results</h4><ul><li>Raspberry Pi 4 + Camera Module 3 capture time-series images automatically.</li><li>Images are analyzed using both traditional image-processing techniques and an LLM, whose contamination assessments are compared with quantitative measurements.</li></ul>',
       tags: ['Aluminum Extrusion', 'Raspberry Pi', 'Backlit Imaging', 'Biological Imaging', 'Shape Detection'],
       swTags: ['Python', 'React', 'TypeScript', 'Firebase', 'LLM Analysis'],
       img: 'assets/rd/sporescope-rig/rig-wide.jpg',
@@ -235,6 +235,9 @@
       ],
       gallery: [
         { src: 'assets/rd/sporescope-rig/rig-wide.jpg', caption: '2020 extrusion frame with a backlit stage below and the overhead camera under the top plate.' },
+        { src: 'assets/rd/sporescope-rig/plate-holder.jpg', caption: 'Laser-cut plate holder on the backlit stage — six numbered seats stop the dishes sliding and let them be remounted in the same positions run after run.' },
+        { src: 'assets/rd/sporescope-rig/capture-regions.jpg', caption: 'Raw overhead frame from the Raspberry Pi camera — red circles mark the six plate positions cropped out of every capture and sent on for analysis.' },
+        { src: 'assets/rd/sporescope-rig/snippet-837C0C.png', caption: 'One plate cropped out of that frame and stored as its own record in the database — plate SMP-837C0C, the same dish assembled into the time-lapse below.' },
         { src: 'assets/rd/sporescope-rig/web-app.jpg', caption: 'Web app: one live row per plate — current frame, culture profile, GPT analysis, extracted colony outlines, and intensity over the run.' },
         { src: 'assets/rd/sporescope-rig/plate-837C0C.gif', caption: 'Plate SMP-837C0C — captured frames assembled into a time-lapse, stamped with elapsed hours.' },
         { src: 'assets/rd/sporescope-rig/plate-9A8231.gif', caption: 'Plate SMP-9A8231 — a colony spreading across the dish over the run.' }
@@ -243,7 +246,7 @@
     'bio-chart-rig': {
       year: '2023',
       title: 'Bio Chart — Sensor & Imaging Chamber',
-      desc: 'A compact sensor and imaging chamber built to collect repeatable data from biological samples. The enclosure contains sample shelves, sensors, controlled overhead lighting, and a camera for consistent image capture. A Raspberry Pi mounted externally connects to the internal components and coordinates data collection and transmission.\n\nMicrocontrollers record sensor measurements while the camera captures samples at scheduled intervals. The enclosed structure helps reduce changes in ambient light and keeps the samples, sensors, and camera in fixed positions throughout each experiment.\n\nCaptures land in a purpose-built data model: Firestore holds Chambers → Plates → Snippets → Shapes, with each snippet carrying its raw-image path and mean channel intensities, while Firebase Storage mirrors the same hierarchy. The software that reads it lives under Software Projects.',
+      desc: '<h4>Motivation</h4><p>Developed as a self-contained chamber for long-term observation of mycelium growing inside a closed environment, reducing the need for manual inspection.</p><h4>Features</h4><ul><li>Raspberry Pi-based imaging station captures photographs every 30 minutes.</li><li>Images are uploaded automatically and processed into an interactive web interface with time-lapse GIF generation.</li><li>RGB color metrics are tracked over time to identify growth trends and detect contamination.</li><li>The system is designed to notify the user via email or SMS when predefined conditions indicate abnormal growth.</li></ul><h4>Engineering decisions</h4><ul><li>Fully enclosed chamber minimizes environmental disturbance.</li><li>Integrated lighting ensures repeatable imaging conditions across long experiments.</li></ul>',
       tags: ['Raspberry Pi', 'Microcontrollers', 'Sensors', 'Image Capture', 'Data Acquisition', 'Biological Monitoring'],
       swTags: ['Python', 'React', 'TypeScript', 'Firestore', 'AWS EC2'],
       img: 'assets/rd/bio-chart-rig/rig-1.jpg',
@@ -253,20 +256,22 @@
       ],
       gallery: [
         { src: 'assets/rd/bio-chart-rig/rig-1.jpg', caption: 'Chamber open with the interior LED lighting on; the Raspberry Pi sits outside on the wall, camera ribbon passing through a cut window.' },
-        { src: 'assets/rd/bio-chart-rig/rig-3.jpg', caption: 'Stepped shelving holds labeled culture jars in fixed positions, so every capture frames the same subjects.' },
         { src: 'assets/rd/bio-chart-rig/rig-2.jpg', caption: 'Closed, with the chamber ID and static IP on the front plate.' },
+        { src: 'assets/rd/bio-chart-rig/capture-regions.jpg', caption: 'Raw full-size frame from the Pi camera — every jar carries its flask ID on the lid, and the red rectangle marks the region cropped out of each capture and stored as that flask\'s own record.' },
+        { src: 'assets/rd/bio-chart-rig/capture-a.jpg', caption: 'What the camera produces: one flask cropped out of a capture and stored as its own record — mycelium spreading through the grain. Frames like this feed the color-intensity analysis and assemble into the time-lapses below.' },
         { src: 'assets/rd/bio-chart-rig/data-model.png', caption: 'Data model: Firestore holds chambers → plates → snippets → shapes; Firebase Storage mirrors the same hierarchy for the files.' },
         { src: 'assets/rd/bio-chart-rig/web-interface.jpg', caption: 'Web interface: one row per flask — latest frame, flask parameters, time-lapse still, and mean red/green/blue intensity over the run.' },
         { video: 'assets/rd/bio-chart-rig/interface-demo.mp4', poster: 'assets/rd/bio-chart-rig/interface-demo-poster.jpg', caption: 'Interacting with the live interface.' },
         { src: 'assets/rd/bio-chart-rig/timelapse-a.gif', caption: 'Flask time-lapse — each frame stamped with elapsed hours.' },
         { src: 'assets/rd/bio-chart-rig/timelapse-b.gif', caption: 'A second flask over the same run.' },
-        { src: 'assets/rd/bio-chart-rig/timelapse-c.gif', caption: 'A third flask; weeks of growth play back in seconds.' }
+        { src: 'assets/rd/bio-chart-rig/timelapse-c.gif', caption: 'A third flask; weeks of growth play back in seconds.' },
+        { src: 'assets/rd/bio-chart-rig/timelapse-flower.gif', caption: 'The same rig pointed at something else entirely: a lily opening and collapsing over 92 hours, 367 captures at a fixed camera position. Nothing about the setup changes — only the subject.' }
       ]
     },
     'synchronicity-table': {
       year: 'In progress',
       title: 'Shared Signal',
-      desc: 'An interactive sculpture system combining physical fabrication with embedded computing.\n\nThe build spans woodworking and assembly, a Raspberry Pi driving the logic, LCD integration into the table surface, custom software, and the geometry that defines the piece.\n\nBecause the layout is the design, I built a browser tool to work it out before cutting anything — a design aid for this piece specifically, not a general app. Circles are placed on the surface at real dimensions, each labelled with its diameter in mm and dimensioned against the panel and its Ø667 mm envelope, with controls for table depth, individual circle sizes, and locking positions once they are settled. The animation runs live at adjustable speed, so the flowing colour fields are judged in motion rather than imagined; tilt and rotation sliders swing the arrangement into perspective, and a grouped view shows the sculpture as a body rather than a flat plan. Coordinates export to CSV to drive the build.\n\nThe piece is being built for Synth-tember at New Alliance Gallery, opening 11 September — the tool exists to get the layout settled and cut in time for that.\n\nWrite-up in progress — prototyping steps, fabrication photos, and notes on installation reliability coming.',
+      desc: '<h4>Motivation</h4><p>Developed for an interactive gallery installation where animated light patterns are displayed through hundreds of precisely positioned openings in a tabletop. The project required both a custom physical display system and software tools for rapid design iteration.</p><h4>Engineering decisions</h4><ul><li>Chose a Raspberry Pi 5 to drive a high-resolution LCD display with smooth real-time animation while keeping the hardware compact enough to integrate directly behind the tabletop.</li><li>Mounted the Raspberry Pi directly to the display to minimize footprint, simplify cable management, and keep the installation self-contained while maintaining physical access for maintenance.</li><li>The installation runs locally during exhibition without requiring an Internet connection. Content is developed on a web-based interface, deployed to the Raspberry Pi, and executed entirely from local storage.</li></ul><h4>Design software</h4><ul><li>Developed a custom interactive design application after determining that traditional CAD software was too slow for iterative visual exploration.</li><li>The application automatically generates and updates hundreds of circular cutouts while providing immediate rendered previews from multiple viewing angles, allowing rapid experimentation with layout and animation before fabrication.</li></ul><h4>Technologies</h4><p>Raspberry Pi 5 • LCD Display • JavaScript • SVG • HTML/CSS • GitHub Pages • SSH</p>',
       tags: ['Fabrication', 'Raspberry Pi', 'LCD', 'Geometry'],
       swTags: ['JavaScript', 'SVG', 'Browser Tool'],
       img: 'assets/rd/synchronicity-table/design-app.jpg',
@@ -279,7 +284,7 @@
     'coffee-cone': {
       year: 'Finished · in use',
       title: '3D-Printed Coffee Dosing Cone',
-      desc: 'A flexible dosing cone made for a 58 mm portafilter. It grips the basket rim by friction, prevents coffee grounds from spilling, and removes easily with one hand.\n\nPrinted in flexible TPU filament, I use it myself several times a day. It is a small but constant reminder of how useful 3D printing can be for solving simple, everyday problems.',
+      desc: '<h4>Motivation</h4><p>Designed after finding commercial metal dosing funnels inconvenient for daily use.</p><h4>Iteration</h4><ul><li>Multiple versions explored height, taper angle, flexibility, and material selection.</li><li>Final design uses TPU for a secure friction fit and easier one-handed removal.</li><li>Used daily, providing continuous real-world validation.</li></ul>',
       tags: ['CAD', '3D Printing', 'TPU', 'Functional Design'],
       img: 'assets/rd/coffee-cone/cone.jpg',
       links: [],
@@ -291,7 +296,7 @@
     'lasercutter': {
       year: 'Ongoing',
       title: 'Laser Cutting & Engraving',
-      desc: 'A collection of rapid one-off fixtures, labels, gauges, jigs, and workflow tools produced with a laser cutter to simplify everyday tasks and prototype mechanical ideas.',
+      desc: '<h4>Motivation</h4><p>A collection of small practical tools, labels, fixtures, and organizers created to solve everyday workflow problems around the house and workshop.</p><h4>Philosophy</h4><p>Rather than temporary labels or tape, laser engraving creates durable markings that remain readable throughout the lifetime of the object.</p>',
       tags: ['Laser Cutting', 'Engraving', 'Plywood', 'Shop Fixtures'],
       swTags: ['Inkscape', 'Vector Design'],
       img: 'assets/rd/lasercutter/collage.jpg',
@@ -308,7 +313,7 @@
     'plant-rig': {
       year: 'In progress',
       title: 'Plant Imaging Rig',
-      desc: 'A wall-mounted station for photographing a plant the same way, over and over, as it grows.\n\nThe build is a single vertical rail carrying three things: a Raspberry Pi camera in a printed housing at the top, a diffused light column around it so the subject is lit identically in every frame regardless of the room, and a wooden platter below on a bearing, driven by a motor through an O-ring belt. The motor turns the pot between shots, so each capture session yields the plant from multiple angles instead of one fixed face.\n\nThe rail mounts to the wall on a bracket, keeping camera-to-subject distance and framing fixed across weeks — the same constraint that makes the Bio Chart chamber images comparable.\n\nWrite-up in progress — motor driver and step timing, camera housing iterations, capture scheduling, and the software that assembles the sequences.',
+      desc: '<h4>Motivation</h4><p>Designed to create an affordable system for capturing long-term plant growth from multiple viewing angles, enabling reconstruction of animated 3D models of slow biological processes. Unlike conventional photogrammetry systems that rely on many synchronized cameras, this approach uses a single rotating camera to reduce cost while supporting experiments lasting days or weeks.</p><h4>Engineering decisions</h4><ul><li>A rotating platform was designed to position the plant accurately for repeatable multi-angle imaging.</li><li>The platter indexes 15° every five minutes and captures a frame at each stop, so a full 360° revolution — 24 angles of the plant — completes every two hours.</li><li>The turntable was machined on a lathe to ensure concentricity, perpendicularity, and smooth rotation, minimizing positional errors during image capture.</li><li>A bearing-supported platform reduces friction and improves rotational stability.</li><li>A spring-loaded belt tensioning mechanism maintains consistent belt tension while minimizing load on the low-torque motor, allowing reliable unattended operation over long periods.</li><li>A custom light diffuser mounted near the camera provides soft, repeatable illumination while reducing harsh reflections.</li></ul><h4>Challenges</h4><ul><li>Finding the correct balance between belt tension and motor torque required multiple iterations.</li><li>The rotating platform needed to remain both precisely concentric and perpendicular to the rotation axis to prevent changes in belt tension and unwanted vibration.</li><li>Long-duration experiments demanded reliable mechanical performance with minimal maintenance.</li></ul><h4>Technologies</h4><p>Raspberry Pi • Camera Module • Belt Drive • Custom Turntable • Bearings • Spring Tensioner • Mechanical Design • Lathe Machining • Python</p>',
       tags: ['Raspberry Pi', 'Camera', 'Motor Control', 'Lighting', '3D Printing'],
       swTags: ['Python', 'Capture Scheduling', 'Time-Lapse'],
       img: 'assets/rd/plant-rig/rig-wide.jpg',
@@ -316,6 +321,9 @@
       gallery: [
         { src: 'assets/rd/plant-rig/rig-wide.jpg', caption: 'Camera housing and diffused light column at the top, motorised platter below carrying the pot.' },
         { src: 'assets/rd/plant-rig/rig-lights-off.jpg', caption: 'Lights off: the camera housing, the extrusion arm carrying the platter, and the belt running to the motor pulley.' },
+        { src: 'assets/rd/plant-rig/belt-drive.jpg', caption: 'The drive seen from the front: the motor pulley at the rail, a spring-loaded idler on each side, and the belt running down in a V to the platter below.' },
+        { src: 'assets/rd/plant-rig/belt-tensioner.jpg', caption: 'Spring-loaded idler pulleys press against the drive belt, keeping it under constant tension.' },
+        { src: 'assets/rd/plant-rig/platter.jpg', caption: 'The platter: a lightweight stand with timing belt bonded around the rim to give the drive belt grip, riding on bearings for smooth rotation over many repetitions.' },
         { video: 'assets/rd/plant-rig/prototype.mp4', poster: 'assets/rd/plant-rig/prototype-poster.jpg', caption: 'Early prototype of the turning mechanism.' }
       ]
     },

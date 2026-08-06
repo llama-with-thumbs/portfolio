@@ -959,6 +959,52 @@ body,
   margin-bottom: 1rem;
 }
 
+/* Structured descriptions: labelled sections + bulleted lines */
+.modal__desc h4 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal__desc h4:first-child {
+  margin-top: 0;
+}
+
+.modal__desc p {
+  margin-bottom: 0.5rem;
+}
+
+.modal__desc ul {
+  margin-bottom: 0.5rem;
+}
+
+.modal__desc li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.modal__desc li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.modal__desc > :last-child {
+  margin-bottom: 0;
+}
+
 .modal__tags {
   display: flex;
   flex-wrap: wrap;

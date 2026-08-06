@@ -737,6 +737,12 @@ hr.web1-hr {
   margin-bottom: 8px;
 }
 
+/* Square markers, no softening — period-correct list styling */
+[data-theme="web1"] .modal__desc li::before {
+  border-radius: 0;
+  opacity: 1;
+}
+
 [data-theme="web1"] .modal__tags {
   gap: 4px;
   margin-bottom: 10px;

@@ -53,7 +53,7 @@
           <div class="card__body">
             <span class="card__year">2025</span>
             <h4 class="card__title">SporeScope — Imaging Rig</h4>
-            <p class="card__desc">A compact 16 × 15 × 18 in rig in 2020 aluminum extrusion, holding agar plates in fixed positions under a Raspberry Pi–controlled overhead camera for consistent time-series capture.</p>
+            <p class="card__desc">Designed to automate long-term monitoring of fungal growth and evaluate whether simple, low-cost backlit imaging is sufficient to distinguish healthy mycelium from contamination without specialized optics.</p>
             <div class="card__tags">
               <span>Aluminum Extrusion</span><span>Raspberry Pi</span><span>Backlit Imaging</span><span class="tag--sw">React</span><span class="tag--sw">Firebase</span>
             </div>
@@ -68,7 +68,7 @@
           <div class="card__body">
             <span class="card__year">2023</span>
             <h4 class="card__title">Bio Chart — Sensor &amp; Imaging Chamber</h4>
-            <p class="card__desc">A compact sensor and imaging chamber for repeatable data from biological samples — sample shelves, sensors, controlled overhead lighting, and a camera, coordinated by an externally mounted Raspberry Pi.</p>
+            <p class="card__desc">Developed as a self-contained chamber for long-term observation of mycelium growing inside a closed environment, reducing the need for manual inspection.</p>
             <div class="card__tags">
               <span>Raspberry Pi</span><span>Microcontrollers</span><span>Sensors</span><span class="tag--sw">Python</span><span class="tag--sw">React</span>
             </div>
@@ -76,16 +76,16 @@
           <div class="card__arrow">&rarr;</div>
         </a>
 
-        <a href="#" class="card" data-project="synchronicity-table">
-          <div class="card__img">
-            <img src="assets/rd/synchronicity-table/design-app.jpg" alt="Shared Signal layout tool" loading="lazy">
+        <a href="#" class="card" data-project="plant-rig">
+          <div class="card__img card__img--fit" style="--thumb: url('assets/rd/plant-rig/rig-wide.jpg')">
+            <img src="assets/rd/plant-rig/rig-wide.jpg" alt="Wall-mounted plant imaging rig" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
-            <h4 class="card__title">Shared Signal</h4>
-            <p class="card__desc">Interactive sculpture system — fabrication, Raspberry Pi, LCD integration, and a purpose-built browser tool for positioning the geometry and previewing the animation at real dimensions.</p>
+            <h4 class="card__title">Plant Imaging Rig</h4>
+            <p class="card__desc">Designed to create an affordable system for capturing long-term plant growth from multiple viewing angles, enabling reconstruction of animated 3D models of slow biological processes. Unlike conventional photogrammetry systems that rely on many synchronized cameras, this approach uses a single rotating camera to reduce cost while supporting experiments lasting days or weeks.</p>
             <div class="card__tags">
-              <span>Fabrication</span><span>Raspberry Pi</span><span>LCD</span><span class="tag--sw">JavaScript</span><span class="tag--sw">Browser Tool</span>
+              <span>Raspberry Pi</span><span>Camera</span><span>Motor Control</span><span class="tag--sw">Python</span><span class="tag--sw">Time-Lapse</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
@@ -98,7 +98,7 @@
           <div class="card__body">
             <span class="card__year">Finished &middot; in use</span>
             <h4 class="card__title">3D-Printed Coffee Dosing Cone</h4>
-            <p class="card__desc">A flexible dosing cone made for a 58&nbsp;mm portafilter. It grips the basket rim by friction, prevents coffee grounds from spilling, and removes easily with one hand.</p>
+            <p class="card__desc">Designed after finding commercial metal dosing funnels inconvenient for daily use.</p>
             <div class="card__tags">
               <span>CAD</span><span>3D Printing</span><span>TPU</span><span>Functional Design</span>
             </div>
@@ -113,7 +113,7 @@
           <div class="card__body">
             <span class="card__year">Ongoing</span>
             <h4 class="card__title">Laser Cutting &amp; Engraving</h4>
-            <p class="card__desc">A collection of rapid one-off fixtures, labels, gauges, jigs, and workflow tools produced with a laser cutter to simplify everyday tasks and prototype mechanical ideas.</p>
+            <p class="card__desc">A collection of small practical tools, labels, fixtures, and organizers created to solve everyday workflow problems around the house and workshop.</p>
             <div class="card__tags">
               <span>Laser Cutting</span><span>Engraving</span><span>Plywood</span><span class="tag--sw">Inkscape</span><span class="tag--sw">Vector Design</span>
             </div>
@@ -121,16 +121,16 @@
           <div class="card__arrow">&rarr;</div>
         </a>
 
-        <a href="#" class="card" data-project="plant-rig">
-          <div class="card__img card__img--fit" style="--thumb: url('assets/rd/plant-rig/rig-wide.jpg')">
-            <img src="assets/rd/plant-rig/rig-wide.jpg" alt="Wall-mounted plant imaging rig" loading="lazy">
+        <a href="#" class="card" data-project="synchronicity-table">
+          <div class="card__img">
+            <img src="assets/rd/synchronicity-table/design-app.jpg" alt="Shared Signal layout tool" loading="lazy">
           </div>
           <div class="card__body">
             <span class="card__year">In progress</span>
-            <h4 class="card__title">Plant Imaging Rig</h4>
-            <p class="card__desc">Wall-mounted Raspberry Pi camera station with its own diffused light and a belt-driven motorized platter that rotates the plant between shots for consistent multi-angle capture.</p>
+            <h4 class="card__title">Shared Signal</h4>
+            <p class="card__desc">Developed for an interactive gallery installation where animated light patterns are displayed through hundreds of precisely positioned openings in a tabletop. The project required both a custom physical display system and software tools for rapid design iteration.</p>
             <div class="card__tags">
-              <span>Raspberry Pi</span><span>Camera</span><span>Motor Control</span><span class="tag--sw">Python</span><span class="tag--sw">Time-Lapse</span>
+              <span>Fabrication</span><span>Raspberry Pi</span><span>LCD</span><span class="tag--sw">JavaScript</span><span class="tag--sw">Browser Tool</span>
             </div>
           </div>
           <div class="card__arrow">&rarr;</div>
@@ -184,7 +184,7 @@
       <div class="modal__body">
         <span class="modal__year" id="modalYear"></span>
         <h2 class="modal__title" id="modalTitle"></h2>
-        <p class="modal__desc" id="modalDesc"></p>
+        <div class="modal__desc" id="modalDesc"></div>
         <div class="modal__tags" id="modalTags"></div>
         <div class="modal__links" id="modalLinks"></div>
         <div class="modal__gallery" id="modalGallery"></div>
