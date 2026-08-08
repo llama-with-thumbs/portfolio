@@ -194,29 +194,41 @@
     },
 
     'helmet': {
-      year: 'Workshop work',
-      title: 'Napoleonic Helmets & Shakos',
-      desc: 'Uniform headwear of the Napoleonic period, made in a workshop producing reproductions of period uniform and equipment.\n\nEach piece pulls together several trades at once — raised and embossed brass, cast and chased fittings, nickel plate work, felt and cloth bodies, leather peaks bound in metal, fur turbans, and horsehair manes and plumes.\n\nI worked at the shop for about a year.',
+      year: 'Process Engineer · November 2009 – September 2011',
+      title: 'JSC "Antik" — Historical Reproduction Manufacturing',
+      desc: '<h4>Context</h4><p>Manufacturer of historically accurate reproductions of 18th–19th century military uniforms, edged weapons, and artifacts — shakos, dragoon and cuirassier helmets, plates, and fittings — for museums, collectors, and reenactment.</p><h4>The problem</h4><p>Every product had two specifications that could conflict: what the historical object actually was, and what could be produced repeatably with available equipment and materials. Original techniques and tooling no longer exist; original stock is often unavailable. The job was to close that gap without the result becoming a costume.</p><h4>What I did</h4><ul><li>Researched objects from primary and secondary sources to establish what was actually being reproduced before any process was chosen.</li><li>Defined manufacturing processes for each part — milling, drilling, turning, stamping, heat treatment — and adapted traditional techniques to modern materials and equipment.</li><li>Coordinated craftsmen and production staff, and built the production schedules that sequenced their work.</li><li>Procured materials and components against those specifications.</li><li>Manufactured products directly and performed quality control against the researched standard.</li></ul><h4>Engineering decisions</h4><ul><li>Historical sources conflict. Deciding what to build meant weighing evidence, not just copying a photograph — and documenting the decision so the same object could be made the same way twice.</li><li>Substituting a modern material changes more than the material. Different alloys form, spring back, and finish differently, so a like-for-like swap silently changes the geometry unless the process is re-tuned around it.</li><li>Process selection was driven by run size. A form worth cutting tooling for at fifty units is worth doing by hand at five, and getting that threshold wrong is expensive in either direction.</li><li>Craft work does not schedule like machine work. Sequencing a shop where some operations are hand-paced and others are machine-paced meant planning around the people, not just the process times.</li></ul><h4>Equipment</h4><p>Milling machines · Engine lathes · Hydraulic press · Muffle furnace</p>',
       tags: ['Brass Work', 'Metalwork', 'Historical Reproduction', 'Leather', 'Craft'],
       img: 'assets/art/helmet-collage.jpg',
       links: [],
       gallery: [
-        { src: 'assets/art/helmet.jpg', caption: 'Brass helmet — polished skull, embossed comb, scale chinstrap and rosette boss, fur turban, black horsehair mane and plume.' },
-        { src: 'assets/art/helmet-3.jpg', caption: 'The same pattern in an officer version, with a leopard-skin turban and gilt fittings.' },
-        { src: 'assets/art/helmet-2.jpg', caption: 'Czapka with a crimson cloth body and a gilt sunburst plate carrying the crowned N.' },
-        { src: 'assets/art/helmet-4.jpg', caption: 'Red shako with a silver eagle plate numbered 3, tricolour cockade and white band.' }
+        { src: 'assets/art/repro-czapka.jpg', caption: 'Czapka, 1st Chevau-Légers Lanciers of the Imperial Guard (Polish Lancers), c. 1810–1814 — crimson cloth, struck brass sunray plate, silvered cypher.' },
+        { src: 'assets/art/repro-dragoon-officer.jpg', caption: 'French dragoon officer\'s helmet, First Empire — brass skull, leopard-skin turban, horsehair mane.' },
+        { src: 'assets/art/repro-dragoon-helmet.jpg', caption: 'French dragoon helmet, First Empire — sealskin turban, repoussé lion mask on the comb.' },
+        { src: 'assets/art/repro-shako-1812.jpg', caption: 'French Empire shako, 1812 pattern — eagle-on-crescent plate, 3rd Regiment.' },
+        { src: 'assets/art/repro-cartridge-pouch.jpg', caption: 'Cartridge pouch (lyadunka), Russian Guard cavalry — star of the Order of St Andrew, enamelled and gilt.' }
       ]
     },
     'iron-gates': {
-      year: 'Saint Petersburg',
-      title: 'Wrought Iron Gates — Restoration',
-      desc: 'Gates leading into the inner garden of an old house in Saint Petersburg, restored in the forge.\n\nOnly the right leaf survived. We copied it to rebuild the missing left one — matching the scrollwork, the fleur ornaments, and the circular К monogram so the pair reads as original.\n\nI worked as a blacksmith for about two years during my last years of college; this was one of the restoration jobs from that time.',
-      tags: ['Blacksmithing', 'Wrought Iron', 'Restoration', 'Forging', 'Ornamental Metalwork'],
-      img: 'assets/art/gates-1.jpg',
+      year: 'Blacksmith · December 2007 – February 2009 · Saint Petersburg',
+      title: 'Metalmorphosis — Forged Metalwork',
+      desc: '<h4>Context</h4><p>A custom forge producing one-off architectural and functional metalwork: gates, canopies, furniture, and smaller commissioned pieces. Every job began as a conversation with a client and ended as a physical object with no second chance at the material.</p><h4>What I did</h4><ul><li>Designed and estimated complex forged structures — gates, canopies, and furniture — translating a client\'s description into a buildable design with a defensible cost.</li><li>Fabricated pieces from concept through completion at the anvil and the hammer.</li><li>Worked directly with clients to review designs, refine requirements, and coordinate execution through delivery.</li></ul><h4>Engineering decisions</h4><ul><li>Estimating forged work means predicting labor, not just material. A twisted collar and a straight bar of the same weight are not the same job. Getting quotes right required understanding how long each operation actually takes at temperature.</li><li>Hot work is unforgiving of sequencing errors: heat has to be spent in the right order, because reheating costs scale and distorts what is already finished.</li><li>Design had to account for what the process can hold. Forged tolerances are not machined tolerances, and joints were detailed to absorb that variation rather than fight it.</li></ul><h4>Equipment</h4><p>Muffle furnace · Pneumatic power hammer · Anvil and hand tools</p>',
+      tags: ['Blacksmithing', 'Wrought Iron', 'Forging', 'Ornamental Metalwork', 'Restoration'],
+      img: 'assets/art/smith-collage.jpg',
       links: [],
       gallery: [
-        { src: 'assets/art/gates-1.jpg', caption: 'The finished pair in the archway — the left leaf rebuilt from the surviving right one, down to the scrollwork crown and К monogram.' },
-        { src: 'assets/art/gates-2.jpg', caption: 'Open, seen from the street: Кузнечный переулок — Blacksmith Lane.' }
+        { src: 'assets/art/gates-1.jpg', caption: 'Courtyard gate, 18 Vereyskaya Ulitsa, St Petersburg — apartment building by L. M. Kharlamov, 1901. Left leaf forged as a replacement to match the surviving right leaf; right leaf cleaned and restored.' },
+        { src: 'assets/art/gates-2.jpg', caption: 'Courtyard gate, 18 Vereyskaya Ulitsa, St Petersburg — apartment building by L. M. Kharlamov, 1901. Left leaf forged as a replacement to match the surviving right leaf; right leaf cleaned and restored.' },
+        { src: 'assets/art/smith-canopy.jpg', caption: 'Entrance canopy over the door of a brick building — forged scrollwork filling the arched tympanum, carried on slender columns.' },
+        { src: 'assets/art/smith-gates-new.jpg', caption: 'Driveway gates set into a stone wall — spear-topped railing above solid leaves, ring pulls, and a scrolled heart under a star finial.' },
+        { src: 'assets/art/smith-spiral-stair.jpg', caption: 'Spiral staircase — forged balusters of scrolls and pointed leaves winding around the central column, under a bent timber handrail.' },
+        { src: 'assets/art/smith-chandelier.jpg', caption: 'Chandelier — a riveted and punched iron band carrying six candle arms and tapered drops, hung on a hand-formed chain.' },
+        { src: 'assets/art/smith-bench.jpg', caption: 'Hall bench: an upholstered seat on a light forged frame, with scrolls sweeping through the back.' },
+        { src: 'assets/art/smith-fire-doors.jpg', caption: 'Fireplace doors — crossed bars with scroll and rosette ornament inside an arched frame, hinged to open as a pair.' },
+        { src: 'assets/art/smith-cafe-furniture.jpg', caption: 'Café tables and stools in Gatchina — twisted and tapered forged legs under plank tops.' },
+        { src: 'assets/art/blade-tanto.jpg', caption: 'Tanto — hand-forged blade, olive wood mounts; silver guard modelled in wax and centrifugally cast in one piece at St Petersburg State Marine Technical University.' },
+        { src: 'assets/art/blade-tanto-2.jpg', caption: 'Tanto — hand-forged blade, olive wood mounts; silver guard modelled in wax and centrifugally cast in one piece at St Petersburg State Marine Technical University.' },
+        { src: 'assets/art/blade-side-sword.jpg', caption: 'Side sword — forged ring guard and side ring, wire-wrapped grip.' },
+        { src: 'assets/art/smith-shop.jpg', caption: 'In the shop: working a panel down over the anvil, a colleague steadying it against the horn. I am on the left.' }
       ]
     },
 
