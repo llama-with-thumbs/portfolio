@@ -519,34 +519,19 @@
   const themeToggle = document.getElementById('themeToggle');
   const root = document.documentElement;
 
+  // Visitors who left the retired 90s mode switched on still have it saved.
   const saved = localStorage.getItem('theme');
-  if (saved) {
+  if (saved === 'web1') {
+    localStorage.setItem('theme', 'dark');
+    root.setAttribute('data-theme', 'dark');
+  } else if (saved) {
     root.setAttribute('data-theme', saved);
   }
 
   themeToggle.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    const next = (current === 'light' || current === 'web1') ? 'dark' : 'light';
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-  });
-
-  // ── Web 1.0 toggle ──
-  const web1Toggle = document.getElementById('web1Toggle');
-  let preWeb1Theme = null;
-
-  web1Toggle.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    if (current === 'web1') {
-      const restore = preWeb1Theme || 'dark';
-      root.setAttribute('data-theme', restore);
-      localStorage.setItem('theme', restore);
-      preWeb1Theme = null;
-    } else {
-      preWeb1Theme = current;
-      root.setAttribute('data-theme', 'web1');
-      localStorage.setItem('theme', 'web1');
-    }
   });
 
   // ── Nav scroll state ──
@@ -588,12 +573,6 @@
   });
 
   reveals.forEach(el => observer.observe(el));
-
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.hero .reveal').forEach(el => {
-      el.classList.add('reveal--visible');
-    });
-  });
 
   // ── Contact form (EmailJS) ──
   // TODO: Replace these with your EmailJS credentials

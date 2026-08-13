@@ -177,82 +177,6 @@ img {
    HERO
    ═══════════════════════════════════════════ */
 
-.hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  min-height: 100dvh;
-  padding: 56px clamp(1.5rem, 4vw, 3rem) 0;
-}
-
-.hero__content {
-  max-width: var(--max-w);
-  width: 100%;
-  margin: 0 auto;
-}
-
-.hero__greeting {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.hero__name {
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero__tagline {
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
-  color: var(--text-muted);
-  max-width: 480px;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.hero__cta {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.hero__scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-dim);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-.hero__scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--text-dim), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
-}
-
 /* ═══════════════════════════════════════════
    BUTTONS
    ═══════════════════════════════════════════ */
@@ -332,6 +256,34 @@ img {
   letter-spacing: -0.02em;
 }
 
+/* "See all …" link under a teaser band on the home page */
+.section__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* Art teaser on the home page. The Art page itself lays these out as masonry
+   (.gallery__grid uses `columns`), which is right there but reads as ragged
+   next to the even card rows above it — so on the home page only, the same
+   tiles become a matching grid with a fixed image height. Scoped to
+   .section.projects, a wrapper the Art page never uses. */
+.section.projects .gallery__grid {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.section.projects .gallery__item {
+  margin: 0;
+}
+
+.section.projects .gallery__item img {
+  height: 240px;
+  object-fit: cover;
+}
+
 /* Heading plus a lead line, for pages that open straight into a section */
 .section__intro {
   margin-bottom: 2.5rem;
@@ -343,6 +295,25 @@ img {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-muted);
+}
+
+/* Home page: the name line that replaced the full-height hero. Keeps the
+   hero's gradient treatment at a size that doesn't push the work below. */
+.section__name {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Home page: hairline marking where one band of work ends and the next
+   begins, so R&D / Software / Art read as separate groups. */
+.section--divided {
+  border-top: 1px solid var(--border);
 }
 
 /* ═══════════════════════════════════════════
@@ -797,28 +768,6 @@ img {
 [data-theme="light"] .theme-toggle__icon--moon {
   opacity: 1;
   transform: scale(1) rotate(0deg);
-}
-
-/* ── Web 1.0 Toggle Button ── */
-
-.web1-toggle {
-  padding: 0.3rem 0.6rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  font-family: 'Courier New', monospace;
-  color: var(--text-muted);
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-  flex-shrink: 0;
-}
-
-.web1-toggle:hover {
-  color: var(--accent);
-  border-color: var(--border-hover);
-  background: var(--bg-card);
 }
 
 /* Smooth theme transition on body */
@@ -1303,12 +1252,6 @@ body,
   transform: translateY(0);
 }
 
-/* Stagger children in hero */
-.hero .reveal:nth-child(1) { transition-delay: 0.1s; }
-.hero .reveal:nth-child(2) { transition-delay: 0.2s; }
-.hero .reveal:nth-child(3) { transition-delay: 0.35s; }
-.hero .reveal:nth-child(4) { transition-delay: 0.5s; }
-
 /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
@@ -1368,17 +1311,9 @@ body,
     gap: 2rem;
   }
 
-  .hero__cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 480px) {
-  .hero__name {
-    font-size: 2.2rem;
-  }
-
   .section {
     padding: 3.5rem 1.25rem;
   }
@@ -1391,16 +1326,6 @@ body,
 /* ═══════════════════════════════════════════
    ART GALLERY
    ═══════════════════════════════════════════ */
-
-.art-hero {
-  min-height: 60vh;
-  min-height: 60dvh;
-  padding-top: 8rem;
-}
-
-.art-hero .hero__content {
-  text-align: left;
-}
 
 .gallery {
   max-width: var(--max-w);

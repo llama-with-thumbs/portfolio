@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vlad Filitovich — Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="web1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +20,7 @@
     <div class="nav__right">
       <ul class="nav__links" id="navLinks">
         <li><a href="rd.html">R&amp;D</a></li>
-        <li><a href="#projects">Software Projects</a></li>
+        <li><a href="software.html">Software Projects</a></li>
         <li><a href="art.html">Art</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -30,275 +29,164 @@
         <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
         <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
       </button>
-      <button class="web1-toggle" id="web1Toggle" aria-label="Toggle 90s mode">90s</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero" id="hero">
-    <div class="hero__content">
-      <p class="hero__greeting reveal">Hi, I'm</p>
-      <h1 class="hero__name reveal">Vlad Filitovich</h1>
-      <marquee class="hero__marquee web1-only" scrollamount="4">~ Welcome to my Personal Homepage! ~</marquee>
-      <p class="hero__tagline reveal">Multidisciplinary R&amp;D Engineer combining hardware prototyping, manufacturing processes, experimental design, and software development.</p>
-      <div class="hero__cta reveal">
-        <a href="#projects" class="btn btn--primary">View Work</a>
-        <a href="#contact" class="btn btn--outline">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero__scroll-hint">
-      <span>scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </header>
-
-  <div class="under-construction web1-only">** This site is under construction! Check back soon for updates! **</div>
-  <hr class="web1-hr web1-only">
-
   <!-- PROJECTS -->
-  <section class="section projects" id="projects">
+  <section class="section section--top projects" id="work">
+    <div class="section__intro reveal">
+      <h1 class="section__name">Vlad Filitovich</h1>
+      <p class="section__lead">Multidisciplinary R&amp;D Engineer combining hardware prototyping, manufacturing processes, experimental design, and software development.</p>
+    </div>
+
     <div class="section__header reveal">
       <span class="section__label">01</span>
+      <h2 class="section__title">R&amp;D Projects</h2>
+    </div>
+
+    <div class="projects__grid reveal">
+
+        <a href="#" class="card" data-project="sporescope-rig">
+          <div class="card__img">
+            <img src="assets/rd/sporescope-rig/rig-wide.jpg" alt="SporeScope imaging rig" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">SporeScope — Imaging Rig</h4>
+            <p class="card__desc">Designed to automate long-term monitoring of fungal growth and evaluate whether simple, low-cost backlit imaging is sufficient to distinguish healthy mycelium from contamination without specialized optics.</p>
+            <div class="card__tags">
+              <span>Aluminum Extrusion</span><span>Raspberry Pi</span><span>Backlit Imaging</span><span class="tag--sw">React</span><span class="tag--sw">Firebase</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="plant-rig">
+          <div class="card__img card__img--fit" style="--thumb: url('assets/rd/plant-rig/rig-wide.jpg')">
+            <img src="assets/rd/plant-rig/rig-wide.jpg" alt="Wall-mounted plant imaging rig" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">In progress</span>
+            <h4 class="card__title">Plant Imaging Rig</h4>
+            <p class="card__desc">Designed to create an affordable system for capturing long-term plant growth from multiple viewing angles, enabling reconstruction of animated 3D models of slow biological processes. Unlike conventional photogrammetry systems that rely on many synchronized cameras, this approach uses a single rotating camera to reduce cost while supporting experiments lasting days or weeks.</p>
+            <div class="card__tags">
+              <span>Raspberry Pi</span><span>Camera</span><span>Motor Control</span><span class="tag--sw">Python</span><span class="tag--sw">Time-Lapse</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+        <a href="#" class="card" data-project="helmet">
+          <div class="card__img">
+            <img src="assets/art/helmet-collage.jpg" alt="Reproduction czapka, dragoon helmets and shako" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2009 – 2011</span>
+            <h4 class="card__title">JSC &quot;Antik&quot; — Historical Reproduction Manufacturing</h4>
+            <p class="card__desc">Process engineer at a manufacturer of historically accurate reproductions of 18th–19th century military uniforms, edged weapons, and artifacts. Every product had two specifications that could conflict: what the historical object actually was, and what could be produced repeatably with available equipment and materials.</p>
+            <div class="card__tags">
+              <span>Process Engineering</span><span>Metalwork</span><span>Heat Treatment</span><span>Historical Reproduction</span><span>Quality Control</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
+
+    </div>
+
+    <div class="section__more reveal">
+      <a href="rd.html" class="btn btn--outline">See all R&amp;D projects &rarr;</a>
+    </div>
+  </section>
+
+  <section class="section section--divided projects" id="projects">
+    <div class="section__header reveal">
+      <span class="section__label">02</span>
       <h2 class="section__title">Software Projects</h2>
     </div>
 
     <div class="projects__grid reveal">
 
-      <a href="#" class="card" data-project="sememes">
-        <div class="card__img">
-          <img src="assets/sememe/thumbnail.svg" alt="Sememes" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2026</span>
-          <h4 class="card__title">Sememes</h4>
-          <p class="card__desc">Voice note recorder with Whisper transcription, auto-translation, and interactive Topic Map — a vis.js graph of recurring themes linked to the exact moments they appear.</p>
-          <div class="card__tags">
-            <span>Python</span><span>Flask</span><span>Whisper</span><span>vis.js</span><span>SSE</span>
+        <a href="#" class="card" data-project="sememes">
+          <div class="card__img">
+            <img src="assets/sememe/thumbnail.svg" alt="Sememes" loading="lazy">
           </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
+          <div class="card__body">
+            <span class="card__year">2026</span>
+            <h4 class="card__title">Sememes</h4>
+            <p class="card__desc">Voice note recorder with Whisper transcription, auto-translation, and interactive Topic Map — a vis.js graph of recurring themes linked to the exact moments they appear.</p>
+            <div class="card__tags">
+              <span>Python</span><span>Flask</span><span>Whisper</span><span>vis.js</span><span>SSE</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
 
-      <a href="#" class="card" data-project="sporescope">
-        <div class="card__img">
-          <img src="assets/sporescope/data-model.png" alt="SporeScope Data Model" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2025</span>
-          <h4 class="card__title">SporeScope</h4>
-          <p class="card__desc">Ontology-based data model linking chambers, plates, and analytical snippets in Firestore with Firebase Storage assets. Feature extraction includes RGB intensities, growth area, perimeter, and polygon boundary shapes stored as semantic subcollections.</p>
-          <div class="card__tags">
-            <span>Ontology</span><span>Firestore</span><span>Canvas</span><span>Recharts</span>
+        <a href="#" class="card" data-project="sporescope">
+          <div class="card__img">
+            <img src="assets/sporescope/data-model.png" alt="SporeScope Data Model" loading="lazy">
           </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">SporeScope</h4>
+            <p class="card__desc">Ontology-based data model linking chambers, plates, and analytical snippets in Firestore with Firebase Storage assets. Feature extraction includes RGB intensities, growth area, perimeter, and polygon boundary shapes stored as semantic subcollections.</p>
+            <div class="card__tags">
+              <span>Ontology</span><span>Firestore</span><span>Canvas</span><span>Recharts</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
 
-      <a href="#" class="card" data-project="hot-springs">
-        <div class="card__img">
-          <img src="assets/hot-springs-finder/thumbnail.png" alt="Hot Springs Finder" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2025</span>
-          <h4 class="card__title">Hot Springs Finder</h4>
-          <p class="card__desc">Interactive Leaflet.js map of thermal springs across the US. Search with autocomplete, temperature filtering, satellite/default views, and responsive mobile design.</p>
-          <div class="card__tags">
-            <span>Leaflet.js</span><span>JavaScript</span><span>GitHub Pages</span>
+        <a href="#" class="card" data-project="hot-springs">
+          <div class="card__img">
+            <img src="assets/hot-springs-finder/thumbnail.png" alt="Hot Springs Finder" loading="lazy">
           </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="musictutor">
-        <div class="card__img">
-          <img src="assets/musictutor/instance-graph.png" alt="MusicTutor Instance Graph" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2025</span>
-          <h4 class="card__title">MusicTutor</h4>
-          <p class="card__desc">RDF/OWL ontology modeling curriculum structure, temporal participation, and conversational interaction. Apache Jena Fuseki triple store with SPARQL querying via Node/Express API.</p>
-          <div class="card__tags">
-            <span>RDF/OWL</span><span>Fuseki</span><span>SPARQL</span><span>Node.js</span>
+          <div class="card__body">
+            <span class="card__year">2025</span>
+            <h4 class="card__title">Hot Springs Finder</h4>
+            <p class="card__desc">Interactive Leaflet.js map of thermal springs across the US. Search with autocomplete, temperature filtering, satellite/default views, and responsive mobile design.</p>
+            <div class="card__tags">
+              <span>Leaflet.js</span><span>JavaScript</span><span>GitHub Pages</span>
+            </div>
           </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="bio-chart">
-        <div class="card__img">
-          <img src="assets/bio-chart/thumbnail.png" alt="Bio Chart" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2023</span>
-          <h4 class="card__title">Bio Chart</h4>
-          <p class="card__desc">Microcontroller-driven sensor data pipeline — collects, processes, and visualizes biological growth data. Multi-stage image analysis with RGB extraction and interactive web dashboard.</p>
-          <div class="card__tags">
-            <span>React</span><span>TypeScript</span><span>Firebase</span><span>Python</span><span>AWS EC2</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="language-for-kids">
-        <div class="card__img">
-          <img src="assets/language-for-kids/thumbnail.png" alt="Language for Kids" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2022</span>
-          <h4 class="card__title">Language for Kids</h4>
-          <p class="card__desc">Web-based game hub making language learning fun for children. Collaborative UI design with a graphic designer — responsive layouts, game carousel, login/registration, and progress tracking.</p>
-          <div class="card__tags">
-            <span>JavaScript</span><span>Figma</span><span>Responsive</span><span>Firebase</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="covid-dashboard">
-        <div class="card__img">
-          <img src="assets/covid-dashboard/thumbnail.png" alt="Covid Dashboard" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2021</span>
-          <h4 class="card__title">Covid Dashboard</h4>
-          <p class="card__desc">SPA with MVC architecture tracking pandemic data. Interactive Mapbox map and D3.js charts with data from Johns Hopkins CSSE.</p>
-          <div class="card__tags">
-            <span>D3.js</span><span>Mapbox</span><span>Webpack</span><span>MVC</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="medart">
-        <div class="card__img">
-          <img src="assets/medart-endodontics/thumbnail.png" alt="MedArt Endodontics" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2021</span>
-          <h4 class="card__title">MedArt Endodontics</h4>
-          <p class="card__desc">Professional dental clinic website with appointment booking and service showcase.</p>
-          <div class="card__tags">
-            <span>HTML/CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="bh-healthcare">
-        <div class="card__img">
-          <img src="assets/bh-healthcare/thumbnail.png" alt="BH Healthcare" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2020</span>
-          <h4 class="card__title">BH Healthcare</h4>
-          <p class="card__desc">Company site for a home health care provider in MA. Application forms with Formik/Yup, email via EmailJS, search with Fuse.js, multilingual support, and Google Apps Script automation for internal workflows.</p>
-          <div class="card__tags">
-            <span>React</span><span>Bootstrap</span><span>Formik</span><span>Fuse.js</span><span>Apps Script</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="gem-puzzle">
-        <div class="card__img">
-          <img src="assets/gem-puzzle/thumbnail.svg" alt="Gem Puzzle" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2021</span>
-          <h4 class="card__title">Gem Puzzle</h4>
-          <p class="card__desc">Classic sliding tile puzzle game with smooth animations and move counter.</p>
-          <div class="card__tags">
-            <span>JavaScript</span><span>CSS3</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="english-cards">
-        <div class="card__img">
-          <img src="assets/english-cards/thumbnail.svg" alt="English Cards" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2021</span>
-          <h4 class="card__title">English Cards</h4>
-          <p class="card__desc">Flashcard-based vocabulary learning app with flip animations and category selection.</p>
-          <div class="card__tags">
-            <span>JavaScript</span><span>CSS Animations</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="memoji">
-        <div class="card__img">
-          <img src="assets/memoji/thumbnail.png" alt="Memoji Game" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2020</span>
-          <h4 class="card__title">Memoji</h4>
-          <p class="card__desc">Memory card game — Coursera Front-End capstone. Flip animations, visual feedback, modular game logic, and cross-device responsive design.</p>
-          <div class="card__tags">
-            <span>HTML5</span><span>CSS3</span><span>ES6+</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="calculator">
-        <div class="card__img">
-          <img src="assets/calculator/thumbnail.svg" alt="Calculator" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2020</span>
-          <h4 class="card__title">Calculator</h4>
-          <p class="card__desc">Functional calculator app with keyboard support and clean UI.</p>
-          <div class="card__tags">
-            <span>JavaScript</span><span>HTML/CSS</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="virtual-keyboard">
-        <div class="card__img">
-          <img src="assets/virtual-keyboard/thumbnail.svg" alt="Virtual Keyboard" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">2020</span>
-          <h4 class="card__title">Virtual Keyboard</h4>
-          <p class="card__desc">On-screen virtual keyboard with multilingual support and key press animations.</p>
-          <div class="card__tags">
-            <span>JavaScript</span><span>DOM Events</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
-
-      <a href="#" class="card" data-project="more-projects">
-        <div class="card__img">
-          <img src="assets/more-projects/thumbnail.svg" alt="More Projects" loading="lazy">
-        </div>
-        <div class="card__body">
-          <span class="card__year">Various</span>
-          <h4 class="card__title">More Projects</h4>
-          <p class="card__desc">MusicTutor (React Native + OpenAI), Ziz (Flask accounting), Budget Math (React/TS), Timely-Notify (FastAPI + Leaflet)</p>
-          <div class="card__tags">
-            <span>React Native</span><span>Flask</span><span>FastAPI</span><span>TypeScript</span>
-          </div>
-        </div>
-        <div class="card__arrow">&rarr;</div>
-      </a>
+          <div class="card__arrow">&rarr;</div>
+        </a>
 
     </div>
 
-</section>
+    <div class="section__more reveal">
+      <a href="software.html" class="btn btn--outline">See all software projects &rarr;</a>
+    </div>
+  </section>
 
-  <hr class="web1-hr web1-only">
+  <section class="section section--divided projects">
+    <div class="section__header reveal">
+      <span class="section__label">03</span>
+      <h2 class="section__title">Art &amp; Craft</h2>
+    </div>
+
+    <div class="gallery__grid reveal">
+
+        <a href="#" class="gallery__item" data-project="synthtember" data-category="exhibition">
+          <img src="assets/art/synthtember.jpg" alt="Synth-tember: A Synthesis of Art + Science" loading="lazy">
+          <div class="gallery__caption"><strong>Synth-tember</strong><span>New Alliance Gallery · Sep 11 – Nov 13</span></div>
+        </a>
+
+        <a href="#" class="gallery__item" data-project="sun-figure" data-category="installation">
+          <img src="assets/art/wedding-backdrop.jpg" alt="Giant sun-faced puppet at a wedding ceremony" loading="lazy">
+          <div class="gallery__caption"><strong>Giant Puppet</strong><span>Wedding decoration · stage backdrop and curtain</span></div>
+        </a>
+
+    </div>
+
+    <div class="section__more reveal">
+      <a href="art.html" class="btn btn--outline">See all art projects &rarr;</a>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="contact__content reveal">
-      <span class="section__label">02</span>
+      <span class="section__label">04</span>
       <h2 class="section__title">Let's Work Together</h2>
       <p class="contact__text">Have a project in mind or just want to chat? I'd love to hear from you.</p>
       <form class="contact__form" id="contactForm">
@@ -327,8 +215,6 @@
       <div class="footer__links">
         <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <div class="footer__best-viewed web1-only">Best viewed in Netscape Navigator 4.0 at 800x600 resolution</div>
-      <div class="footer__counter web1-only">You are visitor #00847 since January 2026</div>
     </div>
   </footer>
 
