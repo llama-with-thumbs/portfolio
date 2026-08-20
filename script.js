@@ -324,6 +324,15 @@
         { src: 'assets/rd/synchronicity-table/panel-finished.jpg', caption: 'The same panel after finishing — a poured marbled surface worked over the top face and the profiled edge, with every bore left open for the light to read through.' }
       ]
     },
+    'wdt-tool': {
+      year: 'Finished · in use',
+      title: 'WDT Tool for Espresso',
+      desc: '<h4>What it is</h4><p>A WDT (Weiss Distribution Technique) tool: a set of fine needles stirred through the dose sitting in the portafilter basket, breaking up the clumps that come off the grinder before the coffee is tamped.</p><h4>Why it matters</h4><p>Clumped grounds channel. Water takes the loosest route it can find through the puck, over-extracting along that path and leaving the rest of the bed under-extracted. Tamping cannot fix it — pressing down on an uneven bed just compresses the unevenness. The distribution has to be corrected while the coffee is still loose.</p><p><em>Build details and photographs to follow.</em></p>',
+      tags: ['Espresso', 'Tool Design', 'Fabrication'],
+      img: '',
+      links: [],
+      gallery: []
+    },
     'coffee-cone': {
       year: 'Finished · in use',
       title: '3D-Printed Coffee Dosing Cone',
