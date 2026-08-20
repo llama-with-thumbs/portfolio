@@ -13,7 +13,7 @@
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <a href="#" class="nav__logo">VF</a>
+    <a href="index.html" class="nav__logo">VF</a>
     <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -45,6 +45,21 @@
     </div>
 
     <div class="projects__grid reveal">
+
+        <a href="#" class="card" data-project="kettle-actuator">
+          <div class="card__img">
+            <img src="assets/rd/kettle-actuator/assembled.jpg" alt="Spring-loaded actuator for a water boiler button" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__year">2026 &middot; in use</span>
+            <h4 class="card__title">Accessible Button Actuator &mdash; Zojirushi Water Boiler</h4>
+            <p class="card__desc">The boiler dispenses only while a small unlock button is held and a second button pressed &mdash; a precise, sustained fingertip movement that is painful or impossible with limited finger mobility. This attachment turns both buttons into raised, spring-loaded caps that can be worked with a loose hand or a closed fist.</p>
+            <div class="card__tags">
+              <span>Accessibility</span><span>Assistive Design</span><span>Ergonomics</span><span>Prototyping</span><span>Spring Mechanism</span>
+            </div>
+          </div>
+          <div class="card__arrow">&rarr;</div>
+        </a>
 
         <a href="#" class="card" data-project="sporescope-rig">
           <div class="card__img">
@@ -189,22 +204,10 @@
       <span class="section__label">04</span>
       <h2 class="section__title">Let's Work Together</h2>
       <p class="contact__text">Have a project in mind or just want to chat? I'd love to hear from you.</p>
-      <form class="contact__form" id="contactForm">
-        <div class="form__group">
-          <label for="fromName" class="form__label">Name</label>
-          <input type="text" id="fromName" name="from_name" class="form__input" required>
-        </div>
-        <div class="form__group">
-          <label for="fromEmail" class="form__label">Email</label>
-          <input type="email" id="fromEmail" name="from_email" class="form__input" required>
-        </div>
-        <div class="form__group">
-          <label for="message" class="form__label">Message</label>
-          <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--lg form__submit">Send Message</button>
-        <p class="form__status" id="formStatus"></p>
-      </form>
+      <div class="contact__actions">
+        <a href="#" class="btn btn--primary btn--lg" data-mail="dmxhZC5maWxpdG92aWNoQGdtYWlsLmNvbQ==" data-mail-show rel="nofollow">Email me</a>
+        <a href="https://www.linkedin.com/in/vlad-filitovich/" target="_blank" rel="noopener" class="btn btn--outline btn--lg">LinkedIn</a>
+      </div>
     </div>
   </section>
 
@@ -214,6 +217,8 @@
       <span>&copy; 2026 Vlad Filitovich</span>
       <div class="footer__links">
         <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vlad-filitovich/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" data-mail="dmxhZC5maWxpdG92aWNoQGdtYWlsLmNvbQ==" rel="nofollow">Email</a>
       </div>
     </div>
   </footer>
@@ -237,7 +242,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

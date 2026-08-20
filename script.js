@@ -193,6 +193,26 @@
       ]
     },
 
+    'eltech': {
+      year: 'Process Engineer · mid-2014 – 2016 · Saint Petersburg',
+      title: 'ElTech SPb — High-Tech Manufacturing Facility Design & Equipping',
+      desc: '<h4>Context</h4><p>An engineering company delivering large projects to design, modernize, and equip high-tech manufacturing facilities — microelectronics and other advanced manufacturing. Scope ran from individual equipment purchases up to the modernization or creation of complete manufacturing processes and production areas, including a factory producing diodes for lighting products.</p><h4>The problem</h4><p>A customer arrives with drawings, specifications, and manufacturing requirements — not an equipment list. Somebody has to read the existing and proposed technological processes out of that documentation, judge whether the operations actually needed can be performed on the machines under consideration, and identify everything else the process will require before any of it is bought. Here a mistake is paid for in capital equipment rather than in scrap.</p><h4>What I did</h4><ul><li>Reviewed customer drawings, specifications, and manufacturing requirements to understand the existing and proposed technological processes.</li><li>Evaluated whether existing manufacturing operations could be performed on proposed CNC machines, and identified where new equipment, tooling, fixtures, or process changes were required.</li><li>Compared alternative manufacturing technologies and equipment on achievable tolerances, productivity, tooling requirements, and compatibility with the overall process.</li><li>Worked with CNC and equipment manufacturers to verify that proposed machines could meet the technical requirements of specific manufacturing operations.</li><li>Followed projects from early planning through equipment selection, purchasing, delivery, installation, commissioning, and production startup.</li></ul><h4>Engineering decisions</h4><ul><li>The question is never whether a machine is good, but whether it can hold the operations this particular part needs. Testing a proposed machine against the customer\'s actual operations is what turns a specification into a decision, and it is where equipment that looks adequate on paper gets ruled out.</li><li>A machine on its own is not a process. Tooling, fixtures, and process changes frequently decide whether an operation is feasible at all, so they had to be identified during selection rather than discovered at installation.</li><li>Alternatives have to be compared on all the terms at once — achievable tolerance, productivity, tooling requirement, and fit with the rest of the process. Optimising against any one of them in isolation produces the wrong machine.</li><li>Vendor capability had to be verified against specific operations, not general specification. Working directly with the manufacturers was how to establish whether a machine would meet the requirement for the operation it was actually being bought for.</li><li>Commissioning belongs inside the scope, not after it. On one project covering three DMG Mori Seiki machines, the manufacturer sent an instructor from Japan for several days to train the operators, and I carried the technical side through installation and startup. Capability that arrives with the machine but not with the people never reaches the product.</li></ul><h4>Scope</h4><p>CNC machining centres (DMG Mori Seiki) · Microelectronics and electronic-component production · LED diode manufacturing</p>',
+      tags: ['Process Engineering', 'Equipment Selection', 'CNC', 'Tooling & Fixtures', 'Microelectronics', 'Commissioning'],
+      img: '',
+      links: [],
+      gallery: []
+    },
+
+    'diesel-energo': {
+      year: 'Process Engineer · September 2011 – mid-2014 · Saint Petersburg',
+      title: 'Diesel-Energo — Marine & Standby Power Engine Overhaul',
+      desc: '<h4>Context</h4><p>A Saint Petersburg repair works for large diesel engines, tracing its lineage to the Nobel machine works of the early twentieth century. The shop overhauled large marine diesel engines and diesel-electric generator sets — including Russky Dizel DG-4000 units at roughly 3.5–4 MW per engine — of the kind that supply emergency and standby power to critical facilities such as hospitals and metro stations. The work covered manufacture as well as major overhaul: for an overhaul the entire engine was delivered into the shop to be stripped down, inspected, and rebuilt with worn parts replaced.</p><h4>The problem</h4><p>Overhaul is not production. Every engine arrives worn in its own way, and a shop of about a hundred people still has to turn that into work which can be planned, sequenced, and repeated. The technological processes had to be firm enough to schedule against and still absorb whatever each engine turned out to need.</p><h4>What I did</h4><ul><li>Oversaw execution of the technological processes across a shop of roughly 100 people, and revised those processes where they could be improved.</li><li>Held the technological processes for major overhaul — strip-down, inspection of worn components, replacement or reconditioning, and rebuild — as complete engines came through the shop.</li><li>Owned the process route for machined components, working primarily in the mechanical machining area and coordinating supporting operations such as powder coating and laser marking.</li><li>Worked with the quality control department to confirm that parts met the required dimensional tolerances and technical specifications.</li><li>Maintained the routing whenever a process was revised, so each component followed the correct sequence of operations and reached the right department at the right stage.</li><li>Integrated a newly purchased CNC turning machine into existing production, developing the processes built around it with the goal of automating work and shortening it.</li><li>Redesigned existing operations to remove handling and measurement steps, including designing custom tooling and carrying it through fabrication, testing, and release into production.</li></ul><h4>Engineering decisions</h4><ul><li>An aluminium hose clamp is the clearest example. It was made in two operations: the part was parted off from the tube, then reloaded into the spindle, measured, and its end radiused. That second setup cost a reload and a measurement that depended on the operator getting it right. I designed a tool that parted the finished part off while simultaneously forming the radius on the end of the next one, still in the bar. One operation instead of two, no reload, no measuring — and the radius comes from the tool geometry rather than from operator judgement, so it is the same on every part.</li><li>I designed that tool, then followed it through fabrication, trial, and formal incorporation into the technological process. A tool that works at the machine but never reaches the process documentation does not survive the person who made it.</li><li>A process change is not finished when the operation changes. The routing has to change with it — the sequence, the department, and the stage at which the part arrives — or a revision that improves one operation quietly breaks the ones downstream of it.</li><li>Buying a CNC machine does not by itself automate anything. The value came from deciding which existing operations were worth moving onto it and building the processes around it, rather than treating the purchase as the improvement.</li></ul><h4>Scope &amp; equipment</h4><p>Mechanical machining · Powder coating · Laser marking · Quality control · CNC turning machine · Custom form tooling</p>',
+      tags: ['Process Engineering', 'Major Overhaul', 'Inspection', 'Quality Control', 'CNC Integration', 'Tool Design'],
+      img: '',
+      links: [],
+      gallery: []
+    },
+
     'helmet': {
       year: 'Process Engineer · November 2009 – September 2011',
       title: 'JSC "Antik" — Historical Reproduction Manufacturing',
@@ -210,7 +230,7 @@
     },
     'iron-gates': {
       year: 'Blacksmith · December 2007 – February 2009 · Saint Petersburg',
-      title: 'Metalmorphosis — Forged Metalwork',
+      title: 'Metalmorphosis (Andrey Promyslov Workshop) — Forged Metalwork',
       desc: '<h4>Context</h4><p>A custom forge producing one-off architectural and functional metalwork: gates, canopies, furniture, and smaller commissioned pieces. Every job began as a conversation with a client and ended as a physical object with no second chance at the material.</p><h4>What I did</h4><ul><li>Designed and estimated complex forged structures — gates, canopies, and furniture — translating a client\'s description into a buildable design with a defensible cost.</li><li>Fabricated pieces from concept through completion at the anvil and the hammer.</li><li>Worked directly with clients to review designs, refine requirements, and coordinate execution through delivery.</li></ul><h4>Engineering decisions</h4><ul><li>Estimating forged work means predicting labor, not just material. A twisted collar and a straight bar of the same weight are not the same job. Getting quotes right required understanding how long each operation actually takes at temperature.</li><li>Hot work is unforgiving of sequencing errors: heat has to be spent in the right order, because reheating costs scale and distorts what is already finished.</li><li>Design had to account for what the process can hold. Forged tolerances are not machined tolerances, and joints were detailed to absorb that variation rather than fight it.</li></ul><h4>Equipment</h4><p>Muffle furnace · Pneumatic power hammer · Anvil and hand tools</p>',
       tags: ['Blacksmithing', 'Wrought Iron', 'Forging', 'Ornamental Metalwork', 'Restoration'],
       img: 'assets/art/smith-collage.jpg',
@@ -234,6 +254,23 @@
 
     // ── R&D projects (rd.html) ──
     // Photos: drop images into assets/rd/<project>/ and list them in `gallery`.
+    'kettle-actuator': {
+      year: '2026 · in use',
+      title: 'Accessible Button Actuator — Zojirushi Water Boiler',
+      desc: '<h4>Motivation</h4><p>The Zojirushi CV-DCC dispenses water only while an unlock button is held and a second dispense button is pressed. Both are small, nearly flush with the lid, and set close together, so operating them means placing a fingertip accurately and holding a sustained press. For someone with limited finger mobility or painful joints that combination — small target, precise placement, force delivered through a fingertip — is what makes the appliance hard to use without help.</p><h4>The problem</h4><p>The difficulty is not that the buttons are stiff. It is that they demand precision and a fine pinch-type movement. Any fix that only reduces the force needed leaves the accuracy requirement in place, so the design had to change what kind of movement operates the appliance, not just how hard it is.</p><h4>Design</h4><ul><li>A first prototype extended each button upward with a dowel, a foam grip and a bead, purely to test height, spacing and reach in place on the appliance before committing to a made part.</li><li>The working version is a spring-loaded plunger running in a turned barrel: a domed cap on a shaft, a compression spring around it, and a housing with a flared base that seats over the original button. Roughly 80 mm tall.</li><li>Raising the actuation point converts a fingertip press into a gross movement that can be made with a loose hand, a knuckle, or a closed fist.</li></ul><h4>Engineering decisions</h4><ul><li>The target is the problem, not the force. Enlarging the button into a raised cap means accuracy stops mattering — the hand no longer has to find a small flush target, so the movement can come from the arm rather than from the fingers.</li><li>The spring is there for feedback, not to reduce effort. A control you cannot feel is one you press too hard and hold too long. A defined spring travel with a clear response at the end of it tells the user the press has registered, without watching the appliance or pushing to the limit of the joint.</li><li>Height changes which joints do the work. Lifting the control above the lid lets the wrist stay neutral and the load fall on the arm and shoulder instead of the finger joints, which is where the pain is.</li><li>Built in materials that can be worked by hand — turned wood, cork and a stock compression spring — so the part could be fitted to the actual button positions and revised on the spot rather than driven from a drawing.</li></ul><h4>Materials</h4><p>Turned wood · Cork · Stock compression spring · Metal cap</p>',
+      tags: ['Accessibility', 'Assistive Design', 'Ergonomics', 'Prototyping', 'Spring Mechanism', 'Woodturning'],
+      img: 'assets/rd/kettle-actuator/assembled.jpg',
+      links: [],
+      gallery: [
+        { src: 'assets/rd/kettle-actuator/assembled.jpg', caption: 'The finished actuator assembled — domed cap on a turned shaft, sprung inside a barrel with a flared cork base.' },
+        { src: 'assets/rd/kettle-actuator/parts.jpg', caption: 'Plunger and housing separated: the compression spring sits around the shaft, and the barrel is bored to guide it.' },
+        { src: 'assets/rd/kettle-actuator/parts-detail.jpg', caption: 'Bore and flared base of the housing, which seats over the original button and spreads the load across the lid.' },
+        { src: 'assets/rd/kettle-actuator/early-prototype.jpg', caption: 'First prototype in place on the CV-DCC — dowel, foam grip and bead, used to test height, spacing and reach before making a finished part.' },
+        { src: 'assets/rd/kettle-actuator/sketch-sections.jpg', caption: 'Design sketches: sectioned elevation carrying the 80 mm height and bore diameter, the spring and its travel, and a pictorial of the assembly.' },
+        { src: 'assets/rd/kettle-actuator/sketch-concept.jpg', caption: 'Early concept sketch working out the plunger, the spring and the flared base.' }
+      ]
+    },
+
     'sporescope-rig': {
       year: '2025',
       title: 'SporeScope — Imaging Rig',
@@ -574,40 +611,15 @@
 
   reveals.forEach(el => observer.observe(el));
 
-  // ── Contact form (EmailJS) ──
-  // TODO: Replace these with your EmailJS credentials
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-
-  if (!contactForm) return;
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('.form__submit');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    formStatus.textContent = '';
-    formStatus.className = 'form__status';
-
-    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
-      .then(() => {
-        formStatus.textContent = 'Message sent successfully!';
-        formStatus.classList.add('form__status--success');
-        contactForm.reset();
-      })
-      .catch(() => {
-        formStatus.textContent = 'Something went wrong. Please try again.';
-        formStatus.classList.add('form__status--error');
-      })
-      .finally(() => {
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
-      });
+  // ── Email links ──
+  // The address is encoded rather than written into the markup, so it is not
+  // sitting in the page source for address harvesters to regex out. Assembled
+  // here at runtime; [data-mail-show] also gets the address as its label.
+  document.querySelectorAll('[data-mail]').forEach(el => {
+    let addr;
+    try { addr = atob(el.dataset.mail); } catch (err) { return; }
+    el.href = 'mailto:' + addr;
+    if (el.hasAttribute('data-mail-show')) el.textContent = addr;
   });
+
 })();
