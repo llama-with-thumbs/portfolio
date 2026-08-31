@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Vlad Filitovich — Nausea City — Synth-tember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --surface: #16161a;
+      --text: #f2f2f0;
+      --muted: #a0a0a8;
+      --dim: #6e6e78;
+      --line: #26262c;
+      --accent: #ff5fd2;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .wrap { max-width: 720px; margin: 0 auto; }
+
+    /* ── Header ── */
+    .head { text-align: center; margin-bottom: 3rem; }
+
+    .head__name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .head__venue {
+      margin-top: 0.9rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .head__show {
+      margin-top: 0.65rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .head__dates {
+      margin-top: 0.3rem;
+      font-size: 0.82rem;
+      color: var(--dim);
+    }
+
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: var(--line);
+      margin: 2.25rem auto 0;
+      border: 0;
+    }
+
+    /* ── Work ── */
+    .piece { margin-bottom: 3.25rem; }
+
+    .frame {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-touch-callout: none;
+      pointer-events: none;
+    }
+
+    /* transparent layer so a long-press or right-click lands here, not on the image */
+    .frame__guard {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+    }
+
+    .label { padding-top: 1.25rem; }
+
+    .label__title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .label__meta {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .label__status {
+      margin-top: 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+    }
+
+    /* ── Show poster ── */
+    .show {
+      border-top: 1px solid var(--line);
+      padding-top: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .show__label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--dim);
+      margin-bottom: 1.25rem;
+    }
+
+    .show__poster {
+      max-width: 300px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .show__poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* ── Enquiries ── */
+    .foot {
+      border-top: 1px solid var(--line);
+      padding-top: 2.5rem;
+      text-align: center;
+    }
+
+    .foot__label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--dim);
+    }
+
+    .foot__text {
+      margin-top: 0.9rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .foot a {
+      display: inline-block;
+      margin-top: 1.1rem;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      color: var(--bg);
+      background: var(--accent);
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .foot a:hover { opacity: 0.85; }
+
+    .foot__copy {
+      margin-top: 2.5rem;
+      font-size: 0.72rem;
+      color: var(--dim);
+    }
+
+    @media (min-width: 600px) {
+      body { padding: 4rem 2rem 5rem; }
+      .head__name { font-size: 1.9rem; }
+      .label__title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header class="head">
+      <h1 class="head__name">Vlad Filitovich</h1>
+      <p class="head__venue">New Alliance Gallery</p>
+      <p class="head__show">Synth-tember: A Synthesis of Art + Science</p>
+      <p class="head__dates">September 11 &ndash; November 13, 2026</p>
+      <hr class="rule">
+    </header>
+
+    <main>
+
+      <article class="piece">
+        <div class="frame">
+          <img src="work-1.jpg" alt="Nausea City — acrylic on mixed materials and sculptural forms" draggable="false">
+          <div class="frame__guard"></div>
+        </div>
+        <div class="label">
+          <h2 class="label__title">Nausea City</h2>
+          <p class="label__meta">2026 &middot; Acrylic on mixed materials and sculptural forms &middot; Dimensions variable</p>
+          <p class="label__status">Not for sale</p>
+        </div>
+      </article>
+
+    </main>
+
+    <section class="show">
+      <p class="show__label">The exhibition</p>
+      <div class="show__poster">
+        <img src="poster.jpg" alt="Synth-tember: A Synthesis of Art + Science, New Alliance Gallery, 9/11 – 11/13" draggable="false">
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="foot__label">Enquiries</p>
+      <p class="foot__text">This piece is not for sale. Enquiries and commissions are welcome.</p>
+      <a href="#" data-mail="dmxhZC5maWxpdG92aWNoQGdtYWlsLmNvbQ==" rel="nofollow">Contact the artist</a>
+      <p class="foot__copy">&copy; 2026 Vlad Filitovich. All rights reserved.<br>Images may not be reproduced without permission.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      // Email assembled at runtime so the address is not in the page source.
+      document.querySelectorAll('[data-mail]').forEach(el => {
+        let addr;
+        try { addr = atob(el.dataset.mail); } catch (err) { return; }
+        el.href = 'mailto:' + addr;
+      });
+
+      // Discourage casual saving. This stops right-click and drag; it cannot
+      // stop a screenshot, which is why the files served here are web-resolution.
+      document.querySelectorAll('.frame, .show__poster').forEach(el => {
+        el.addEventListener('contextmenu', e => e.preventDefault());
+        el.addEventListener('dragstart', e => e.preventDefault());
+      });
+    })();
+  </script>
+
+</body>
+</html>
