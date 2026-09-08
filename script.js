@@ -600,19 +600,30 @@
   // ── Scroll reveal ──
   const reveals = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal--visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  const revealAll = () => reveals.forEach(el => el.classList.add('reveal--visible'));
 
-  reveals.forEach(el => observer.observe(el));
+  if (!('IntersectionObserver' in window)) {
+    // No observer, no animation - but the content must never stay hidden.
+    revealAll();
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      // Must stay 0. A fractional threshold is unreachable for any element
+      // taller than the viewport: the R&D grid is ~5600px on a phone against
+      // an ~844px screen, so it could never exceed 0.15 and the whole page
+      // stayed at opacity 0 while remaining clickable.
+      threshold: 0,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(el => observer.observe(el));
+  }
 
   // ── Email links ──
   // The address is encoded rather than written into the markup, so it is not
