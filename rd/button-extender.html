@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlad Filitovich — Button Extender v2</title>
+  <meta name="description" content="A spring-loaded, SLA-printed button extender for a Zojirushi water boiler, designed for users with hypermobility spectrum disorder. From hand sketches to parametric drawings, STEP models, a motion study and a printed series.">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Long-form write-up layout, on top of the site styles ── */
+    .article { max-width: 820px; }
+    .article .section__lead { max-width: none; font-size: 1.05rem; }
+    .crumbs { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .crumbs a { color: var(--accent); }
+    .crumbs a:hover { color: var(--accent-hover); }
+    .article h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+    .article h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin: 3.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article p { margin-bottom: 0.9rem; color: var(--text); font-weight: 300; }
+    .article p b, .article li b { font-weight: 600; }
+    .article ul { margin: 0 0 1rem; }
+    .article li { position: relative; padding-left: 1.1rem; margin-bottom: 0.55rem; font-weight: 300; }
+    .article li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .article ol { margin: 0 0 1rem 1.2rem; }
+    .article ol li { padding-left: 0.3rem; list-style: decimal; }
+    .article ol li::before { display: none; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.25rem 0 0; }
+    .tags span { font-size: 0.72rem; font-weight: 500; padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--tag-bg); color: var(--accent); }
+    .tags span.tag--sw { background: var(--tag-sw-bg); color: var(--tag-sw); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 2rem 0 0; }
+    .stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; }
+    .stat b { display: block; font-size: 1.35rem; font-weight: 600; color: var(--accent); letter-spacing: -0.02em; }
+    .stat span { font-size: 0.75rem; color: var(--text-muted); }
+
+    figure { margin: 1.25rem 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    figure img, figure video { display: block; width: 100%; height: auto; }
+    figure.light img { background: #fff; }
+    figcaption { font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); padding: 0.65rem 0.9rem; border-top: 1px solid var(--border); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .grid2 figure, .grid3 figure { margin: 0; }
+    .grid3 img { aspect-ratio: 3 / 4; object-fit: cover; }
+    .hero-row { margin-top: 2rem; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+    tr:last-child td { border-bottom: 0; }
+    td.num { white-space: nowrap; color: var(--text-muted); }
+    td.sizes { color: var(--text-muted); font-size: 0.8rem; min-width: 180px; }
+    th.what { width: 46%; }
+
+    .files { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; margin: 1rem 0; }
+    .files a { display: flex; flex-direction: column; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); font-size: 0.85rem; font-weight: 500; transition: border-color 0.2s, background 0.2s; }
+    .files a:hover { border-color: var(--border-hover); background: var(--bg-card-hover); }
+    .files a small { font-weight: 300; color: var(--text-muted); font-size: 0.75rem; }
+
+    .back { margin-top: 3rem; }
+
+    @media (max-width: 720px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .grid2, .grid3 { grid-template-columns: 1fr; }
+      .grid3 img { aspect-ratio: auto; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav__logo">VF</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="../rd.html">R&amp;D</a></li>
+        <li><a href="../software.html">Software Projects</a></li>
+        <li><a href="../art.html">Art</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2m0 15v2m-9.5-9.5h2m15 0h2m-3.04-6.46-1.42 1.42M7.46 16.54l-1.42 1.42m0-11.88 1.42 1.42m9.08 9.08 1.42 1.42"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75 9.75 9.75 0 0 1 8.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25 9.75 9.75 0 0 0 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="section section--top article">
+
+    <p class="crumbs"><a href="../rd.html">R&amp;D Projects</a> &rsaquo; Button Extender v2</p>
+    <h1>Button Extender v2 &mdash; Engineered &amp; SLA-Printed</h1>
+    <p class="section__lead">A four-part, spring-loaded button extender for a Zojirushi water boiler, designed for my roommates with hypermobility spectrum disorder. It turns a small, stiff fingertip button into a wide dome pressed with the palm. From three pencil sketches to dimensioned parametric drawings, STEP models and a motion study in about a week, then a small series printed in Formlabs resin.</p>
+    <div class="tags">
+      <span>Accessibility</span><span>Assistive Design</span><span>Mechanical Design</span><span>Parametric CAD</span><span>Spring Mechanism</span><span>Tolerancing</span><span>SLA Printing</span><span>Formlabs</span>
+      <span class="tag--sw">Python</span><span class="tag--sw">ezdxf</span><span class="tag--sw">CadQuery</span><span class="tag--sw">three.js</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>4</b><span>coaxial parts</span></div>
+      <div class="stat"><b>6 mm</b><span>stroke</span></div>
+      <div class="stat"><b>~28 N</b><span>spring force at the stop</span></div>
+      <div class="stat"><b>0.00 mm</b><span>both hard stops meet together</span></div>
+    </div>
+
+    <div class="grid2 hero-row">
+      <figure>
+        <img src="../assets/rd/button-extender/in-place.jpg" alt="SLA-printed button extender fitted over the dispense button of a Zojirushi water boiler, next to the first wood and cork version">
+        <figcaption>The printed extender over the dispense button, next to the first turned-wood and cork version still on the unlock button.</figcaption>
+      </figure>
+      <figure class="light">
+        <video src="../assets/rd/button-extender/press-3d.mp4" poster="../assets/rd/button-extender/hero-cutaway.png" autoplay loop muted playsinline></video>
+        <figcaption>Press-and-release motion, 3D cut-away with a live readout of cap travel, spring length and force.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Motivation</h2>
+    <p>The dispense button on our Zojirushi boiler is small, nearly flush with the lid, and meant for a fingertip. My roommates have hypermobility spectrum disorder (HSD). For them, pushing hard through the end of a finger puts the whole load on small, overly flexible joints: it hurts, and it risks inflaming those joints.</p>
+    <p>The <a href="../rd.html" style="color:var(--accent)">first actuator</a> I made for this boiler was turned by hand from wood and cork and fitted to the appliance on the spot. It solved the problem, but it is a one-off. Nothing about it could be reproduced, and every size in it lived in my head. This version keeps the same idea and turns it into a documented mechanical design: parts with drawings and tolerances, an assembly that was checked before anything was made, and a print order that anyone could repeat.</p>
+    <p>The extender sits over the original button. Instead of a fingertip, you press a wide domed cap with your palm, so the force is spread over a large area and carried by the hand and wrist. A rounded plunger at the bottom pushes the real button, and a spring returns everything when you let go.</p>
+
+    <h2>Design intent</h2>
+    <ul>
+      <li><b>Press with the palm, not the fingertip.</b> The cap is Ø27 mm, several times wider than the original button, so it fits under the palm and spreads the pressure instead of concentrating it at one point.</li>
+      <li><b>Nothing sharp under the hand.</b> The top is a shallow R50 dome that rolls into an R3 edge and an R9 flare: one tangent surface with no corner pressing into the skin.</li>
+      <li><b>A clear, solid end of travel.</b> The press ends on two hard stops that meet at the same moment, so the user feels exactly when the button is pressed and never pushes harder "to be sure".</li>
+      <li><b>Automatic return.</b> A spring lifts the cap back up, so it never has to be pulled or reset.</li>
+    </ul>
+
+    <h2>The parts</h2>
+    <table>
+      <tr><th>#</th><th>Part</th><th class="what">What it does</th><th>Key sizes (mm)</th></tr>
+      <tr><td class="num">1</td><td><b>Button cap</b></td><td>The surface you press. A wide domed top blends into a stem through one smooth curve and ends in a pin that guides the spring.</td><td class="sizes">Ø27 cap, 34.59 tall, R50 / R3 / R9 profile, Ø7.3 stem, Ø5.5 × 11.5 pin</td></tr>
+      <tr><td class="num">2</td><td><b>Spring</b></td><td>Returns the cap after each press. Stock compression spring.</td><td class="sizes">OD 7.4, 0.9 wire, 7 coils closed and ground, 21 free, ~4.7 N/mm</td></tr>
+      <tr><td class="num">3</td><td><b>Shaft</b></td><td>The body. A flared base sits on the appliance; a through bore guides the cap and holds the spring.</td><td class="sizes">28.84 tall, Ø20.5 base, Ø13 stem, Ø7.4 bore, R9 entry flare</td></tr>
+      <tr><td class="num">4</td><td><b>Plunger</b></td><td>Its spherical dome is the only thing that touches the appliance's own button.</td><td class="sizes">7.5 tall, Ø7.3 head, Ø5.5 × 3.5 pin</td></tr>
+    </table>
+    <p>All four parts are coaxial. Top to bottom: cap, spring, shaft, plunger. The spring sits inside the shaft bore between the cap's pin shoulder and the plunger's shoulder.</p>
+    <figure class="light">
+      <img src="../assets/rd/button-extender/models-quarter-cut.png" alt="3D models of the cap, shaft and plunger, quarter cut" loading="lazy">
+      <figcaption>The three printed parts as revolved solids, quarter cut. Exported from CadQuery as STEP and STL.</figcaption>
+    </figure>
+
+    <h2>How it works</h2>
+    <p>At rest the spring is relaxed at 21 mm and the plunger dome sits flush with the bottom of the shaft. Pressing the cap compresses the spring by 6 mm, to 15 mm and about 28 N, and pushes the plunger dome 2 mm below the shaft base. That 2 mm is what presses the appliance button. Releasing the cap lets the spring push everything back.</p>
+    <p>The stroke ends at two hard stops that are designed to touch at the same instant:</p>
+    <ol>
+      <li>the cap's pin meets the plunger's pin inside the bore, and</li>
+      <li>the R9 curve under the cap lands on the R9 flared opening at the top of the shaft.</li>
+    </ol>
+    <p>Both gaps reach 0.00 mm together, so the press feels solid and the load is shared across the wide flare rather than stopping on a Ø5.5 pin.</p>
+    <div class="grid2">
+      <figure class="light">
+        <video src="../assets/rd/button-extender/press-2d.mp4" poster="../assets/rd/button-extender/motion-rest-pressed.png" autoplay loop muted playsinline></video>
+        <figcaption>The same motion as a 2D half-section with a live readout.</figcaption>
+      </figure>
+      <figure class="light">
+        <img src="../assets/rd/button-extender/section-rest-pressed.png" alt="Assembled half-section at rest and pressed, with gaps and spring lengths" loading="lazy">
+        <figcaption>Assembled half-section at rest and at the first hard stop. Flare gap and pin gap both go from 6.00 to 0.00 mm.</figcaption>
+      </figure>
+    </div>
+
+    <h2>From sketch to drawing</h2>
+    <p>Each part started as a pencil sketch with its main dimensions, plus a written spec for the spring. Each sketch then became a small Python script whose dimensions sit at the top of the file. Running the script regenerates the DXF drawing and a PNG preview, so changing a size is a one-line edit and the drawing is never out of date.</p>
+    <div class="grid3">
+      <figure><img src="../assets/rd/button-extender/sketch-cap.jpg" alt="Hand sketch of the button cap" loading="lazy"><figcaption>Sketch: button cap</figcaption></figure>
+      <figure><img src="../assets/rd/button-extender/sketch-shaft.jpg" alt="Hand sketch of the shaft" loading="lazy"><figcaption>Sketch: shaft</figcaption></figure>
+      <figure><img src="../assets/rd/button-extender/sketch-plunger.jpg" alt="Hand sketch of the plunger" loading="lazy"><figcaption>Sketch: plunger</figcaption></figure>
+    </div>
+    <div class="grid2" style="margin-top:1rem">
+      <figure class="light"><img src="../assets/rd/button-extender/drawing-cap.png" alt="Final drawing of the button cap" loading="lazy"><figcaption>Final drawing: button cap. Ø27, R50 → R3 → R9 all tangent, Ø7.3 stem, Ø5.5 × 11.5 pin, ISO 2768-m.</figcaption></figure>
+      <figure class="light"><img src="../assets/rd/button-extender/drawing-shaft.png" alt="Final drawing of the shaft" loading="lazy"><figcaption>Final drawing: shaft. 28.84 tall, Ø20.5 base, Ø7.4 bore with the R9 entry flare.</figcaption></figure>
+      <figure class="light"><img src="../assets/rd/button-extender/drawing-plunger.png" alt="Final drawing of the plunger" loading="lazy"><figcaption>Final drawing: plunger. Ø7.3 head, spherical dome, Ø5.5 × 3.5 pin.</figcaption></figure>
+      <figure class="light"><img src="../assets/rd/button-extender/drawing-spring.png" alt="Final drawing of the spring, free and compressed" loading="lazy"><figcaption>Final drawing: spring, free and compressed.</figcaption></figure>
+    </div>
+
+    <h2>Checking the fit before making anything</h2>
+    <p>An exploded assembly and an assembled half-section are built directly from the part scripts. I used them only to check sizes, never to edit parts, so the parts stay the single source of truth. The exploded drawing carries a parts list, a mating-diameter table with every clearance written out, and an axial stack check. That is where the parts that did not work together showed up, and the sizes were then tuned one at a time.</p>
+    <figure class="light">
+      <img src="../assets/rd/button-extender/exploded-assembly.png" alt="Exploded assembly drawing with parts list, mating diameters and axial check" loading="lazy">
+      <figcaption>Exploded assembly for size validation. The mating table flagged the one fit that goes into the next version: the spring OD equals the bore.</figcaption>
+    </figure>
+
+    <h2>Key decisions</h2>
+    <ul>
+      <li><b>Pins as the stroke limit.</b> The cap pin went from 8 mm on the sketch to 11.5 mm so the two pins meet 1 mm before the spring goes solid. The spring never bottoms out.</li>
+      <li><b>Two stops, one moment.</b> The cap stem was tuned, and shortened by 2.91 mm in the last step, so the cap's R9 curve lands on the shaft's flared opening exactly when the pins touch.</li>
+      <li><b>Stack height.</b> The shaft went from 31.5 mm in the first sketch to 28.84 mm after a few rounds of checking the stack in the assembly.</li>
+      <li><b>Plunger travel.</b> The plunger dome starts flush with the shaft base and ends 2 mm below it, which sets how far the appliance button is pressed.</li>
+      <li><b>Clearances written down, not guessed.</b> The cap stem and plunger head, both Ø7.3, slide in a Ø7.4 bore: 0.10 mm diametral. Pins are Ø5.5 in the Ø5.6 spring ID.</li>
+      <li><b>Printable shapes.</b> The recess under the shaft base was removed, the base and stem were resized, and R0.2 and R0.5 edge rounds were added to the pins and heads so parts slide together and come off supports cleanly.</li>
+      <li><b>Every size checked against the user.</b> A wide cap, a smooth top and a defined stop were the criteria for each decision, not what was easiest to model.</li>
+    </ul>
+
+    <h2>Printing</h2>
+    <p>The finished profiles were revolved into solid models and exported as STEP and STL. A small series of four sets was ordered through Formlabs' on-demand service, FormNow, and printed on 7 October 2026. The cap, the surface the hand touches, is in <b>Precision Model Resin</b>; the shaft and plunger are in <b>Grey Resin V5</b>. All parts shipped with supports attached and were cleaned up by hand.</p>
+    <div class="grid2">
+      <figure>
+        <img src="../assets/rd/button-extender/parts-on-supports.jpg" alt="Printed shaft, cap and plunger on their supports, with the spring" loading="lazy">
+        <figcaption>One set as delivered: shaft and plunger in Grey Resin V5, cap in Precision Model Resin, with the stock spring.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/rd/button-extender/cap-and-shaft.jpg" alt="Cap and shaft after support removal" loading="lazy">
+        <figcaption>Cap and shaft after support removal. The plunger dome shows at the base of the shaft.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Next version</h2>
+    <ul>
+      <li><b>Spring fit.</b> The spring's outside diameter, 7.4 mm, equals the bore, and a compressed spring grows about 0.1 mm wider, so it can rub or bind near full press. A Ø7.8 bore or a spring with about 7.0 mm OD fixes it.</li>
+      <li><b>Retention.</b> Nothing holds the cap and plunger in axially yet; they stay in place because of how the stack sits on the appliance. A snap ring or small lip would make it one piece you can pick up.</li>
+    </ul>
+
+    <h2>Tools</h2>
+    <ul>
+      <li>Hand sketching for the initial concept, based on my roommates' needs</li>
+      <li>Python with ezdxf for the parametric 2D drawings (AutoCAD-compatible DXF)</li>
+      <li>CadQuery for the 3D solids (STEP and STL)</li>
+      <li>matplotlib and ffmpeg for the 2D motion study; three.js for the 3D cut-away animation</li>
+      <li>Claude as an AI assistant to draft the drawing, modelling and animation scripts from my sketches and instructions</li>
+      <li>Formlabs SLA via FormNow: Precision Model Resin and Grey Resin V5</li>
+    </ul>
+
+    <h2>Files</h2>
+    <p>Final drawings as DXF (AutoCAD R2010) and the three printed parts as STEP, in millimetres.</p>
+    <div class="files">
+      <a href="../assets/rd/button-extender/files/button_cap.step" download>button_cap.step <small>cap solid</small></a>
+      <a href="../assets/rd/button-extender/files/shaft_part.step" download>shaft_part.step <small>shaft solid</small></a>
+      <a href="../assets/rd/button-extender/files/third_part.step" download>third_part.step <small>plunger solid</small></a>
+      <a href="../assets/rd/button-extender/files/button_cap.dxf" download>button_cap.dxf <small>cap drawing</small></a>
+      <a href="../assets/rd/button-extender/files/shaft_part.dxf" download>shaft_part.dxf <small>shaft drawing</small></a>
+      <a href="../assets/rd/button-extender/files/third_part.dxf" download>third_part.dxf <small>plunger drawing</small></a>
+      <a href="../assets/rd/button-extender/files/spring.dxf" download>spring.dxf <small>spring drawing</small></a>
+      <a href="../assets/rd/button-extender/files/assembly.dxf" download>assembly.dxf <small>exploded assembly</small></a>
+      <a href="../assets/rd/button-extender/files/assembled.dxf" download>assembled.dxf <small>half-section, rest and pressed</small></a>
+    </div>
+
+    <p class="back"><a href="../rd.html" class="btn btn--outline">&larr; All R&amp;D projects</a></p>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy; 2026 Vlad Filitovich</span>
+      <div class="footer__links">
+        <a href="../index.html">Portfolio</a>
+        <a href="https://github.com/llama-with-thumbs" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vlad-filitovich/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" data-mail="dmxhZC5maWxpdG92aWNoQGdtYWlsLmNvbQ==" rel="nofollow">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
